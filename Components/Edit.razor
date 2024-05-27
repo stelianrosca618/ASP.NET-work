@@ -1,0 +1,111 @@
+﻿@page "/Comments/edit"
+@inject MyRazorPagesApp.Data.ApplicationDbContext DB
+@using MyRazorPagesApp.Models
+@inject NavigationManager NavigationManager
+@using Microsoft.EntityFrameworkCore
+
+<PageTitle>Edit</PageTitle>
+
+<h1>Edit</h1>
+
+<h4>Comment</h4>
+<hr />
+@if (Comment is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <EditForm method="post" Model="Comment" OnValidSubmit="UpdateComment" FormName="edit" Enhance>
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <input type="hidden" name="Comment.CommentId" value="@Comment.CommentId" />
+                <div class="mb-3">
+                    <label for="postid" class="form-label">PostId:</label>
+                    <InputNumber id="postid" @bind-Value="Comment.PostId" class="form-control" />
+                    <ValidationMessage For="() => Comment.PostId" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="userid" class="form-label">UserId:</label>
+                    <InputText id="userid" @bind-Value="Comment.UserId" class="form-control" />
+                    <ValidationMessage For="() => Comment.UserId" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="content" class="form-label">Content:</label>
+                    <InputText id="content" @bind-Value="Comment.Content" class="form-control" />
+                    <ValidationMessage For="() => Comment.Content" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="commenttime" class="form-label">CommentTime:</label>
+                    <InputDate id="commenttime" @bind-Value="Comment.CommentTime" class="form-control" />
+                    <ValidationMessage For="() => Comment.CommentTime" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="downvote" class="form-label">DownVote:</label>
+                    <InputNumber id="downvote" @bind-Value="Comment.DownVote" class="form-control" />
+                    <ValidationMessage For="() => Comment.DownVote" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="upvote" class="form-label">UpVote:</label>
+                    <InputNumber id="upvote" @bind-Value="Comment.UpVote" class="form-control" />
+                    <ValidationMessage For="() => Comment.UpVote" class="text-danger" />
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </EditForm>
+        </div>
+    </div>
+}
+
+<div>
+    <a href="/comments">Back to List</a>
+</div>
+
+@code {
+    [SupplyParameterFromQuery]
+    public int CommentId { get; set; }
+
+    [SupplyParameterFromForm]
+    public Comment? Comment { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Comment ??= await DB.Comments.FirstOrDefaultAsync(m => m.CommentId == CommentId);
+
+        if (Comment is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+
+    // To protect from overposting attacks, enable the specific properties you want to bind to.
+    // For more details, see https://aka.ms/RazorPagesCRUD.
+    public async Task UpdateComment()
+    {
+        DB.Attach(Comment!).State = EntityState.Modified;
+
+        try
+        {
+            await DB.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!CommentExists(Comment!.CommentId))
+            {
+                NavigationManager.NavigateTo("notfound");
+            }
+            else
+            {
+                throw;
+            }
+        }
+
+        NavigationManager.NavigateTo("/comments");
+    }
+
+    bool CommentExists(int commentid)
+    {
+        return DB.Comments.Any(e => e.CommentId == commentid);
+    }
+}

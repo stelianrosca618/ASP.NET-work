@@ -1,0 +1,55 @@
+﻿@page "/comments"
+@using Microsoft.AspNetCore.Components.QuickGrid
+@inject MyRazorPagesApp.Data.ApplicationDbContext DB
+@using MyRazorPagesApp.Models
+
+<PageTitle>Index</PageTitle>
+
+<h1>Index</h1>
+
+<p>
+    <a href="comments/create">Create New</a>
+</p>
+
+<QuickGrid Class="custom-grid" Items="DB.Comments">
+    <PropertyColumn Property="comment => comment.PostId" />
+    <PropertyColumn Property="comment => comment.UserId" />
+    <PropertyColumn Property="comment => comment.Content" />
+    <PropertyColumn Property="comment => comment.CommentTime" />
+    <PropertyColumn Property="comment => comment.DownVote" />
+    <PropertyColumn Property="comment => comment.UpVote" />
+
+    <TemplateColumn Context="comment">
+        <a href="@($"comments/edit?commentid={comment.CommentId}")">Edit</a> |
+        <a href="@($"comments/details?commentid={comment.CommentId}")">Details</a> |
+        <a href="@($"comments/delete?commentid={comment.CommentId}")">Delete</a>
+    </TemplateColumn>
+</QuickGrid>
+
+<style>
+    .custom-grid {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .custom-grid th, .custom-grid td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .custom-grid tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .custom-grid tr:hover {
+        background-color: #ddd;
+    }
+
+    .custom-grid th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>

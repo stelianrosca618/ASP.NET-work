@@ -1,0 +1,165 @@
+
+@using MyRazorPagesApp.Pages
+@using MyRazorPagesApp.Models
+
+@inject MyRazorPagesApp.Services.CustomCircuitHandler CircuitHandler
+@inject MyRazorPagesApp.Data.ApplicationDbContext _context
+@inject MyRazorPagesApp.Data.ApplicationDbContext _context1
+@inject HttpClient Http
+@using System.Linq
+@using Microsoft.EntityFrameworkCore
+
+            <div class="frame-parent border-t border-gray-200  flex lg:flex-row flex-col justify-between gap-4 py-3 ">
+                     
+                     <div class="flex gap-3">
+                        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                            <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="Vector" d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        
+                    
+                        <div id="upvoteButton" class="up" @onclick="Upvote">Up</div>
+                        <span id="upvoteCount">@upvotes</span>
+                        </div>
+
+                        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                            <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="Vector" d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+
+                        <div id="downButton" class="up" @onclick="Downvote">Down</div>
+                        <span id="downvoteCount">@downvotes</span>
+                        </div>
+                        <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                </svg>
+                        </div>
+                    </div>
+                    <div  class="flex gap-2">
+                            <div class="flex gap-1 items-center bg-amber-500  rounded-3xl px-3 py-2 w-fit">                     
+                                        <div class="report">Report</div>
+                        </div>
+                            <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="message-2">
+                                    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                </svg>
+                                <div class="up">Share</div>
+                            </div>
+                        </div>
+                   </div>
+
+               
+
+@code {
+    public long upvotes ;
+    public long downvotes;
+    //get AnswerId from the parent component
+
+    public Post post { get; set; }
+    [Parameter]
+    public int PostId { get; set; }
+
+    public Vote vote { get; set; }
+    
+    
+    
+
+   protected override async Task OnInitializedAsync()
+    {
+        Console.WriteLine(PostId+"PostId");
+        await GetUpvotes();
+        await GetDownvotes();
+     
+    } 
+  
+
+     private async Task GetUpvotes()
+    {
+        var response = await Http.GetAsync("http://localhost:5200/" + $"api/Postsvotes/upvotes/{PostId}");
+        if (response.IsSuccessStatusCode)
+        {
+            upvotes = await response.Content.ReadFromJsonAsync<long>();
+            // Do something with upvotes
+        }
+        Console.WriteLine(Http.BaseAddress);
+    }
+    public async Task GetDownvotes()
+
+    {
+        var response = await Http.GetAsync("http://localhost:5200/" + $"api/Postsvotes/downvotes/{PostId}");
+        if (response.IsSuccessStatusCode)
+        {
+            downvotes = await response.Content.ReadFromJsonAsync<long>();
+            // Do something with downvotes
+        }
+    }
+
+
+    public async Task Upvote()
+    {
+       var postExists = _context.Posts.Any(a => a.Id == PostId);
+        if (postExists)
+        {
+            var vote = new Vote { PostId = PostId,
+             };
+            vote.Upvote++;
+            _context.Votes.Add(vote);
+            _context.SaveChanges();
+        }
+        else
+        {
+            Console.WriteLine("Post does not exist");
+        }
+
+                // Calculate the new upvote count
+        upvotes = await _context.Votes
+                .Where(v => v.PostId == PostId)
+                .SumAsync(v => v.Upvote);
+
+        Console.WriteLine(upvotes);
+
+        // Update the UI...
+    }
+     public async Task Downvote()
+    {
+       var postExists = _context.Posts.Any(a => a.Id == PostId);
+        if (postExists)
+        {
+            var vote = new Vote { PostId = PostId,
+             };
+            vote.Downvote++;
+        //TODO: if downvotes reach 5 then answer is hidden
+            _context.Votes.Add(vote);
+            _context.SaveChanges();
+        }
+        else
+        {
+            Console.WriteLine("post does not exist");
+        }
+
+                // Calculate the new upvote count
+        downvotes = await _context.Votes
+                .Where(v => v.PostId == PostId)
+                .SumAsync(v => v.Downvote);
+
+        Console.WriteLine(downvotes);
+
+        // Update the UI...
+    }
+
+
+
+
+
+
+
+
+
+}

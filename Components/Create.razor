@@ -1,0 +1,68 @@
+﻿@page "/comments/create"
+@inject MyRazorPagesApp.Data.ApplicationDbContext DB
+@using MyRazorPagesApp.Models
+@inject NavigationManager NavigationManager
+
+<PageTitle>Create</PageTitle>
+
+<h1>Create</h1>
+
+<h4>Comment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <EditForm method="post" Model="Comment" OnValidSubmit="AddComment" FormName="create" Enhance>
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" />
+            <div class="mb-3">
+                <label for="postid" class="form-label">PostId:</label> 
+                <InputNumber id="postid" @bind-Value="Comment.PostId" class="form-control" /> 
+                <ValidationMessage For="() => Comment.PostId" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="userid" class="form-label">UserId:</label> 
+                <InputText id="userid" @bind-Value="Comment.UserId" class="form-control" /> 
+                <ValidationMessage For="() => Comment.UserId" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="content" class="form-label">Content:</label> 
+                <InputText id="content" @bind-Value="Comment.Content" class="form-control" /> 
+                <ValidationMessage For="() => Comment.Content" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="commenttime" class="form-label">CommentTime:</label> 
+                <InputDate id="commenttime" @bind-Value="Comment.CommentTime" class="form-control" /> 
+                <ValidationMessage For="() => Comment.CommentTime" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="downvote" class="form-label">DownVote:</label> 
+                <InputNumber id="downvote" @bind-Value="Comment.DownVote" class="form-control" /> 
+                <ValidationMessage For="() => Comment.DownVote" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="upvote" class="form-label">UpVote:</label> 
+                <InputNumber id="upvote" @bind-Value="Comment.UpVote" class="form-control" /> 
+                <ValidationMessage For="() => Comment.UpVote" class="text-danger" /> 
+            </div>        
+            <button type="submit" class="btn btn-primary">Create</button>
+        </EditForm>
+    </div>
+</div>
+
+<div>
+    <a href="/comments">Back to List</a>
+</div>
+
+@code {
+
+    [SupplyParameterFromForm]
+    public Comment Comment { get; set; } = new();
+
+    // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+    public async Task AddComment()
+    {
+        DB.Comments.Add(Comment);
+        await DB.SaveChangesAsync();
+        NavigationManager.NavigateTo("/comments");
+    }
+}

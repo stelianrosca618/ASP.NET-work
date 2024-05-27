@@ -1,0 +1,41 @@
+@* 
+@inject HttpClient Http
+@using MyRazorPagesApp.Models
+
+<form @onsubmit="CreatePost">
+    <div class="flex gap-4 border-b border-gray-200 py-3">
+        <img class="group-inner" alt="" src="./public/ellipse-6@2x.png" />
+        <textarea @bind="post.Content" class="group-item w-full text-lg"
+            placeholder="what do you want to ask"></textarea>
+    </div>
+
+    <div class="submit-wrapper w-full flex justify-end py-3">
+        <button type="submit" class="submit px-4 py-2 bg-gray-200 rounded text-gray-400">Submit</button>
+    </div>
+</form> *@
+
+@* @code {
+private Post post = new Post();
+
+private async Task CreatePost()
+{
+await Http.SendJsonAsync(HttpMethod.Post, "/api/posts", post);
+post = new Post();
+}
+} *@
+@* 
+@code {
+    private Post post = new Post();
+
+
+
+    private async Task Create_Post()
+
+    {
+
+        await Http.PostAsJsonAsync("/api/posts/create", post.Content);
+
+        post = new Post();
+
+    }
+} *@

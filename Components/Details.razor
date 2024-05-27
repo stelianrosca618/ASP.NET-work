@@ -1,0 +1,55 @@
+﻿@page "/comments/details"
+@inject MyRazorPagesApp.Data.ApplicationDbContext DB
+@using MyRazorPagesApp.Models
+@inject NavigationManager NavigationManager
+@using Microsoft.EntityFrameworkCore
+
+<PageTitle>Details</PageTitle>
+
+<h1>Details</h1>
+
+<div>
+    <h4>Comment</h4>
+    <hr />
+    @if (comment is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        <dl class="row">
+            <dt class="col-sm-2">PostId</dt>
+            <dd class="col-sm-10">@comment.PostId</dd>
+            <dt class="col-sm-2">UserId</dt>
+            <dd class="col-sm-10">@comment.UserId</dd>
+            <dt class="col-sm-2">Content</dt>
+            <dd class="col-sm-10">@comment.Content</dd>
+            <dt class="col-sm-2">CommentTime</dt>
+            <dd class="col-sm-10">@comment.CommentTime</dd>
+            <dt class="col-sm-2">DownVote</dt>
+            <dd class="col-sm-10">@comment.DownVote</dd>
+            <dt class="col-sm-2">UpVote</dt>
+            <dd class="col-sm-10">@comment.UpVote</dd>
+        </dl>
+        <div>
+            <a href="@($"/comments/edit?commentid={comment.CommentId}")">Edit</a> |
+            <a href="@($"/comments")">Back to List</a>
+        </div>
+    }
+</div>
+
+@code {
+    Comment? comment;
+
+    [SupplyParameterFromQuery]
+    public int CommentId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        comment = await DB.Comments.FirstOrDefaultAsync(m => m.CommentId == CommentId);
+
+        if (comment is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+}

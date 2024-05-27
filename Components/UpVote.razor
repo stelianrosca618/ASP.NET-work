@@ -1,0 +1,277 @@
+@using MyRazorPagesApp.Pages
+@using MyRazorPagesApp.Models
+
+@inject MyRazorPagesApp.Data.ApplicationDbContext DB
+
+
+@inject ICommentsDto CommentsDto
+@inject IVoteDto VoteDto
+@inject IHttpContextAccessor _httpContextAccessor
+
+@using System.Linq
+@using Microsoft.EntityFrameworkCore
+
+
+
+@if (Entity == ContentEntity.Post)
+     { 
+    <div class="frame-parent border-t border-gray-200  flex lg:flex-row flex-col justify-between gap-4 py-3 ">
+
+    <div class="flex gap-3">
+    
+        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+            <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Vector" d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594"
+                    stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <button id="upvoteButton" class="up" @onclick="Upvote">Up</button>
+            <span id="upvoteCount">@upvotes</span>
+        </div>
+
+        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+            <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Vector"
+                    d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406"
+                    stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <button id="downButton" class="up" @onclick="Downvote">Down</button>
+            <span id="downvoteCount">@downvotes</span>
+        </div>
+       @* @if (Entity == ContentEntity.Post)
+       // { *@
+        <button @onclick="ToggleCommentBox" class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="message-2">
+                    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path id="Vector_2"
+                        d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z"
+                        stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+            </svg>
+        </button>
+        
+        
+    </div>
+    <div class="flex gap-2">
+        <div class="flex gap-1 items-center bg-amber-500  rounded-3xl px-3 py-2 w-fit">
+            <div class="report">Report</div>
+        </div>
+        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="message-2">
+                    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path id="Vector_2"
+                        d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z"
+                        stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+            </svg>
+            <div class="up">Share</div>
+        </div>
+    </div>
+
+</div>
+
+    @if (showCommentBox)
+    {
+        <textarea @bind="newComment.Content" rows="2" cols="40" placeholder="Comment.."></textarea>
+         <button class="submit-reply" @onclick="SubmitComment">Submit</button>
+        @foreach (var comment in Comments)
+        {
+        <textarea @bind="comment.Content" rows="2" cols="40" placeholder="Comment..."></textarea>
+          <div class="frame-parent border-t border-gray-200  flex lg:flex-row flex-col justify-between gap-4 py-3 ">
+                <div class="flex gap-3">
+                   <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                        
+                        <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="Vector" d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594"
+                                stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>   
+                        <button id="CommentupvoteButton" class="up" @onclick="UpvoteComment">                
+                        <span id="CommentupvoteCount">@comment.UpVote</span></button>
+                    </div>
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                       
+                        <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="Vector"
+                                d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406"
+                                stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                       <button id="CommentdownButton" class="up" @onclick="DownvoteComment"> 
+                        <span id="CommentdownvoteCount">@comment.DownVote</span>
+                        </button> 
+                    </div>
+                    <button class="reply">Reply</button>
+                </div>
+            </div>
+    }
+    } @*closing of toggle*@
+
+} @*}closing if*@
+
+@code {
+    long upvotes;
+    long commentupvotes;
+    long downvotes;
+    long commentdownvotes;
+    string userId = "";
+
+    
+
+    private bool showCommentBox = false;
+
+    
+    public List<CommentViewModel> Comments {get;set; } = new List<CommentViewModel>();
+
+    public string commentText { get; set;}
+    public CommentViewModel newComment = new CommentViewModel();
+    [Parameter] public int Id { get; set; }
+
+    [Parameter] public ContentEntity Entity { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Console.WriteLine(Id + "Id");
+        await GetUpvotes();
+        await GetDownvotes();
+        userId = _httpContextAccessor.HttpContext?.User.FindFirst(x => x.Type.Contains("nameidentifier"))?.Value ?? "";
+        Comments = await CommentsDto.GetCommentsByPostId(Id);
+        
+    }
+
+
+    private async Task GetUpvotes()
+    {
+        upvotes = await VoteDto.GetUpVoteByEntity(Id, Entity);
+        commentupvotes = await VoteDto.GetUpVoteByEntity(Id, ContentEntity.Comment);
+    }
+    public async Task GetDownvotes()
+    {
+        downvotes = await VoteDto.GetDownVoteByEntity(Id, Entity);
+        commentdownvotes = await VoteDto.GetDownVoteByEntity(Id, ContentEntity.Comment);
+    }
+   private async Task SubmitComment()
+    {
+        Comment newCOMMENT = new Comment
+        {
+            UserId = userId,
+            Content = newComment.Content,
+            PostId = Id,
+        };
+        newComment.Content = string.Empty;
+        int commentId = await CreateComment(newCOMMENT);
+        
+        Comments = await CommentsDto.GetCommentsByPostId(Id);
+        StateHasChanged();
+    }
+
+    public async Task<int> CreateComment(Comment comment)
+    {
+        return await CommentsDto.CreateComment(comment);
+    }
+
+    
+    public void ToggleCommentBox()
+    {
+        showCommentBox = !showCommentBox;
+
+    }
+
+  
+    public async Task Upvote()
+    {
+        //var answerExists = _context.Answers.Any(a => a.Id == Id);
+
+        var voteExists = VoteDto.CheckVoteByUser(Id, userId, Entity);
+
+        if (true && !voteExists)
+        {
+            var vote = VoteDto.CreateVoteByEntity(new VoteViewModel
+                {
+                    UserId = userId,
+                    Id = Id,
+                    Upvote = 1
+                }, Entity);
+        }
+        else
+        {
+            Console.WriteLine("Answer does not exist");
+        }
+
+        await GetUpvotes();
+
+        StateHasChanged();
+    }
+    public async Task UpvoteComment()
+    {
+        var commentExists = CommentsDto.CheckCommentExists(Id);
+        var voteExists = VoteDto.CheckVoteByUser(Id, userId, ContentEntity.Comment);
+
+        if (commentExists.Result && !voteExists)
+        {
+            var vote = VoteDto.CreateVoteByEntity(new VoteViewModel
+                {
+                    UserId = userId,
+                    Id = Id,
+                    Upvote = 1
+                }, ContentEntity.Comment);
+        }
+        else
+        {
+            Console.WriteLine("Comment does not exist or already upvoted");
+        }
+
+        await GetUpvotes();
+
+        StateHasChanged();
+    }
+    public async Task Downvote()
+    {
+        //var answerExists = _context.Answers.Any(a => a.Id == Id);
+
+        var voteExists = VoteDto.CheckVoteByUser(Id, userId, Entity);
+
+        if (true && !voteExists)
+        {
+            var vote = VoteDto.CreateVoteByEntity(new VoteViewModel
+                {
+                    UserId = userId,
+                    Id = Id,
+                    Downvote = 1
+                }, Entity);
+        }
+        else
+        {
+            Console.WriteLine("Answer does not exist");
+        }
+
+        await GetDownvotes();
+
+        StateHasChanged();
+    }
+    public async Task DownvoteComment()
+    {
+        //var answerExists = _context.Answers.Any(a => a.Id == Id);
+
+        var voteExists = VoteDto.CheckVoteByUser(Id, userId, ContentEntity.Comment);
+
+        if (true && !voteExists)
+        {
+            var vote = VoteDto.CreateVoteByEntity(new VoteViewModel
+                {
+                    UserId = userId,
+                    Id = Id,
+                    Downvote = 1
+                }, ContentEntity.Comment);
+        }
+        else
+        {
+            Console.WriteLine("Answer does not exist");
+        }
+
+        await GetDownvotes();
+
+        StateHasChanged();
+    }
+}

@@ -1,0 +1,220 @@
+@page "/search"
+@using System.Net.Http
+@using System.Net.Http.Json
+@using System.Threading.Tasks
+@using Microsoft.AspNetCore.Components
+@inject HttpClient Http
+
+<body class="bg-gray-100">
+    <div class="quiby-before-login lg:flex  gap-5   lg:p-0 p-2 lg:w-10/12 w-full m-auto ">
+        <div class="group-parent lg:w-1/4 ">
+            <div class="group-container">
+                <div class="rectangle-parent4  ">
+                    <div class="topics text-lg text-gray-400">Searches</div>
+                    <div class="border border-gray p-6 flex flex-col gap-4 shadow rounded-2xl bg-white ">
+                        <div class="books-parent flex gap-2 ">
+                           <img class="people-icon" alt="" src="./public/people.svg" />
+                            <div class="books">Communities</div>
+                        </div>
+                        <div class="visiting-travel-parent flex gap-2 ">
+                          
+                            <div class="books">Posts</div>
+                            <div class="w-8 h-6  justify-center  gap-2.5 inline-flex bg-cyan-600 rounded-full ">
+              
+              <div class="text-center text-white justify-center">2</div>
+            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+@*community-slides*@
+        <div class="center-group lg:w-3/4 flex flex-col  mt-10  ">         
+          <div class="text-zinc-500 text-lg font-normal font-['Outfit']">Communities </div>
+          
+             <div class="bg-grey lg:w-10/12 mt-1 rounded-2xl">
+                       <div class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 p-">
+
+        <!-- Box 1 -->
+         <div class="w-60 h-64 rounded-lg shadow p-2 flex flex-col bg-white">
+    <img class="w-24 h-24 mt-3 rounded-full border border-gray-200 mx-auto mb-3" alt="" src="./public/ellipse-16@2x.png"/>
+  <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+    
+    <div class="w-32 h-10 px-7 py-2.5 rounded-3xl   border border-black mx-auto mb-3 flex justify-center items-center gap-2.5 ">
+        <div class="text-black">Join</div>
+    </div>
+</div>
+
+        <!-- more box -->
+        
+                    <div class="w-60 h-64 rounded-lg shadow p-2 flex flex-col bg-white">
+    <img class="w-24 h-24 mt-3 rounded-full border border-gray-200 mx-auto mb-3" alt="" src="./public/ellipse-16@2x.png"/>
+  <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+    
+    <div class="w-32 h-10 px-7 py-2.5 rounded-3xl   border border-black mx-auto mb-3 flex justify-center items-center gap-2.5 ">
+        <div class="text-black">Join</div>
+    </div>
+</div>
+         <div class="w-60 h-64 rounded-lg shadow p-2 flex flex-col bg-white">
+    <img class="w-24 h-24 mt-3 rounded-full border border-gray-200 mx-auto mb-3" alt="" src="./public/ellipse-16@2x.png"/>
+  <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+    
+    <div class="w-32 h-10 px-7 py-2.5 rounded-3xl   border border-black mx-auto mb-3 flex justify-center items-center gap-2.5 ">
+        <div class="text-black">Join</div>
+    </div>
+</div>
+         <div class="w-60 h-64 rounded-lg shadow p-2 flex flex-col bg-white">
+    <img class="w-24 h-24 mt-3 rounded-full border border-gray-200 mx-auto mb-3" alt="" src="./public/ellipse-16@2x.png"/>
+  <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+    
+    <div class="w-32 h-10 px-7 py-2.5 rounded-3xl   border border-black mx-auto mb-3 flex justify-center items-center gap-2.5 ">
+        <div class="text-black">Join</div>
+    </div>
+</div>
+</div>
+                         
+    
+</div>
+
+
+            
+            <div class="text-zinc-500 text-lg pt-1font-normal font-['Outfit']">Posts </div>
+ 
+             <div class="bg-white lg:w-10/12 rounded-2xl ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">
+                   
+                       
+                        <div class="lisa-morrison-parent font-medium mb-3">
+                            <div class="lisa-morrison text-lg">Lisa Morrison</div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                 <img class=" " alt="" src="./public/rectangle-76@2x.png" />
+
+
+                <div class="mohammed-aziz-owns mt-4 text-lg pb-3">
+                    Mohammed Aziz owns his bookstore in Rabat's medina since 1967. He has
+                    over 4,000 books some of which he meticulously displays outside
+                    everyday. He has read every single book, wether they're in Arabic,
+                    French, English or Spanish. Do NOT ignore unexplained weight loss. I
+                    have had more than one patient be very happy about their weight loss.
+                    They were overweight
+                </div>
+                
+            </div>         
+                                      </div>
+                       
+            </div>
+             @*post1*@
+            <div class="bg-white lg:w-10/12 rounded-2xl ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class="littlebrwnrobot  font-medium mb-3">
+                            <div class="littlebrwnrobot text-lg">littlebrwnrobot</div>
+                            <div class="pm text-gray-500 text-base "> rosewoodlliars1 / mo. ago</div>
+
+                        </div>
+                        
+                    <div>
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+            
+  
+              
+                   <div class="there-could-be-container mt-4 text-lg pb-3">
+              <div class="text-black font-bold text-2xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+              <div class="none-of-this">
+          None of this misbehavior shit happened in private schools. From
+          experiencing both, it seems like public schools have the tendency to
+          infantilize students a lot more than any other school even if they
+          don’t want to admit it. Students who deserved to fail, actually
+          failed. Smaller classrooms, better education, and a much better safe
+          environment. Yes, tuition is horrible and many can’t afford it but the
+          difference in staff and environment is insane. Even if they were
+          funded equally, I still don’t think authority in public schools would
+          change.
+        </div>
+          
+                </div>
+  <div class="h-[180px] w-full rounded-2xl pb-3">
+            
+                     <img class="w-full h-full rounded-2xl object-cover" alt="" src="./public/rectangle-81@2x.png" />
+                 </div>
+                <div class="frame-parent border-t border-gray-200  lg:flex justify-between gap-5 py-4 ">
+                <div class="flex gap-3">
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                    
+                
+                    <div class="up">Up</div>
+                    </div>
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                        <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="Vector" d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+
+                        <div class="up">Down</div>
+                    </div>
+                    <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+                </div>
+                    <div>
+                        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                            </svg>
+                            <div class="up">Share</div>
+                        </div>
+                    </div>
+                </div>                                              
+                         </div>         
+                                      </div>
+                           
+            </div>
+            
+          
+        </div>
+    </div>
+           
+    </body>
