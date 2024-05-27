@@ -1,0 +1,128 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_LayoutAuth";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" />
+</head>
+
+<body class="bg-white">
+
+  <div class=" lg:flex  justify-between lg:p-6 p-2 lg:w-3/4 w-10/12 gap-4 mx-auto  mt-10">
+      <div class="group-parent lg:w-3/5  " >
+      <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post"
+        class="w-full">
+        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+        <div class="text-black text-2xl py-2 px-5 font-medium font-['Outfit']">
+          <div class="flex lg:flex-row flex-col mt-7  ">
+            <img class="w-12 h-12 " alt="" src="~/public/group-1000002018.svg" />
+          </div>Create an Account
+
+        </div>
+      <div class=" lg:px-5">
+        <div class="flex flex-col  w-full lg:flex-row gap-4  ">
+          <div class=" lg:w-1/2 w-full relative flex items-center mb-2 ">
+            <img class=" absolute left-2 h-4 w-6" alt="" src="~/public/profile.svg" />
+            <input class="h-14 w-full bg-zinc-100 text-base font-light rounded-lg border  py-2 px-7"
+              type="text" asp-for="Input.Username" aria-required="true" placeholder="Username">
+          </div>
+          <div class="relative lg:w-1/2 w-full flex items-center mb-2 ">
+            <img class="absolute left-2 h-4 w-6 " alt="" src="~/public/profile.svg" />
+            <input type="text" asp-for="Input.Firstname"
+              class="h-14  w-full bg-zinc-100 text-base font-light rounded-lg border  py-2 px-7"
+              aria-required="true" placeholder="Firstname (optional)">
+          </div>
+        </div>
+        <div class="flex flex-col lg:w-full lg:flex-row gap-4 ">
+          <div class="relative lg:w-1/2 w-full flex items-center mb-2 ">
+            <img class="absolute left-2 h-4 w-6" alt="" src="~/public/profile.svg" />
+            <input class="h-14 w-full bg-zinc-100 text-base font-light rounded-lg border  py-2 px-7" type="text"
+              asp-for="Input.Lastname" aria-required="true" placeholder="Lastname optional">
+          </div>
+          <div class="relative lg:w-1/2 w-full flex items-center mb-2 ">
+            <img class="absolute left-2 h-4 w-6" alt="" src="~/public/sms.svg" />
+            <input class="h-14  w-full bg-zinc-100 text-base font-light rounded-lg border   py-2 px-7" type="email"
+              asp-for="Input.Email" autocomplete="username" aria-required="true" placeholder="name@example.com">
+          </div>
+        </div>
+        <div class="flex flex-col  w-full  lg:flex-row gap-4  ">
+          <div class="relative lg:w-1/2 w-full flex items-center mb-2 ">
+            <input class="h-14  w-full bg-zinc-100 text-base   font-light rounded-lg border  py-2 px-7"
+              autocomplete="new-password" type="password" asp-for="Input.Password" aria-required="true"
+              placeholder="password">
+            <img class="absolute left-2 h-4 w-6" alt="" src="~/public/lock.svg" />
+          </div>
+          <div class=" relative lg:w-1/2 w-full flex items-center mb-2 ">
+            <input class="h-14 w-full bg-zinc-100 text-base font-light rounded-lg border py-2 px-7"
+              type="password" asp-for="Input.ConfirmPassword" aria-required="true" placeholder="Confirm Password">
+            <img class="absolute left-2 h-4 w-6" alt="" src="~/public/lock.svg" />
+          </div>
+        </div></div>
+      <div class="flex items-center justify-center w-full p-4 m-auto">
+      <button id="registerSubmit" type="submit"
+              class=" w-full h-12 text-white text-sm  bg-red-700 rounded-3xl border-black">
+              Register
+      </button>
+  </div>
+
+
+      </form>
+      
+    </div>
+
+
+    <div class=" lg:w-2/5 flex flex-col gap-16 mt-7" >
+       <img class=" " alt="" src="~/public/register.png" />
+
+    </div>
+  
+  </div>
+  @* <div class="">
+     <section>
+    <h3>Use another service to register.</h3>
+    <hr />
+    @{
+    if ((Model.ExternalLogins?.Count ?? 0) == 0)
+    {
+    <div>
+    <p>
+    There are no external authentication services configured. See this <a
+    href="https://go.microsoft.com/fwlink/?LinkID=532715">article
+    about setting up this ASP.NET application to support logging in via external services</a>.
+    </p>
+    </div>
+    }
+    else
+    {
+    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post"
+    class="form-horizontal">
+    <div>
+    <p>
+    @foreach (var provider in Model.ExternalLogins!)
+    {
+    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your
+    @provider.DisplayName account">@provider.DisplayName</button>
+    }
+    </p>
+    </div>
+    </form>
+    }
+    }
+    </section>
+  </div> *@
+  
+
+  @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+  }
+</body>
+
+</html>
