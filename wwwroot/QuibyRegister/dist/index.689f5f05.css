@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  --font-outfit: Outfit;
+  --font-size-xs: 12px;
+  --font-size-base: 16px;
+  --color-white: #fff;
+  --color-gainsboro: #d9d9d9;
+  --color-black: #000;
+  --color-whitesmoke-100: #f8f8f8;
+  --color-red: #d00000;
+  --color-darkgray: #b0b0b0;
+  --br-21xl: 40px;
+  --br-8xs: 5px;
+  --br-xl: 20px;
+}
+
+/*# sourceMappingURL=index.689f5f05.css.map */

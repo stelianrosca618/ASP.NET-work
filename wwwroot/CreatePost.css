@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-outfit: Outfit;
+  --font-inherit: inherit;
+
+  /* font sizes */
+  --font-size-sm: 14px;
+  --font-size-lg: 18px;
+  --font-size-xs: 12px;
+  --font-size-base: 16px;
+  --font-size-5xl: 24px;
+
+  /* Colors */
+  --color-whitesmoke-100: #f8f8f8;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-gray-100: #8e8e8e;
+  --color-silver: #c4c4c4;
+  --color-mediumseagreen: #0ab56b;
+
+  /* Border radiuses */
+  --br-3xs: 10px;
+  --br-31xl: 50px;
+}

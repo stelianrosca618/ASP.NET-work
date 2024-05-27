@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-outfit: Outfit;
+
+  /* font sizes */
+  --font-size-xs: 12px;
+  --font-size-base: 16px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-gainsboro: #d9d9d9;
+  --color-black: #000;
+  --color-whitesmoke-100: #f8f8f8;
+  --color-red: #d00000;
+  --color-darkgray: #b0b0b0;
+
+  /* Border radiuses */
+  --br-21xl: 40px;
+  --br-8xs: 5px;
+  --br-xl: 20px;
+}

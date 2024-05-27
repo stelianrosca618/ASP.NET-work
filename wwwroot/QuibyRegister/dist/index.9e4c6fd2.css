@@ -1,0 +1,1778 @@
+.quiby-register-child {
+  background-color: #f8d000;
+  width: 425px;
+  height: 713px;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 1015px;
+}
+
+.group-child, .image-40-icon {
+  width: 1438px;
+  position: absolute;
+}
+
+.image-40-icon {
+  object-fit: cover;
+  height: 1007px;
+  top: 0;
+  left: 0;
+}
+
+.group-child {
+  border-radius: 0 0 var(--br-xl) var(--br-xl);
+  background-color: #f5f5f5;
+  height: 60px;
+  top: calc(50% - 30px);
+  left: calc(50% - 719px);
+}
+
+.have-an-account {
+  font-weight: 300;
+}
+
+.login {
+  color: var(--color-red);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.have-an-account-container {
+  position: absolute;
+  top: 20px;
+  left: 638px;
+}
+
+.rectangle-parent {
+  width: 1438px;
+  height: 60px;
+  position: absolute;
+  top: calc(50% + 296.5px);
+  left: calc(50% - 720px);
+}
+
+.group-item {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.create-an-account {
+  color: var(--color-black);
+  font-size: 24px;
+  font-weight: 500;
+  position: absolute;
+  top: 58px;
+  left: 0;
+}
+
+.group-inner {
+  border-radius: var(--br-8xs);
+  background-color: var(--color-whitesmoke-100);
+  width: 307px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.firstname-optional {
+  font-weight: 300;
+  position: absolute;
+  top: 13px;
+  left: 47px;
+}
+
+.profile-icon {
+  width: 6.51%;
+  max-width: 100%;
+  height: 40%;
+  max-height: 100%;
+  position: absolute;
+  inset: 30% 88.6% 30% 4.89%;
+  overflow: hidden;
+}
+
+.group-div, .rectangle-container, .rectangle-group {
+  width: 307px;
+  height: 50px;
+  position: absolute;
+  top: 108px;
+  left: 0;
+}
+
+.group-div, .rectangle-container {
+  top: 168px;
+}
+
+.group-div {
+  top: 108px;
+  left: 327px;
+}
+
+.show {
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
+  font-weight: 300;
+  text-decoration: underline;
+  position: absolute;
+  top: 18px;
+  left: 258px;
+}
+
+.rectangle-parent1 {
+  width: 307px;
+  height: 50px;
+  position: absolute;
+  top: 228px;
+  left: 0;
+}
+
+.group-child5, .rectangle-parent2, .rectangle-parent3 {
+  width: 307px;
+  height: 50px;
+  position: absolute;
+  top: 228px;
+  left: 327px;
+}
+
+.group-child5, .rectangle-parent3 {
+  top: 168px;
+}
+
+.group-child5 {
+  border-radius: var(--br-21xl);
+  background-color: var(--color-red);
+  width: 634px;
+  top: 0;
+  left: 0;
+}
+
+.register {
+  font-weight: 500;
+  position: absolute;
+  top: 15px;
+  left: 287px;
+}
+
+.rectangle-parent4 {
+  color: var(--color-white);
+  width: 634px;
+  height: 50px;
+  position: absolute;
+  top: 298px;
+  left: 0;
+}
+
+.group-child6, .group-container {
+  width: 634px;
+  height: 348px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.group-child6 {
+  background-color: var(--color-whitesmoke-100);
+  border-radius: 10px;
+  height: 80px;
+  top: 28px;
+}
+
+.group-child7 {
+  border-radius: var(--br-21xl);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gainsboro);
+  box-sizing: border-box;
+  width: 287px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.continue-with-google, .group-icon {
+  position: absolute;
+  top: 13px;
+  left: 86px;
+}
+
+.group-icon {
+  width: 6.27%;
+  max-width: 100%;
+  height: 45%;
+  max-height: 100%;
+  inset: 27.5% 86.76% 27.5% 6.97%;
+  overflow: hidden;
+}
+
+.frame-icon, .rectangle-parent6 {
+  width: 287px;
+  height: 40px;
+  position: absolute;
+  top: 48px;
+  left: 20px;
+}
+
+.frame-icon {
+  width: 18px;
+  height: 18px;
+  top: 11px;
+  overflow: hidden;
+}
+
+.continue-with-apple {
+  position: absolute;
+  top: 13px;
+  left: 90px;
+}
+
+.rectangle-parent7 {
+  width: 287px;
+  height: 40px;
+  position: absolute;
+  top: 48px;
+  left: 327px;
+}
+
+.register-with {
+  color: #848484;
+  font-size: 14px;
+  font-weight: 300;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.line-div, .rectangle-parent5 {
+  display: none;
+  position: absolute;
+}
+
+.rectangle-parent5 {
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
+  width: 634px;
+  height: 108px;
+  top: 388px;
+  left: 0;
+}
+
+.line-div {
+  border-top: 1px solid var(--color-gainsboro);
+  box-sizing: border-box;
+  width: 635px;
+  height: 1px;
+  top: 367.5px;
+  left: -.5px;
+}
+
+.group-parent {
+  color: var(--color-darkgray);
+  width: 634px;
+  height: 348px;
+  position: absolute;
+  top: 119px;
+  left: 160px;
+}
+
+.vector-icon, .vector-icon1, .vector-icon2 {
+  width: .56%;
+  max-width: 100%;
+  height: .04%;
+  max-height: 100%;
+  position: absolute;
+  inset: 76.06% 35% 23.89% 64.43%;
+  overflow: hidden;
+}
+
+.vector-icon1, .vector-icon2 {
+  width: 4.12%;
+  height: 6.06%;
+  inset: 35.52% 5.74% 58.42% 90.14%;
+}
+
+.vector-icon2 {
+  width: 4.14%;
+  height: 6.07%;
+  inset: 58.58% 30.71% 35.36% 65.14%;
+}
+
+.quiby-register-item, .vector-icon3, .vector-icon4, .vector-icon5, .vector-icon6 {
+  width: 6.63%;
+  max-width: 100%;
+  height: 9.81%;
+  max-height: 100%;
+  position: absolute;
+  inset: 17.95% 33.15% 72.24% 60.22%;
+  overflow: hidden;
+}
+
+.quiby-register-item, .vector-icon4, .vector-icon5, .vector-icon6 {
+  width: 2.13%;
+  height: 4.3%;
+  inset: 21.04% 7.26% 74.67% 90.61%;
+}
+
+.vector-icon4, .vector-icon5, .vector-icon6 {
+  width: 4.51%;
+  height: 6.13%;
+  inset: 21.22% 13.94% 72.65% 81.55%;
+}
+
+.vector-icon5, .vector-icon6 {
+  width: 4.59%;
+  height: 6.3%;
+  inset: 21.13% 13.9% 72.57% 81.51%;
+}
+
+.vector-icon6 {
+  width: 3.36%;
+  height: 4.57%;
+  inset: 24.2% 26.07% 71.24% 70.58%;
+}
+
+.freepik-path-inject-129-icon, .vector-icon7, .vector-icon8, .vector-icon9 {
+  width: 3.42%;
+  max-width: 100%;
+  height: 4.7%;
+  max-height: 100%;
+  position: absolute;
+  inset: 24.13% 26.04% 71.17% 70.54%;
+  overflow: hidden;
+}
+
+.freepik-path-inject-129-icon, .vector-icon8, .vector-icon9 {
+  width: 4.59%;
+  height: 6.29%;
+  inset: 43.65% 7.32% 50.06% 88.09%;
+}
+
+.freepik-path-inject-129-icon, .vector-icon9 {
+  width: 4.99%;
+  height: 6.85%;
+  inset: 40.35% 34.24% 52.8% 60.77%;
+}
+
+.freepik-path-inject-129-icon {
+  width: 34.47%;
+  height: 4.06%;
+  inset: 78.48% 5.4% 17.45% 60.13%;
+}
+
+.vector-icon10, .vector-icon11, .vector-icon12, .vector-icon13, .vector-icon14 {
+  width: 18.35%;
+  max-width: 100%;
+  height: 37.06%;
+  max-height: 100%;
+  position: absolute;
+  inset: 29.19% 13.55% 33.74% 68.1%;
+  overflow: hidden;
+}
+
+.vector-icon11, .vector-icon12, .vector-icon13, .vector-icon14 {
+  opacity: .2;
+}
+
+.vector-icon12, .vector-icon13, .vector-icon14 {
+  opacity: .7;
+  width: 2.01%;
+  height: 3.73%;
+  inset: 30.43% 20.42% 65.84% 77.58%;
+}
+
+.vector-icon13, .vector-icon14 {
+  width: 6.75%;
+  height: 16.29%;
+  inset: 48.26% 16.97% 35.45% 76.28%;
+}
+
+.vector-icon14 {
+  width: 2.86%;
+  height: 1.69%;
+  inset: 44.94% 21.34% 53.38% 75.8%;
+}
+
+.vector-icon15, .vector-icon16, .vector-icon17, .vector-icon18, .vector-icon19, .vector-icon20 {
+  opacity: .7;
+  width: .33%;
+  max-width: 100%;
+  height: .25%;
+  max-height: 100%;
+  position: absolute;
+  inset: 46.38% 22.96% 53.38% 76.71%;
+  overflow: hidden;
+}
+
+.vector-icon16, .vector-icon17, .vector-icon18, .vector-icon19, .vector-icon20 {
+  width: 4.27%;
+  height: 7.88%;
+  inset: 30.53% 15.62% 61.6% 80.11%;
+}
+
+.vector-icon17, .vector-icon18, .vector-icon19, .vector-icon20 {
+  width: 2.06%;
+  height: 11.07%;
+  inset: 37.18% 13.77% 51.74% 84.18%;
+}
+
+.vector-icon18, .vector-icon19, .vector-icon20 {
+  width: .38%;
+  height: .73%;
+  inset: 32.3% 19.35% 66.97% 80.27%;
+}
+
+.vector-icon19, .vector-icon20 {
+  width: 1.02%;
+  height: 1.77%;
+  inset: 33.27% 17.3% 64.95% 81.68%;
+}
+
+.vector-icon20 {
+  width: 7.65%;
+  height: 19.93%;
+  inset: 30.36% 20.36% 49.71% 71.99%;
+}
+
+.vector-icon21 {
+  opacity: .8;
+  width: .8%;
+  height: 5.95%;
+  inset: 47.54% 30.83% 46.51% 68.37%;
+}
+
+.vector-icon21, .vector-icon22, .vector-icon23, .vector-icon24, .vector-icon25 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon22 {
+  opacity: .5;
+  width: .7%;
+  height: 1.96%;
+  inset: 50.39% 15.2% 47.65% 84.1%;
+}
+
+.vector-icon23, .vector-icon24, .vector-icon25 {
+  width: 3.11%;
+  height: 4.18%;
+  inset: 51.26% 12.4% 44.56% 84.49%;
+}
+
+.vector-icon24, .vector-icon25 {
+  width: 6.64%;
+  height: 13.41%;
+  inset: 50.67% 5.93% 35.92% 87.43%;
+}
+
+.vector-icon25 {
+  opacity: .2;
+}
+
+.vector-icon26 {
+  width: 1.8%;
+  height: 3.72%;
+  inset: 56.2% 8.47% 40.08% 89.73%;
+}
+
+.vector-icon26, .vector-icon27, .vector-icon28 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon27 {
+  opacity: .1;
+  width: .87%;
+  height: .99%;
+  inset: 56.19% 8.74% 42.82% 90.4%;
+}
+
+.vector-icon28 {
+  width: 1.75%;
+  height: 4.29%;
+  inset: 52.64% 8.25% 43.07% 89.99%;
+}
+
+.vector-icon29 {
+  opacity: .2;
+  width: .57%;
+  height: 1.15%;
+  inset: 54.59% 8.69% 44.26% 90.74%;
+}
+
+.vector-icon29, .vector-icon30, .vector-icon31, .vector-icon32, .vector-icon33 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon30 {
+  opacity: .2;
+  width: .31%;
+  height: 1.13%;
+  inset: 54.3% 9.7% 44.57% 89.99%;
+}
+
+.vector-icon31, .vector-icon32, .vector-icon33 {
+  width: .11%;
+  height: .33%;
+  inset: 54.4% 9.13% 45.27% 90.76%;
+}
+
+.vector-icon32, .vector-icon33 {
+  height: .32%;
+  inset: 54.14% 9.62% 45.54% 90.26%;
+}
+
+.vector-icon33 {
+  width: .1%;
+  height: .14%;
+  top: 54.03%;
+  bottom: 45.83%;
+  right: 9.65%;
+}
+
+.vector-icon34, .vector-icon35, .vector-icon36, .vector-icon37, .vector-icon38 {
+  width: .23%;
+  max-width: 100%;
+  height: .63%;
+  max-height: 100%;
+  position: absolute;
+  inset: 54.51% 9.57% 44.86% 90.2%;
+  overflow: hidden;
+}
+
+.vector-icon35, .vector-icon36, .vector-icon37, .vector-icon38 {
+  width: .36%;
+  height: .22%;
+  inset: 55.43% 9.22% 44.35% 90.42%;
+}
+
+.vector-icon36, .vector-icon37, .vector-icon38 {
+  width: .29%;
+  height: .41%;
+  inset: 53.74% 8.98% 45.85% 90.73%;
+}
+
+.vector-icon37, .vector-icon38 {
+  width: .27%;
+  height: .16%;
+  inset: 53.57% 9.55% 46.26% 90.18%;
+}
+
+.vector-icon38 {
+  width: .1%;
+  height: .14%;
+  inset: 54.31% 9.15% 45.56% 90.75%;
+}
+
+.vector-icon39, .vector-icon40, .vector-icon41, .vector-icon42, .vector-icon43 {
+  width: 3.04%;
+  max-width: 100%;
+  height: 6.78%;
+  max-height: 100%;
+  position: absolute;
+  inset: 50.71% 6.75% 42.51% 90.2%;
+  overflow: hidden;
+}
+
+.vector-icon40, .vector-icon41, .vector-icon42, .vector-icon43 {
+  width: .47%;
+  height: .96%;
+  inset: 54.96% 8.28% 44.09% 91.26%;
+}
+
+.vector-icon41, .vector-icon42, .vector-icon43 {
+  width: .51%;
+  height: 1.85%;
+  inset: 54.98% 8.47% 43.18% 91.02%;
+}
+
+.vector-icon42, .vector-icon43 {
+  width: .89%;
+  height: 2.14%;
+  inset: 52.58% 9.44% 45.28% 89.67%;
+}
+
+.vector-icon43 {
+  width: .75%;
+  height: 6.68%;
+  inset: 54.24% 12.39% 39.08% 86.86%;
+}
+
+.vector-icon44, .vector-icon45 {
+  width: 2.98%;
+  height: 5.1%;
+  inset: 56.81% 10.28% 38.1% 86.74%;
+}
+
+.vector-icon44 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon45 {
+  opacity: .4;
+}
+
+.group-icon1, .vector-icon45, .vector-icon46, .vector-icon47 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon46 {
+  opacity: .1;
+  width: .69%;
+  height: 3.24%;
+  inset: 57.99% 10.86% 38.76% 88.45%;
+}
+
+.group-icon1, .vector-icon47 {
+  width: 3.71%;
+  height: 7.39%;
+  inset: 56.83% 7.7% 35.78% 88.59%;
+}
+
+.group-icon1 {
+  opacity: .4;
+}
+
+.group-icon2 {
+  opacity: .9;
+  width: 2.82%;
+  height: 2.8%;
+  inset: 56.79% 7.7% 40.41% 89.48%;
+}
+
+.group-icon2, .group-icon3, .vector-icon48, .vector-icon49 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon48 {
+  opacity: .1;
+  width: 1.08%;
+  height: 3.78%;
+  inset: 60.44% 8% 35.78% 90.91%;
+}
+
+.group-icon3, .vector-icon49 {
+  width: 1.51%;
+  height: 4.91%;
+  inset: 59.15% 7.46% 35.94% 91.03%;
+}
+
+.group-icon3 {
+  opacity: .4;
+}
+
+.vector-icon50, .vector-icon51, .vector-icon52, .vector-icon53 {
+  width: .73%;
+  max-width: 100%;
+  height: 1.34%;
+  max-height: 100%;
+  position: absolute;
+  inset: 57.88% 9.05% 40.78% 90.22%;
+  overflow: hidden;
+}
+
+.vector-icon51, .vector-icon52, .vector-icon53 {
+  width: .7%;
+  height: 2.34%;
+  inset: 56.79% 9.75% 40.87% 89.55%;
+}
+
+.vector-icon52, .vector-icon53 {
+  width: 1.98%;
+  height: .46%;
+  inset: 59.01% 7.72% 40.53% 90.31%;
+}
+
+.vector-icon53 {
+  width: 1.13%;
+  height: 1.56%;
+  inset: 58.89% 9.24% 39.55% 89.63%;
+}
+
+.vector-icon54, .vector-icon55, .vector-icon56, .vector-icon57, .vector-icon58 {
+  width: .53%;
+  max-width: 100%;
+  height: 1.7%;
+  max-height: 100%;
+  position: absolute;
+  inset: 59.3% 9.75% 39% 89.72%;
+  overflow: hidden;
+}
+
+.vector-icon55, .vector-icon56, .vector-icon57, .vector-icon58 {
+  width: 4.87%;
+  height: 9.83%;
+  inset: 26.07% 8.39% 64.1% 86.74%;
+}
+
+.vector-icon56, .vector-icon57, .vector-icon58 {
+  width: 5.74%;
+  height: 6.84%;
+  inset: 30.74% 10.54% 62.41% 83.72%;
+}
+
+.vector-icon57, .vector-icon58 {
+  width: 1.1%;
+  height: 2.93%;
+  inset: 32.96% 10.96% 64.11% 87.94%;
+}
+
+.vector-icon58 {
+  width: .77%;
+  height: 2.23%;
+  inset: 31.37% 11.37% 66.39% 87.86%;
+}
+
+.vector-icon59 {
+  width: 3.26%;
+  height: 6.35%;
+  inset: 29.55% 8.63% 64.1% 88.1%;
+}
+
+.vector-icon59, .vector-icon60, .vector-icon61, .vector-icon62, .vector-icon63 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon60 {
+  opacity: .5;
+  width: 3.26%;
+  height: 6.35%;
+  inset: 29.55% 8.63% 64.1% 88.1%;
+}
+
+.vector-icon61, .vector-icon62, .vector-icon63 {
+  width: 1.14%;
+  height: 2.76%;
+  inset: 29.62% 10.47% 67.62% 88.39%;
+}
+
+.vector-icon62, .vector-icon63 {
+  width: .9%;
+  height: 2.92%;
+  inset: 28.58% 10.61% 68.5% 88.49%;
+}
+
+.vector-icon63 {
+  opacity: .2;
+  width: .59%;
+  height: 1.87%;
+  inset: 28.68% 11% 69.45% 88.41%;
+}
+
+.vector-icon64, .vector-icon65, .vector-icon66, .vector-icon67 {
+  width: 1.39%;
+  max-width: 100%;
+  height: 3.33%;
+  max-height: 100%;
+  position: absolute;
+  inset: 26.7% 10.8% 69.97% 87.82%;
+  overflow: hidden;
+}
+
+.vector-icon65, .vector-icon66, .vector-icon67 {
+  width: .09%;
+  height: .27%;
+  inset: 27.9% 11.6% 71.83% 88.31%;
+}
+
+.vector-icon66, .vector-icon67 {
+  inset: 28.19% 11.98% 71.54% 87.94%;
+}
+
+.vector-icon67 {
+  width: .21%;
+  height: .2%;
+  inset: 27.55% 11.52% 72.25% 88.27%;
+}
+
+.vector-icon68, .vector-icon69, .vector-icon70, .vector-icon71, .vector-icon72 {
+  width: .16%;
+  max-width: 100%;
+  height: .35%;
+  max-height: 100%;
+  position: absolute;
+  inset: 27.76% 12.09% 71.88% 87.75%;
+  overflow: hidden;
+}
+
+.vector-icon69, .vector-icon70, .vector-icon71, .vector-icon72 {
+  width: .15%;
+  height: .63%;
+  inset: 28.39% 11.86% 70.98% 87.99%;
+}
+
+.vector-icon70, .vector-icon71, .vector-icon72 {
+  width: .5%;
+  height: .77%;
+  inset: 28.69% 11.38% 70.53% 88.12%;
+}
+
+.vector-icon71, .vector-icon72 {
+  width: .32%;
+  height: .38%;
+  inset: 29.09% 11.43% 70.54% 88.25%;
+}
+
+.vector-icon72 {
+  width: .47%;
+  height: .59%;
+  inset: 28.71% 11.4% 70.7% 88.14%;
+}
+
+.vector-icon73 {
+  width: 1.43%;
+  height: 1.79%;
+  inset: 25.79% 10.92% 72.42% 87.65%;
+}
+
+.vector-icon73, .vector-icon74, .vector-icon75 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon74 {
+  opacity: .2;
+  width: .46%;
+  height: 1.29%;
+  inset: 27% 10.88% 71.7% 88.66%;
+}
+
+.vector-icon75 {
+  width: 2.31%;
+  height: 6.36%;
+  inset: 24.88% 8.07% 68.76% 89.62%;
+}
+
+.vector-icon76, .vector-icon77, .vector-icon78, .vector-icon79, .vector-icon80 {
+  width: 1.35%;
+  max-width: 100%;
+  height: 2.42%;
+  max-height: 100%;
+  position: absolute;
+  inset: 28.87% 9.03% 68.71% 89.63%;
+  overflow: hidden;
+}
+
+.vector-icon77, .vector-icon78, .vector-icon79, .vector-icon80 {
+  width: .3%;
+  height: .87%;
+  inset: 27.63% 10.75% 71.5% 88.96%;
+}
+
+.vector-icon78, .vector-icon79, .vector-icon80 {
+  width: .55%;
+  height: 1.15%;
+  inset: 24.27% 8.52% 74.57% 90.92%;
+}
+
+.vector-icon79, .vector-icon80 {
+  width: .5%;
+  height: 1.29%;
+  inset: 23.57% 8.64% 75.14% 90.86%;
+}
+
+.vector-icon80 {
+  width: .18%;
+  height: 6.12%;
+  inset: 24.96% 22.65% 68.92% 77.17%;
+}
+
+.vector-icon81, .vector-icon82, .vector-icon83, .vector-icon84, .vector-icon85 {
+  width: 4.89%;
+  max-width: 100%;
+  height: 9.87%;
+  max-height: 100%;
+  position: absolute;
+  inset: 17.74% 20.32% 72.39% 74.8%;
+  overflow: hidden;
+}
+
+.vector-icon82, .vector-icon83, .vector-icon84, .vector-icon85 {
+  width: 1.82%;
+  height: 4.97%;
+  inset: 22.29% 22.92% 72.74% 75.27%;
+}
+
+.vector-icon83, .vector-icon84, .vector-icon85 {
+  width: .22%;
+  height: .2%;
+  inset: 26.94% 23.6% 72.87% 76.18%;
+}
+
+.vector-icon84, .vector-icon85 {
+  opacity: .4;
+  width: 1.82%;
+  height: 4.97%;
+  inset: 22.29% 22.92% 72.74% 75.27%;
+}
+
+.vector-icon85 {
+  width: .22%;
+  height: .2%;
+  inset: 26.94% 23.6% 72.87% 76.18%;
+}
+
+.vector-icon86, .vector-icon87, .vector-icon88, .vector-icon89, .vector-icon90 {
+  width: .43%;
+  max-width: 100%;
+  height: 1.05%;
+  max-height: 100%;
+  position: absolute;
+  inset: 23.55% 24.5% 75.4% 75.06%;
+  overflow: hidden;
+}
+
+.vector-icon87, .vector-icon88, .vector-icon89, .vector-icon90 {
+  width: .51%;
+  height: 1.14%;
+  top: 22.74%;
+  bottom: 76.12%;
+  left: 74.99%;
+}
+
+.vector-icon88, .vector-icon89, .vector-icon90 {
+  width: 2.24%;
+  height: 6.15%;
+  inset: 21.21% 21.28% 72.64% 76.47%;
+}
+
+.vector-icon89, .vector-icon90 {
+  opacity: .4;
+  width: .12%;
+  height: .25%;
+  inset: 23.6% 22.71% 76.14% 77.16%;
+}
+
+.vector-icon90 {
+  height: .24%;
+  inset: 24.92% 22.53% 74.84% 77.35%;
+}
+
+.vector-icon91 {
+  width: 1.35%;
+  height: 2.3%;
+  inset: 21.3% 21.85% 76.4% 76.79%;
+}
+
+.group-icon5, .vector-icon91, .vector-icon92, .vector-icon93, .vector-icon94 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.group-icon5 {
+  opacity: .3;
+  width: 1.35%;
+  height: 2.3%;
+  inset: 21.3% 21.85% 76.4% 76.79%;
+}
+
+.vector-icon92, .vector-icon93, .vector-icon94 {
+  width: 2.27%;
+  height: 4.68%;
+  inset: 17.84% 21.93% 77.48% 75.79%;
+}
+
+.vector-icon93, .vector-icon94 {
+  width: .69%;
+  height: 2.84%;
+  inset: 20.03% 22.3% 77.14% 77.01%;
+}
+
+.vector-icon94 {
+  opacity: .2;
+  width: .2%;
+  height: 1%;
+  top: 20.58%;
+  bottom: 78.43%;
+  right: 22.78%;
+}
+
+.vector-icon95, .vector-icon96, .vector-icon97, .vector-icon98, .vector-icon99 {
+  width: 1.25%;
+  max-width: 100%;
+  height: 3.26%;
+  max-height: 100%;
+  position: absolute;
+  inset: 18.28% 22.66% 78.46% 76.09%;
+  overflow: hidden;
+}
+
+.vector-icon96, .vector-icon97, .vector-icon98, .vector-icon99 {
+  width: .14%;
+  height: .21%;
+  inset: 20.06% 23.68% 79.74% 76.18%;
+}
+
+.vector-icon97, .vector-icon98, .vector-icon99 {
+  width: .09%;
+  height: .24%;
+  inset: 19.7% 23.31% 80.06% 76.6%;
+}
+
+.vector-icon98, .vector-icon99 {
+  height: .04%;
+  inset: 19.71% 23.36% 80.25% 76.55%;
+}
+
+.vector-icon99 {
+  width: .12%;
+  height: .51%;
+  inset: 20.15% 23.5% 79.34% 76.38%;
+}
+
+.vector-icon100, .vector-icon101, .vector-icon102, .vector-icon103, .vector-icon104 {
+  width: .2%;
+  max-width: 100%;
+  height: .41%;
+  max-height: 100%;
+  position: absolute;
+  inset: 20.42% 23.19% 79.17% 76.61%;
+  overflow: hidden;
+}
+
+.vector-icon101, .vector-icon102, .vector-icon103, .vector-icon104 {
+  width: .35%;
+  height: 1.16%;
+  inset: 18.37% 23.78% 80.47% 75.87%;
+}
+
+.vector-icon102, .vector-icon103, .vector-icon104 {
+  width: .25%;
+  height: .15%;
+  inset: 19.27% 23.35% 80.58% 76.4%;
+}
+
+.vector-icon103, .vector-icon104 {
+  width: .16%;
+  height: .3%;
+  inset: 19.6% 23.8% 80.09% 76.04%;
+}
+
+.vector-icon104 {
+  width: 1.27%;
+  height: 1.7%;
+  inset: 18.05% 22.59% 80.25% 76.13%;
+}
+
+.vector-icon105 {
+  width: 1.35%;
+  height: .85%;
+  inset: 18.36% 22.47% 80.8% 76.18%;
+}
+
+.group-icon6, .vector-icon105, .vector-icon106, .vector-icon107, .vector-icon108 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon106 {
+  opacity: .1;
+  width: 1.35%;
+  height: .85%;
+  inset: 18.36% 22.47% 80.8% 76.18%;
+}
+
+.group-icon6, .vector-icon107, .vector-icon108 {
+  width: .29%;
+  height: .8%;
+  inset: 19.38% 22.56% 79.81% 77.15%;
+}
+
+.group-icon6, .vector-icon108 {
+  width: 1.42%;
+  inset: 26.82% 21.45% 72.38% 77.14%;
+}
+
+.group-icon6 {
+  opacity: .4;
+}
+
+.vector-icon109, .vector-icon110 {
+  width: 1.69%;
+  height: 4.34%;
+  inset: 20.69% 20.92% 74.97% 77.39%;
+}
+
+.vector-icon109 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon110 {
+  opacity: .4;
+}
+
+.group-icon7, .vector-icon110, .vector-icon111, .vector-icon112, .vector-icon113 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.group-icon7 {
+  opacity: .2;
+  width: .15%;
+  height: 1.2%;
+  inset: 19.4% 22.65% 79.4% 77.2%;
+}
+
+.vector-icon111, .vector-icon112, .vector-icon113 {
+  width: .45%;
+  height: 1.12%;
+  inset: 19.78% 22.29% 79.1% 77.26%;
+}
+
+.vector-icon112, .vector-icon113 {
+  width: .44%;
+  height: .82%;
+  inset: 19.13% 22.33% 80.05% 77.23%;
+}
+
+.vector-icon113 {
+  width: 2.65%;
+  height: 3.24%;
+  inset: 34.27% 30.31% 62.5% 67.04%;
+}
+
+.vector-icon114, .vector-icon115, .vector-icon116, .vector-icon117, .vector-icon118 {
+  width: 6.64%;
+  max-width: 100%;
+  height: 13.42%;
+  max-height: 100%;
+  position: absolute;
+  inset: 25.11% 32.18% 61.48% 61.19%;
+  overflow: hidden;
+}
+
+.vector-icon115, .vector-icon116, .vector-icon117, .vector-icon118 {
+  width: .74%;
+  height: 2.49%;
+  inset: 26.48% 30.66% 71.04% 68.6%;
+}
+
+.vector-icon116, .vector-icon117, .vector-icon118 {
+  width: 2.92%;
+  height: 2.93%;
+  inset: 31.83% 31.49% 65.24% 65.58%;
+}
+
+.vector-icon117, .vector-icon118 {
+  opacity: .2;
+  width: 1.43%;
+  height: 2.03%;
+  inset: 32.71% 32.31% 65.26% 66.25%;
+}
+
+.vector-icon118 {
+  width: 1.01%;
+  height: 1.89%;
+  inset: 32.53% 31.68% 65.58% 67.31%;
+}
+
+.vector-icon119, .vector-icon120, .vector-icon121, .vector-icon122 {
+  width: 1.62%;
+  max-width: 100%;
+  height: 6.27%;
+  max-height: 100%;
+  position: absolute;
+  inset: 28.55% 30.83% 65.18% 67.55%;
+  overflow: hidden;
+}
+
+.vector-icon120, .vector-icon121, .vector-icon122 {
+  width: 4.02%;
+  height: 7.96%;
+  inset: 30.57% 33.68% 61.48% 62.3%;
+}
+
+.vector-icon121, .vector-icon122 {
+  width: 2.8%;
+  height: 4.37%;
+  inset: 29.46% 33.92% 66.17% 63.28%;
+}
+
+.vector-icon122 {
+  opacity: .5;
+}
+
+.vector-icon123 {
+  width: 1.25%;
+  height: 4.5%;
+  inset: 28.76% 34.87% 66.74% 63.88%;
+}
+
+.vector-icon123, .vector-icon124, .vector-icon125, .vector-icon126 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon124 {
+  opacity: .2;
+  width: .55%;
+  height: 1.38%;
+  inset: 29.21% 34.87% 69.42% 64.58%;
+}
+
+.vector-icon125, .vector-icon126 {
+  width: 1.62%;
+  height: 4.33%;
+  inset: 25.95% 34.1% 69.72% 64.29%;
+}
+
+.vector-icon126 {
+  width: .52%;
+  height: 2.37%;
+  inset: 26.06% 35.25% 71.57% 64.23%;
+}
+
+.vector-icon127, .vector-icon128, .vector-icon129, .vector-icon130, .vector-icon131 {
+  width: .45%;
+  max-width: 100%;
+  height: 1.31%;
+  max-height: 100%;
+  position: absolute;
+  inset: 27.41% 35.47% 71.28% 64.07%;
+  overflow: hidden;
+}
+
+.vector-icon128, .vector-icon129, .vector-icon130, .vector-icon131 {
+  width: .11%;
+  height: .31%;
+  inset: 27.7% 34.83% 71.99% 65.06%;
+}
+
+.vector-icon129, .vector-icon130, .vector-icon131 {
+  inset: 28.01% 34.24% 71.69% 65.65%;
+}
+
+.vector-icon130, .vector-icon131 {
+  width: .22%;
+  height: .88%;
+  inset: 28.15% 34.36% 70.97% 65.43%;
+}
+
+.vector-icon131 {
+  width: .24%;
+  height: .33%;
+  inset: 27.06% 34.6% 72.61% 65.16%;
+}
+
+.vector-icon132, .vector-icon133, .vector-icon134, .vector-icon135, .vector-icon136 {
+  width: .26%;
+  max-width: 100%;
+  height: .22%;
+  max-height: 100%;
+  position: absolute;
+  inset: 27.54% 34.29% 72.24% 65.45%;
+  overflow: hidden;
+}
+
+.vector-icon133, .vector-icon134, .vector-icon135, .vector-icon136 {
+  width: .55%;
+  height: .13%;
+  inset: 27.38% 35.08% 72.49% 64.37%;
+}
+
+.vector-icon134, .vector-icon135, .vector-icon136 {
+  width: .26%;
+  height: .22%;
+  inset: 27.75% 34.31% 72.03% 65.43%;
+}
+
+.vector-icon135, .vector-icon136 {
+  width: .23%;
+  height: .34%;
+  inset: 27.16% 33.95% 72.5% 65.82%;
+}
+
+.vector-icon136 {
+  width: .74%;
+  height: 1.31%;
+  inset: 27.3% 34.48% 71.39% 64.78%;
+}
+
+.vector-icon137 {
+  width: .51%;
+  height: 1.36%;
+  inset: 27.62% 33.9% 71.02% 65.6%;
+}
+
+.group-icon8, .vector-icon137, .vector-icon138 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.group-icon8 {
+  opacity: .2;
+  width: 1.1%;
+  height: 1.61%;
+  inset: 27.36% 33.94% 71.03% 64.96%;
+}
+
+.vector-icon138 {
+  width: .4%;
+  height: .54%;
+  inset: 28.84% 34.61% 70.62% 64.99%;
+}
+
+.vector-icon139 {
+  width: 1.83%;
+  height: 1.69%;
+  inset: 25.1% 33.67% 73.21% 64.5%;
+}
+
+.vector-icon139, .vector-icon140, .vector-icon141, .vector-icon142 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon140 {
+  opacity: .2;
+  width: .8%;
+  height: 3.92%;
+  inset: 32.59% 36.95% 63.5% 62.25%;
+}
+
+.vector-icon141, .vector-icon142 {
+  width: 1.6%;
+  height: 5.52%;
+  inset: 30.74% 36.98% 63.74% 61.42%;
+}
+
+.vector-icon142 {
+  width: 4.78%;
+  height: 9.74%;
+  inset: 50.58% 34.35% 39.68% 60.87%;
+}
+
+.vector-icon143, .vector-icon144, .vector-icon145, .vector-icon146, .vector-icon147 {
+  width: 3.54%;
+  max-width: 100%;
+  height: 4.28%;
+  max-height: 100%;
+  position: absolute;
+  inset: 50.08% 31.27% 45.64% 65.19%;
+  overflow: hidden;
+}
+
+.vector-icon144, .vector-icon145, .vector-icon146, .vector-icon147 {
+  width: .62%;
+  height: 1.63%;
+  inset: 49.62% 34.86% 48.75% 64.53%;
+}
+
+.vector-icon145, .vector-icon146, .vector-icon147 {
+  width: 2.05%;
+  height: 2.3%;
+  inset: 54.07% 34.41% 43.63% 63.54%;
+}
+
+.vector-icon146, .vector-icon147 {
+  opacity: .2;
+  width: 1.22%;
+  height: .84%;
+  inset: 55.49% 34.94% 43.67% 63.84%;
+}
+
+.vector-icon147 {
+  width: .91%;
+  height: .73%;
+  inset: 54.37% 34.39% 44.9% 64.7%;
+}
+
+.vector-icon148, .vector-icon149, .vector-icon150 {
+  width: .86%;
+  max-width: 100%;
+  height: 4.43%;
+  max-height: 100%;
+  position: absolute;
+  inset: 51.06% 34.4% 44.52% 64.74%;
+  overflow: hidden;
+}
+
+.vector-icon149, .vector-icon150 {
+  width: 1.48%;
+  height: 5.33%;
+  inset: 55% 35.91% 39.67% 62.61%;
+}
+
+.vector-icon150 {
+  opacity: .5;
+}
+
+.vector-icon151, .vector-icon152, .vector-icon153, .vector-icon154, .vector-icon155 {
+  width: .97%;
+  max-width: 100%;
+  height: 5.01%;
+  max-height: 100%;
+  position: absolute;
+  inset: 55.03% 35.71% 39.96% 63.33%;
+  overflow: hidden;
+}
+
+.vector-icon152, .vector-icon153, .vector-icon154, .vector-icon155 {
+  width: 1.66%;
+  height: 5.14%;
+  inset: 55.19% 36.76% 39.67% 61.58%;
+}
+
+.vector-icon153, .vector-icon154, .vector-icon155 {
+  width: 1.24%;
+  height: 2.08%;
+  inset: 54.88% 36.19% 43.04% 62.56%;
+}
+
+.vector-icon154, .vector-icon155 {
+  width: .98%;
+  height: 2.73%;
+  inset: 53.66% 36.32% 43.61% 62.69%;
+}
+
+.vector-icon155 {
+  opacity: .2;
+  width: .4%;
+  height: .86%;
+  inset: 54% 36.63% 45.13% 62.97%;
+}
+
+.vector-icon156, .vector-icon157, .vector-icon158, .vector-icon159 {
+  width: .38%;
+  max-width: 100%;
+  height: 1.9%;
+  max-height: 100%;
+  position: absolute;
+  inset: 51.23% 36.24% 46.87% 63.38%;
+  overflow: hidden;
+}
+
+.vector-icon157, .vector-icon158, .vector-icon159 {
+  width: 1.28%;
+  height: 3.39%;
+  inset: 51.29% 36.14% 45.32% 62.58%;
+}
+
+.vector-icon158, .vector-icon159 {
+  width: .82%;
+  height: 1.74%;
+  inset: 51.76% 36.97% 46.5% 62.21%;
+}
+
+.vector-icon159 {
+  width: .28%;
+  height: .22%;
+  inset: 53.52% 36.43% 46.26% 63.28%;
+}
+
+.vector-icon160, .vector-icon161, .vector-icon162, .vector-icon163, .vector-icon164 {
+  width: .46%;
+  max-width: 100%;
+  height: .96%;
+  max-height: 100%;
+  position: absolute;
+  inset: 53% 37.11% 46.03% 62.44%;
+  overflow: hidden;
+}
+
+.vector-icon161, .vector-icon162, .vector-icon163, .vector-icon164 {
+  width: .08%;
+  height: .25%;
+  inset: 52.63% 36.73% 47.11% 63.19%;
+}
+
+.vector-icon162, .vector-icon163, .vector-icon164 {
+  inset: 52.52% 36.33% 47.23% 63.58%;
+}
+
+.vector-icon163, .vector-icon164 {
+  width: .21%;
+  height: .64%;
+  inset: 52.73% 36.28% 46.63% 63.52%;
+}
+
+.vector-icon164 {
+  width: .18%;
+  height: .28%;
+  inset: 52.27% 36.73% 47.45% 63.09%;
+}
+
+.vector-icon165 {
+  width: .19%;
+  height: .24%;
+  inset: 52.1% 36.19% 47.66% 63.62%;
+}
+
+.vector-icon165, .vector-icon166, .vector-icon167, .vector-icon168 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon166 {
+  opacity: .2;
+  width: 1.1%;
+  height: 1.33%;
+  inset: 53.35% 36.14% 45.32% 62.76%;
+}
+
+.vector-icon167, .vector-icon168 {
+  width: 1.6%;
+  height: 1.48%;
+  inset: 50.72% 36.22% 47.8% 62.18%;
+}
+
+.vector-icon168 {
+  opacity: .2;
+  width: .66%;
+  height: 2.74%;
+  inset: 57.01% 37.63% 40.25% 61.71%;
+}
+
+.vector-icon169, .vector-icon170, .vector-icon171 {
+  width: 1.03%;
+  max-width: 100%;
+  height: 3.68%;
+  max-height: 100%;
+  position: absolute;
+  inset: 55.73% 37.7% 40.59% 61.27%;
+  overflow: hidden;
+}
+
+.vector-icon170, .vector-icon171 {
+  width: 2.98%;
+  height: 6.19%;
+  inset: 39.62% 25.07% 54.19% 71.95%;
+}
+
+.vector-icon171 {
+  opacity: .1;
+}
+
+.vector-icon172, .vector-icon173, .vector-icon174 {
+  width: 1.17%;
+  max-width: 100%;
+  height: 4.18%;
+  max-height: 100%;
+  position: absolute;
+  inset: 35.95% 26.65% 59.88% 72.18%;
+  overflow: hidden;
+}
+
+.vector-icon173, .vector-icon174 {
+  width: 1.23%;
+  height: 4.21%;
+  bottom: 59.84%;
+  left: 72.11%;
+  right: 26.66%;
+}
+
+.vector-icon174 {
+  width: .39%;
+  height: .78%;
+  inset: 36.1% 27.53% 63.13% 72.08%;
+}
+
+.vector-icon175, .vector-icon176, .vector-icon177 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  bottom: 63.34%;
+  overflow: hidden;
+}
+
+.vector-icon175 {
+  opacity: .5;
+  width: .38%;
+  height: .77%;
+  top: 35.89%;
+  left: 72.1%;
+  right: 27.52%;
+}
+
+.vector-icon176, .vector-icon177 {
+  width: .18%;
+  height: .36%;
+  top: 36.31%;
+  left: 72.17%;
+  right: 27.65%;
+}
+
+.vector-icon177 {
+  opacity: .3;
+  width: .09%;
+  height: .19%;
+  inset: 36.39% 27.69% 63.42% 72.21%;
+}
+
+.freepik-group-inject-129-icon, .vector-icon178, .vector-icon179, .vector-icon180 {
+  width: .88%;
+  max-width: 100%;
+  height: 2.4%;
+  max-height: 100%;
+  position: absolute;
+  inset: 38.02% 27.21% 59.59% 71.91%;
+  overflow: hidden;
+}
+
+.freepik-group-inject-129-icon, .vector-icon179, .vector-icon180 {
+  width: 8.23%;
+  height: 47.31%;
+  inset: 33.59% 17.85% 19.1% 73.92%;
+}
+
+.vector-icon179, .vector-icon180 {
+  width: .48%;
+  height: 1.41%;
+  inset: 35.2% 23.85% 63.38% 75.67%;
+}
+
+.vector-icon180 {
+  width: .54%;
+  height: .49%;
+  inset: 78.71% 25.06% 20.8% 74.41%;
+}
+
+.vector-icon181, .vector-icon182, .vector-icon183, .vector-icon184, .vector-icon185 {
+  width: .31%;
+  max-width: 100%;
+  height: .89%;
+  max-height: 100%;
+  position: absolute;
+  inset: 78.29% 25.05% 20.82% 74.64%;
+  overflow: hidden;
+}
+
+.vector-icon182, .vector-icon183, .vector-icon184, .vector-icon185 {
+  width: 2.4%;
+  height: 2.13%;
+  inset: 78.84% 23.88% 19.02% 73.72%;
+}
+
+.vector-icon183, .vector-icon184, .vector-icon185 {
+  width: .47%;
+  height: .57%;
+  inset: 76.46% 18.61% 22.97% 80.92%;
+}
+
+.vector-icon184, .vector-icon185 {
+  width: .44%;
+  height: .49%;
+  top: 76.05%;
+  bottom: 23.45%;
+  left: 80.95%;
+}
+
+.vector-icon185 {
+  width: 1.84%;
+  height: 3.89%;
+  inset: 75.13% 17.33% 20.98% 80.82%;
+}
+
+.vector-icon186 {
+  width: 3.2%;
+  height: 3.74%;
+  inset: 45.74% 22.24% 50.52% 74.56%;
+}
+
+.vector-icon186, .vector-icon187, .vector-icon188, .vector-icon189 {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.vector-icon187 {
+  opacity: .1;
+  width: 3.2%;
+  height: 3.74%;
+  inset: 45.74% 22.24% 50.52% 74.56%;
+}
+
+.vector-icon188, .vector-icon189 {
+  width: 1.07%;
+  height: 4.04%;
+  inset: 35.91% 26.6% 60.05% 72.33%;
+}
+
+.vector-icon189 {
+  opacity: .7;
+}
+
+.vector-icon190, .vector-icon191, .vector-icon192, .vector-icon193 {
+  width: 2.04%;
+  max-width: 100%;
+  height: 1.97%;
+  max-height: 100%;
+  position: absolute;
+  inset: 32.89% 23.67% 65.15% 74.29%;
+  overflow: hidden;
+}
+
+.vector-icon191, .vector-icon192, .vector-icon193 {
+  width: 1.28%;
+  height: .67%;
+  inset: 76.75% 23.8% 22.58% 74.92%;
+}
+
+.vector-icon192, .vector-icon193 {
+  width: 1.3%;
+  height: 1.72%;
+  inset: 73.31% 18.12% 24.97% 80.58%;
+}
+
+.vector-icon193 {
+  opacity: .2;
+  width: .7%;
+  height: 2.98%;
+  inset: 45.74% 22.24% 51.28% 77.06%;
+}
+
+.quiby-register {
+  background-color: var(--color-white);
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  font-family: var(--font-outfit);
+  width: 100%;
+  height: 713px;
+  position: relative;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=index.9e4c6fd2.css.map */

@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-outfit: Outfit;
+  --font-inherit: inherit;
+
+  /* font sizes */
+  --font-size-base: 16px;
+  --font-size-5xl: 24px;
+
+  /* Colors */
+  --color-whitesmoke: #f8f8f8;
+  --color-black: #000;
+  --color-gray: #8e8e8e;
+  --color-white: #fff;
+
+  /* Paddings */
+  --padding-2xl: 21px;
+}

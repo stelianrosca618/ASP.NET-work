@@ -1,0 +1,811 @@
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-outfit: Outfit;
+
+  /* font sizes */
+  --font-size-base: 16px;
+  --font-size-5xl: 24px;
+
+  /* Colors */
+  --color-whitesmoke: #f8f8f8;
+  --color-black: #000;
+  --color-red: #d00000;
+  --color-gray: #8e8e8e;
+  --color-white: #fff;
+}
+.custom-text {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.header-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.03);
+  /* /* size of header */
+   width: 100%; 
+  height: 100%;
+}
+.header-item,
+.notification-icon {
+  position: absolute;
+  height: 44.19%;
+  width: 6.18%; 
+  top: 28.57%;
+  right: 82.71%;
+  bottom: 27.24%;
+  left: 13.11%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.notification-icon {
+  height: 70%;
+  width: 17.03%;
+  top: 15%;
+  right: 82.97%;
+  bottom: 15%;
+  left: 0;
+}
+.group-child,
+.group-item {
+  position: absolute;
+  left: 60.84px;
+  border-radius: 50%;
+}
+.group-child {
+  top: 0;
+  width: 39.9px;
+  height: 40px;
+  object-fit: cover;
+}
+.group-item {
+  top: 28px;
+  background-color: #0ab56b;
+  border: 1px solid var(--color-white);
+  box-sizing: border-box;
+  width: 6.98px;
+  height: 7px;
+}
+.johnson,
+.online {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 59.85px;
+}
+.online {
+  top: 20px;
+  left: 20.94px;
+  font-size: 12px;
+  font-weight: 200;
+  color: var(--color-gray);
+  text-align: right;
+  width: 33.92px;
+}
+.ellipse-parent,
+.johnson-parent {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 59.85px;
+  height: 35px;
+}
+.ellipse-parent {
+  top: 0;
+  left: 58.26px;
+  width: 105.74px;
+  height: 40px;
+}
+.notification-parent {
+  position: absolute;
+  height: 57.14%;
+  width: 11.39%;
+  top: 21.43%;
+  right: 11.11%;
+  bottom: 21.43%;
+  left: 77.5%;
+  color: var(--color-black);
+}
+.popular {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  font-weight: 300;
+}
+a.popular {
+  text-decoration: none;
+  color:black;
+  font-family: Outfit;
+  /* Add other styles as needed */
+}
+.ranking-icon {
+  position: absolute;
+  height: 100%;
+  width: 23.81%;
+  top: 0;
+  right: 76.19%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.home-icon,
+.popular-parent {
+  position: absolute;
+  top: 25px;
+  left: 540px;
+  width: 84px;
+  height: 20px;
+}
+.home-icon {
+  height: 100%;
+  width: 28.17%;
+  top: 0;
+  right: 71.83%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.chart-icon,
+.home-parent {
+  position: absolute;
+  top: 25px;
+  left: 445px;
+  width: 71px;
+  height: 20px;
+}
+.chart-icon {
+  height: 100%;
+  width: 43.48%;
+  top: 0;
+  right: 56.52%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.all-parent,
+.group-inner {
+  position: absolute;
+  top: 25px;
+  left: 648px;
+  width: 46px;
+  height: 20px;
+}
+.group-inner {
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  background-color: var(--color-whitesmoke);
+  width: 265px;
+  height: 40px;
+}
+.search-quibby {
+  position: absolute;
+  top: 0;
+  left: 29px;
+  font-weight: 200;
+}
+.search-normal-icon {
+  position: absolute;
+  height: 95%;
+  width: 14.29%;
+  top: 5%;
+  right: 85.71%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.search-quibby-parent {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 133px;
+  height: 20px;
+}
+.rectangle-parent {
+  position: absolute;
+  top: 15px;
+  left: 730px;
+  width: 265px;
+  height: 40px;
+  color: #cbccce;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  font-size: var(--font-size-base);
+  color: var(--color-gray);
+  margin: 0;
+   padding: 0;
+}
+.last-updated-november,
+.terms-of-service {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  font-weight: 300;
+}
+.terms-of-service {
+  top: 0;
+  font-size: 36px;
+  font-weight: 600;
+  color:#d00000
+}
+.last-updated-november-06-2023-parent {
+  position: absolute;
+  top: 50px;
+  left: 150px;
+  width: 90%;
+  height: 75px;
+  font-size: var(--font-size-base);
+}
+.table-of-contents {
+  position: absolute;
+  top: 540px;
+  left: 160px;
+ 
+  font-weight: 500;
+}
+.our-services {
+  margin: 0;
+  width: 90%;
+}
+.third-party-websites-and {
+  color: inherit;
+}
+.our-services-2-container {
+  position: absolute;
+  top: 560px;
+  left: 160px;
+  width: 150%;
+  font-size: var(--font-size-base);
+  text-decoration: underline;
+  line-height: 26px;
+  font-weight: 300;
+  color: var(--font-inherit);
+  display: inline-block;
+  width: 739px;
+}
+.agreement-to-our {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 700;
+  
+}
+.we-are-quibbyco-container {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  font-size: var(--font-size-base);
+  line-height: 26px;
+  font-weight: 300;
+  color: var(--font-inherit);
+  display: inline-block;
+  
+}
+
+.agreement-to-our-legal-terms-parent {
+  position: absolute;
+  top: 155px;
+  left: 150px;
+  width: 90%;
+  height: 534px;
+}
+.user-representations3 {
+  margin: 0;
+
+}
+.by-using-the-container {
+  position: absolute;
+  top: 47px;
+  left: 0;
+  font-size: var(--font-size-base);
+  line-height: 26px;
+  font-weight: 300;
+  font-family: var(--font-outfit);
+  display: inline-block;
+  width: 90%;
+}
+.user-representations-parent {
+  position: absolute;
+  top: 3000px;
+  left: 150px;
+  width: 90%;
+  height: 326px;
+  font-size: var(--font-inherit);
+  font-family: var(--font-inherit);
+}
+.you-may-be {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  font-size: var(--font-size-base);
+  line-height: 26px;
+  font-weight: 300;
+  display: inline-block;
+  width: 90%;
+}
+.contribution-license-parent,
+.user-registration-parent {
+  position: absolute;
+  top: 3250px;
+  left: 150px;
+  width: 90%;
+  height: 144px;
+}
+.contribution-license-parent {
+  top: 4890px;
+  height: 690px;
+  
+}
+.social-media-parent,
+.third-party-websites-and-conte-parent {
+  position: absolute;
+  top: 5915px;
+  left: 150px;
+  width: 90%;
+  height: 846px;
+}
+.third-party-websites-and-conte-parent {
+  top: 6395px;
+  height: 560px;
+}
+.advertisers-parent,
+.services-management-parent {
+  position: absolute;
+  top: 6720px;
+  left: 150px;
+  width: 90%;
+  height: 118px;
+}
+.services-management-parent {
+  top: 6853px;
+  height: 274px;
+}
+.copyright-infringements-parent,
+.privacy-policy-parent {
+  position: absolute;
+  top: 7050px;
+  left: 150px;
+  width: 85%;
+  height: 326px;
+}
+.copyright-infringements-parent {
+  top: 7255px;
+  height: 222px;
+}
+.span {
+  font-weight: 300;
+  font-family: var(--font-outfit);
+}
+.if-we-terminate {
+  margin: 0;
+  font-weight: 300;
+}
+.these-legal-terms-container {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  font-size: var(--font-size-base);
+  line-height: 26px;
+  display: inline-block;
+  width: 90%;
+}
+.modifications-and-interruption-parent,
+.term-and-termination-parent {
+  position: absolute;
+  top: 7400px;
+  left: 150px;
+  width: 90%;
+  height: 378px;
+}
+.modifications-and-interruption-parent {
+  top: 7700px;
+  height: 326px;
+}
+.corrections-parent,
+.governing-law-parent {
+  position: absolute;
+  top: 7920px;
+  left: 150px;
+  width: 85%;
+  height: 118px;
+}
+.corrections-parent {
+  top: 8800px;
+  height: 144px;
+}
+.disclaimer-parent,
+.limitations-of-liability-parent {
+  position: absolute;
+  top: 8900px;
+  left: 150px;
+  width: 90%;
+  height: 664px;
+}
+.limitations-of-liability-parent {
+  top: 9260px;
+  height: 326px;
+}
+.indemnification-parent,
+.user-data-parent {
+  position: absolute;
+  top: 9469px;
+  left: 150px;
+  width: 90%;
+  height: 378px;
+}
+.user-data-parent {
+  top: 9775px;
+  height: 196px;
+}
+.electronic-communications-tra-container,
+.visiting-the-services {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 34px;
+  font-weight: 500;
+}
+.visiting-the-services {
+  top: 78px;
+  font-size: var(--font-size-base);
+  line-height: 26px;
+  font-weight: 300;
+  display: inline-block;
+  width:90%;
+}
+.electronic-communications-tra-parent {
+  position: absolute;
+  top: 9905px;
+  left: 150px;
+  width: 90%;
+  height: 312px;
+}
+.if-any-complaint {
+  font-weight: 300;
+}
+.b {
+  font-family: var(--font-outfit);
+}
+.if-any-complaint-container {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  font-size: var(--font-size-base);
+  line-height: 26px;
+  display: inline-block;
+  width: 90%;
+}
+.california-users-and-residents-parent {
+  position: absolute;
+  top: 10140px;
+  left: 150px;
+  width: 90%;
+  height: 148px;
+}
+.these-legal-terms3 {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  font-size: var(--font-size-base);
+  line-height: 26px;
+  font-weight: 300;
+  display: inline-block;
+  width:90%;
+}
+.miscellaneous-parent {
+  position: absolute;
+  top: 10285px;
+  left: 150px;
+  width: 90%;
+  height: 382px;
+}
+.contact-us2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-5xl);
+  line-height: 34px;
+  font-weight: 700;
+}
+.in-order-to-container {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  line-height: 26px;
+  display: inline-block;
+  width: 769px;
+}
+.united-states1 {
+  font-weight: 500;
+  font-family: var(--font-outfit);
+}
+.terms-and-conditions {
+  text-decoration: underline;
+}
+.united-states-infoquibbyco-container {
+  position: absolute;
+  top: 165px;
+  left: 0;
+  line-height: 26px;
+  color: var(--font-inherit);
+  display: inline-block;
+  width: 769px;
+}
+.contact-us-parent {
+  position: absolute;
+  top: 10520px;
+  left: 150px;
+  width: 90%;
+  height: 226px;
+  font-size: var(--font-size-base);
+}
+.dispute-resolution2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-5xl);
+  font-weight: 700;
+}
+.if-the-parties {
+  color: var(--color-black);
+}
+.american-arbitration-associati {
+  text-decoration: underline;
+  color: #d00000;
+}
+.if-the-parties-container {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  line-height: 26px;
+  font-weight: 300;
+  display: inline-block;
+  width: 100%;
+}
+.binding-arbitration-parent,
+.restrictions-parent {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 90%;
+  height: 732px;
+}
+.restrictions-parent {
+  top: 482px;
+  height: 160px;
+}
+.dispute-resolution-parent,
+.exceptions-to-arbitration-parent {
+  position: absolute;
+  top: 600px;
+  left: 0;
+  width:90%;
+  height: 238px;
+}
+.dispute-resolution-parent {
+  top: 8050px;
+  left: 150px;
+  width: 90%;
+  height: 1220px;
+  font-size: var(--font-size-base);
+}
+.apple-and-android-devices-parent {
+  position: absolute;
+  top: 296px;
+  left: 0;
+  width: 90%;
+  height: 576px;
+}
+.if-you-access-the-services-via-parent {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 90%;
+  height: 446px;
+}
+.mobile-application-license-parent {
+  position: absolute;
+  top: 5295px;
+  left: 150px;
+  width: 90%;
+  height: 1102px;
+  font-size: var(--font-size-base);
+}
+.our-intellectual-property,
+.your-use-of {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  font-weight: 500;
+}
+.your-use-of {
+  top: 210px;
+}
+.we-are-the-container,
+.your-submissions-and {
+  position: absolute;
+  top: 700px;
+  left: 0;
+  font-weight: 700;
+}
+.we-are-the-container {
+  top: 70px;
+  line-height: 26px;
+  font-weight: 300;
+  display: inline-block;
+  width: 100%;
+}
+.access-the-services-and {
+  margin-bottom: 0;
+}
+.access-the-services-and-downl {
+  margin: 0;
+  padding-left: var(--padding-2xl);
+}
+.we-are-the-container1 {
+  position: absolute;
+  top: 250px;
+  left: 0;
+  font-size: var(--font-inherit);
+  line-height: 26px;
+  font-weight: 300;
+  font-family: var(--font-inherit);
+  color: var(--font-inherit);
+  display: inline-block;
+  width: 100%;
+}
+.please-review-this-container {
+  top: 744px;
+  left: 0;
+  color: var(--font-inherit);
+  width: 100%;
+}
+.confirm-that-you-container,
+.please-review-this-container,
+.you-are-solely-container {
+  position: absolute;
+  line-height: 26px;
+  display: inline-block;
+}
+.you-are-solely-container {
+  top: 1460px;
+  left: 0;
+  color: var(--font-inherit);
+  width: 100%;
+}
+.confirm-that-you-container {
+  top: 0;
+  left: 30px;
+  font-weight: 300;
+  width: 100%;
+}
+.arrow-right-icon,
+.arrow-right-icon1,
+.arrow-right-icon2,
+.arrow-right-icon3 {
+  position: absolute;
+  height: 4.95%;
+  width: 2.34%;
+  top: 1.00%;
+  right: 97.66%;
+  bottom: 93.41%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.arrow-right-icon1,
+.arrow-right-icon2,
+.arrow-right-icon3 {
+  top: 2.36%;
+  bottom: 57.69%;
+}
+.arrow-right-icon2,
+.arrow-right-icon3 {
+  top: 30.79%;
+  bottom: 36.26%;
+}
+.arrow-right-icon3 {
+  top: 51.36%;
+  bottom: 7.69%;
+}
+.confirm-that-you-have-read-and-parent {
+  position: absolute;
+  top: 1260px;
+  left: 0;
+  width: 90%;
+  height: 364px;
+  color: var(--font-inherit);
+}
+.intellectual-property-rights-parent {
+  position: absolute;
+  top: 1295px;
+  left: 150px;
+  width: 90%;
+
+  font-size: var(--font-size-base);
+}
+.systematically-retrieve-data-container {
+  position: absolute;
+  top: 160px;
+  left: 0;
+  font-size: var(--font-size-base); 
+  line-height: 26px;
+  font-weight: 12px;
+  font-family: var(--font-inherit);
+  display: inline-block;
+  width: 85%;
+}
+.prohibited-activities-parent {
+  position: absolute;
+  top: 3350px;
+  left: 150px;
+  width: 90%;
+  height: 1402px;
+}
+.any-use-of,
+.the-creation-distribution-container,
+.the-services-may2 {
+  position: absolute;
+  left: 0;
+  line-height: 26px;
+  font-weight: 300;
+  display: inline-block;
+}
+.the-services-may2 {
+  top: 40px;
+  width:90%;
+}
+.any-use-of,
+.the-creation-distribution-container {
+  width: 90%;
+}
+.the-creation-distribution-container {
+  top: 153px;
+  font-size: var(--font-inherit);
+  font-family: var(--font-inherit);
+}
+.any-use-of {
+  top: 570px;
+}
+.user-generated-contributions-parent {
+  position: absolute;
+  top: 4288px;
+  left: 150px;
+  width: 85%;
+  height: 1022px;
+  font-size: var(--font-size-base);
+}
+.quiby-term-and-condition {
+  position: relative;
+  background-color: var(--color-whitesmoke);
+  width: 100%;
+  height: 17249px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-outfit);
+}
