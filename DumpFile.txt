@@ -1,0 +1,393 @@
+﻿ <div class="bg-white lg:w-10/12  ">
+            <div class="rectangle-group  flex justify-between rounded-2xl bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">
+                   
+                       
+                        <div class="lisa-morrison-parent font-medium mb-3">
+                            <div class="lisa-morrison text-lg">Lisa Morrison</div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                 <img class=" blur-sm" alt="" src="./public/rectangle-76@2x.png" />
+
+
+                <div class="mohammed-aziz-owns mt-4 text-lg pb-3">
+                    Mohammed Aziz owns his bookstore in Rabat's medina since 1967. He has
+                    over 4,000 books some of which he meticulously displays outside
+                    everyday. He has read every single book, wether they're in Arabic,
+                    French, English or Spanish. Do NOT ignore unexplained weight loss. I
+                    have had more than one patient be very happy about their weight loss.
+                    They were overweight
+                </div>
+                <div class="frame-parent border-t border-gray-200 flex lg:flex-row flex-col justify-between gap-4 py-3 ">
+                <div class="flex gap-3">
+                    <div class="flex gap-1 items-center bg-gray-200  px-3 py-2 w-fit">
+                <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                    
+                
+                    <div class="up">Up</div>
+                    </div>
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                        <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="Vector" d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+
+                        <div class="up">Down</div>
+                    </div>
+                    <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+                </div>
+                    <div>
+                        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                            </svg>
+                            <div class="up">Share</div>
+                        </div>
+                    </div>
+                </div>
+            </div>         
+                                      </div>
+                       
+            </div>
+             @* grid-pictures *@
+            <div class="bg-white lg:w-10/12 rounded-2xl ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class="lisa-morrison-parent  font-medium mb-3">
+                            <div class="lisa-morrison text-lg">Lisa Morrison</div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                              <div class="grid blur-sm grid-cols-2 md:grid-cols-3 gap-4 mt-4 text-lg pb-3">
+    
+                                <img class="group-child7" alt="" src="./public/rectangle-761@2x.png" />
+
+        <img class="group-child8" alt="" src="./public/rectangle-77@2x.png" />
+
+        <img class="group-child9" alt="" src="./public/rectangle-78@2x.png" />
+<img
+            class="group-child13"
+            alt=""
+            src="./public/rectangle-79@2x.png"
+          />
+  </div>
+                
+                <div class="frame-parent border-t border-gray-200 flex lg:flex-row flex-col justify-between gap-4 py-3 ">
+                <div class="flex gap-3">
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                    
+                
+                    <div class="up">Up</div>
+                    </div>
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                        <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="Vector" d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+
+                        <div class="up">Down</div>
+                    </div>
+                    <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+                </div>
+                    <div>
+                        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                            </svg>
+                            <div class="up">Share</div>
+                        </div>
+                    </div>
+                </div>
+            </div>         
+                                      </div>
+                           
+            </div>
+              @* vedio  *@
+            <div class="bg-white lg:w-10/12 rounded-2xl ">
+            <div class="rectangle-group  flex  justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class="lisa-morrison-parent  font-medium mb-3">
+                            <div class="lisa-morrison text-lg">Lisa Morrison</div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div><div >
+                 <img
+          class="rectangle-icon blur-sm mt-3 text-lg pb-3"
+          alt=""
+          src="./public/rectangle-762@2x.png"
+        /><p class="text-gray-200">
+       See Image after
+                    <span class="login"><a asp-area="" asp-page="~\Login">Login</a></span>
+    </p>
+        </div>
+                         
+                <div class="frame-parent border-t border-gray-200 flex lg:flex-row flex-col justify-between gap-4 py-3 ">
+                <div class="flex gap-3">
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                    
+                
+                    <div class="up">Up</div>
+                    </div>
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                        <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="Vector" d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+
+                        <div class="up">Down</div>
+                    </div>
+                    <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+                </div>
+                    <div>
+                        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                            </svg>
+                            <div class="up">Share</div>
+                        </div>
+                    </div>
+                </div>
+            </div>         
+                                      </div>
+                      
+            </div>
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+===============================Profile Activities==================================================================================
+-----------------------------------------------------------------------------------------------------------------------------------
+
+  <div class="bg-white lg:w-full rounded-2xl mb-4 ">
+                <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+                    <div class="w-[8%]">
+                        <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                            <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="w-[90%]">
+                        <div class="flex justify-between w-full ">
+                            <div class=" Fedrick  font-medium mb-3">
+                                <div class=" Fedrick text-lg">
+                                    You Replied on Fedrick Comment
+                                    <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                                </div>
+                                <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                            </div>
+
+                            <div class="  ">
+                                <img class="group-icon " alt="" src="./public/group-178.svg" />
+                            </div>
+
+                        </div>
+                        <div class="text-black font-bold text-1xl">
+                            private schools don’t infantilize students like public schools do
+                        </div>
+                        <p class="none-of-this mt-1 text-lg pb-3">
+                            None of this misbehavior shit happened in private schools. From
+                            experiencing both, it seems like public schools have the tendency to
+                            infantilize students a lot more than any other school even if they
+                            don’t want to admit it. Students wh...
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="bg-white lg:w-full rounded-2xl mb-4">
+                <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+                    <div class="w-[8%]">
+                        <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                            <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="w-[90%]">
+                        <div class="flex justify-between w-full ">
+                            <div class=" Fedrick  font-medium mb-3">
+                                <div class=" Fedrick text-lg">
+                                    You Replied on Fedrick Comment
+                                    <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                                </div>
+                                <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                            </div>
+
+                            <div class="  ">
+                                <img class="group-icon " alt="" src="./public/group-178.svg" />
+                            </div>
+
+                        </div>
+                        <div class="text-black font-bold text-1xl">
+                            private schools don’t infantilize students like public schools do
+                        </div>
+                        <p class="none-of-this mt-1 text-lg pb-3">
+                            None of this misbehavior shit happened in private schools. From
+                            experiencing both, it seems like public schools have the tendency to
+                            infantilize students a lot more than any other school even if they
+                            don’t want to admit it. Students wh...
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="bg-white lg:w-full rounded-2xl mb-4 ">
+                <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+                    <div class="w-[8%]">
+                        <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                            <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="w-[90%]">
+                        <div class="flex justify-between w-full ">
+                            <div class=" Fedrick  font-medium mb-3">
+                                <div class=" Fedrick text-lg">
+                                    You Replied on Fedrick Comment
+                                    <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                                </div>
+                                <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                            </div>
+
+                            <div class="  ">
+                                <img class="group-icon " alt="" src="./public/group-178.svg" />
+                            </div>
+
+                        </div>  <div class="text-black font-bold text-1xl">
+                            private schools don’t infantilize students like public schools do
+                        </div>
+                        <p class="none-of-this mt-1 text-lg pb-3">
+                            None of this misbehavior shit happened in private schools. From
+                            experiencing both, it seems like public schools have the tendency to
+                            infantilize students a lot more than any other school even if they
+                            don’t want to admit it. Students wh...
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="bg-white lg:w-full rounded-2xl ">
+                <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+                    <div class="w-[8%]">
+                        <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                            <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="w-[90%]">
+                        <div class="flex justify-between w-full ">
+                            <div class=" Fedrick  font-medium mb-3">
+                                <div class=" Fedrick text-lg">
+                                    You Replied on Fedrick Comment
+                                    <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                                </div>
+                                <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                            </div>
+
+                            <div class="  ">
+                                <img class="group-icon " alt="" src="./public/group-178.svg" />
+                            </div>
+
+                        </div>
+                        <div class="text-black font-bold text-1xl">
+                            private schools don’t infantilize students like public schools do
+                        </div>
+                        <p class="none-of-this mt-1 text-lg pb-3">
+                            None of this misbehavior shit happened in private schools. From
+                            experiencing both, it seems like public schools have the tendency to
+                            infantilize students a lot more than any other school even if they
+                            don’t want to admit it. Students wh...
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
