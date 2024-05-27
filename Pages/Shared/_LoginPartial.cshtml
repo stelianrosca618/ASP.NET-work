@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="flex gap-3 items-center">
+        <li class="nav-item">
+            <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                <button  type="submit" class="border-2 border-[#ff0000] text-red-500 px-4 py-[10px] rounded">Logout</button>
+            </form>
+        </li>
+      
+    </div>
+}
+else
+{   <div class="flex gap-3 items-center">
+
+        <li class="nav-item">
+            
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a  class="border-2 border-[#ff0000] text-red-500 px-4 py-[10px] rounded" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </li>
+    </div>
+}
+</ul>
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="ellipse-parent ">
+        <a asp-page="Profile">
+            <img class="group-child20 w-12 h-12" alt="" src="./public/ellipse-61@2x.png" />
+        </a>
+    </div>
+}

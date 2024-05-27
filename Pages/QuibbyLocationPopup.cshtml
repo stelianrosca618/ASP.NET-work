@@ -1,0 +1,77 @@
+@page
+@model QuibbyTopicModel
+@{
+
+  ViewData["Title"] = "QuibbyCommunitiesPopup";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" />
+
+</head>
+
+<body class="bg-gray-100">
+  <div class=" flex justify-center  lg:p-0 p-2 lg:w-3/4 w-full m-auto ">
+    <form class=" sm:w-96 p-4  lg:w-2/4 w-full m-auto mt-6 bg-white rounded-2xl">
+     
+      <div class="text-black text-3xl font-medium  flex lg:flex-row flex-col  font-['Outfit']">
+        <div class="flex lg:flex-row flex-col ">
+          <img class="w-6 h-6 max-w-full" alt="" src="./public/profile-2user.png" />
+        </div>
+
+        Add Community
+      </div>
+      <div class="mb-2 ">
+        <input class=" h-14   bg-zinc-100  rounded-lg border  w-full py-2 px-3" id="username" type="text" placeholder="Community Name">
+      </div>
+
+      <div class="mb-2">
+
+        <input class=" h-36  bg-zinc-100 top-0 left-0 rounded-lg border  w-full py-2 px-3 " id="CommunityDescription" type="text"
+          placeholder="Community Description">
+      </div>
+      <div class="mb-2">
+    <select class="h-14 bg-zinc-100 text-base font-light rounded-lg border w-full py-2 px-3 " id="SelectTopic" name="SelectTopic">
+        <option  value="" disabled selected>Select Topic</option>
+        <option value="addiction">Addiction</option>
+        <option value="other_topic_1">Activism </option>
+        <option value="other_topic_2">Advice</option>
+        <option value="other_topic_3">Adult content </option>
+    </select>
+</div>
+        <div class="flex flex-col sm:flex-row  gap-2">
+           <div class="w-10 h-10 bg-white rounded-full border-2 border-red-700">               
+                <div class="text-center px-2 text-black text-sm font-black font-['Nunito']">18+</div>
+              </div>
+              <div class="text-black text-base font-light font-['Outfit']">Adult Content
+              <div class="text-zinc-500 text-xs font-light font-['Outfit']">
+                Must be over 18 to view and contribute
+              </div></div>
+  
+<div class="relative">
+    <input type="checkbox" id="toggle" class="hidden">
+    <label for="toggle" class="cursor-pointer">
+        <div class="w-14 h-8 bg-gray-300 rounded-full p-1 flex items-center transition duration-300 ease-in-out">
+            <div class="w-7 h-7 bg-green-500 rounded-full transform translate-x-0 transition-transform"></div>
+        </div>
+    </label>
+</div>
+            </div>
+<div class="w-86 h-px border mt-2 mb-2 border-neutral-200"></div>
+      <div class=" w-full flex justify-end  gap-4">
+        <div class="text-zinc-500 text-base font-light font-['Outfit']">Cancel</div>
+        <button
+          class="w-full  p-2 sm:w-36 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">Add
+          Community</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+@page
+
+@model QuibbyHomeModel
+@using MyRazorPagesApp.Components
+@using Microsoft.AspNetCore.Components.Web
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Home";
+    ViewData["PostType"] = "Que";
+}
+
+<div class="center-group lg:w-3/4 flex flex-col gap-3 mt-7  ">
+
+    @*topic*@
+    <div class="rectangle-group pb-6 pt-0 sm:flex sm:flex-col">
+        <div class="w-[100%]">
+            <div class="flex flex-col sm:flex-row justify-between gap-4">
+                @* <div class="text-zinc-500 text-lg font-normal font-['Outfit']">Topic: @Model.Topic</div> *@
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <a asp-page="Question/Create" asp-route-id="@Model.PostId" class="w-full sm:w-36 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded-3xl border border-black mb-2 sm:mb-0 text-center">
+                        New Question
+                    </a>
+                    <button class="w-full sm:w-36 h-18 px-3 text-sm py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">Communities</button>
+                    <button class="w-full sm:w-36 text-sm h-18 px-3 py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">Topics</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    @foreach (var post in Model.Questions)
+    {
+    
+            var frmID = "ans_frm_" + post.Id;
+    
+        <div class="bg-white lg:w-10/12 rounded-2xl ">
+            <div class=" flex justify-between lg:p-6   p-3 gap-3 ">
+                <div class="w-full">
+                    <div class="text-black font-bold text-[28px]">@post.Title</div>
+                    <div class="mohammed-aziz-owns mt-4 text-lg pb-3"></div>
+                    <button class="w-56 h-18 px-3 py-2.5 rounded-3xl  border border-black  items-start gap-2 inline-flex " id="add-answer-button" onclick="toggleAnswerForm('@frmID')">Write Answer</button>
+                    <button class="w-56 h-18 px-3 py-2.5  rounded-3xl  border border-black  items-start gap-2 inline-flex">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.87004 8.1525C6.79504 8.145 6.70504 8.145 6.62254 8.1525C4.83754 8.0925 3.42004 6.63 3.42004 4.83C3.42004 2.9925 4.90504 1.5 6.75004 1.5C8.58754 1.5 10.08 2.9925 10.08 4.83C10.0725 6.63 8.65504 8.0925 6.87004 8.1525Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12.3066 3C13.7616 3 14.9316 4.1775 14.9316 5.625C14.9316 7.0425 13.8066 8.1975 12.4041 8.25C12.3441 8.2425 12.2766 8.2425 12.2091 8.25" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M3.12102 10.92C1.30602 12.135 1.30602 14.115 3.12102 15.3225C5.18352 16.7025 8.56602 16.7025 10.6285 15.3225C12.4435 14.1075 12.4435 12.1275 10.6285 10.92C8.57352 9.5475 5.19102 9.5475 3.12102 10.92Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M13.7539 15C14.2939 14.8875 14.8039 14.67 15.2239 14.3475C16.3939 13.47 16.3939 12.0225 15.2239 11.145C14.8114 10.83 14.3089 10.62 13.7764 10.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Follow (0)
+                    </button>
+                    <img class="edit-icon mr-2" alt="" src="./public/profile2user@2x.png" />
+                    <div id="@("ans_frm_" + post.Id)" style="display:none">
+                    <form action="" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                            <input type="hidden" asp-for="Answer.PostId" value="@post.Id" />
+                            <textarea asp-for="Answer.Content" class="block p-2.5 w-full my-2 pl-2 md:h-16 border-gray-300 text-lg" type="text"
+                                      placeholder="Type your answer..."></textarea>
+                            <button class="w-26 h-18 px-3 py-2.5  rounded-3xl border border-black" type="submit" value="Submit">Submit Answer</button>
+                    </form>
+                        @if (Model.Answers != null)
+                        {
+                            foreach (var answer in Model.Answers.Where(x => x.PostId == post.Id))
+                                    {
+                                <div class="bg-white lg:w-10/12 rounded-2xl ">
+                                    <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+                                        <div class="w-[8%]">
+                                            <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+                                        </div>
+                                        <div class="w-[90%]">
+                                            <div class="flex justify-between w-full ">
+                                                <div class="Openingsort48261  font-medium mb-3">
+                                                    <div class="openingsort48261 text-lg">@answer.UserId</div>
+                                                    <div class="pm text-gray-500 text-base ">@answer.CreatedDate</div>
+                                                    <div class="answere text-green-500 text-base ">Answer</div>
+                                                </div>
+                                                <div class="relative inline-block">
+                                                    <button onclick="toggleOptionsMenu()" class="group">
+                                                        <img class="group-icon" alt="" src="./public/group-178.svg" />
+                                                    </button>
+
+                                                    <div class="options-menu hidden absolute top-full left-0 bg-white border border-gray-300 w-2/3 rounded-2xl shadow z-10">
+                                                        <a href="#" onclick="selectOption(1)" class="options-menu-item flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-200 transition ease-in-out duration-150">
+                                                            <span class="icon mr-2">🖊️</span> Edit
+                                                        </a>
+                                                        <a href="#" onclick="selectOption(2)" class="options-menu-item flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-200 transition ease-in-out duration-150">
+                                                            <span class="icon mr-2">🗑️</span> Delete
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <script>
+                                                    function toggleOptionsMenu() {
+                                                        var optionsMenu = document.querySelector('.options-menu');
+                                                        optionsMenu.classList.toggle('hidden');
+                                                    }
+
+                                                    function selectOption(option) {
+                                                        alert("Option " + option + " selected");
+                                                        // Add your logic for each option here
+                                                    }
+                                                </script>
+
+
+
+                                            </div>
+                                            <div class="there-could-be-container mt-4 text-lg pb-3">
+                                                <p class="there-could-be">
+                                                    @answer.Content
+                                                </p>
+
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        </div>
+                </div>
+            </div>
+            <div class="lg:px-6 px-4">
+                <component type="typeof(MyRazorPagesApp.Components.UpVote)"
+                           render-mode="ServerPrerendered"
+                           param-Id="@post.Id"
+                           param-Entity="ContentEntity.Question" />
+            </div>
+        </div>
+    }
+    <script>
+        function toggleAnswerForm(id) {
+            var answerForm = document.getElementById(id);
+            answerForm.style.display = (answerForm.style.display === 'none' || answerForm.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+
+    <button id="scrollBtn" style="display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99; border: none; outline: none; background-color: red; color: white; cursor: pointer; padding: 15px; border-radius: 4px;">
+        <svg aria-hidden="true"
+             focusable="false"
+             data-prefix="fas"
+             class="h-4 w-4"
+             role="img"
+             xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 448 512">
+            <path fill="currentColor"
+                  d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path>
+        </svg>
+
+    </button>
+
+
+    <script>
+
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var scrollBtn = document.getElementById("scrollBtn");
+
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollBtn.style.display = "block";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        }
+
+        document.getElementById('scrollBtn').addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+    </script>
+</div>

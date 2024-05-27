@@ -1,0 +1,400 @@
+@page
+@model QuibbyCommunities
+@{
+
+    ViewData["Title"] = "Technology";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" />
+</head>
+
+<body class="bg-gray-100">
+    <div class="quiby-before-login lg:flex  gap-5 lg:p-0 p-2 lg:w-3/4 w-full m-auto ">
+        @* <div class="group-parent lg:w-1/4 ">
+            <div class="group-container">
+                <div class="rectangle-parent4  ">
+                    <div class="topics text-lg text-gray-400">Topics</div>
+                    <div class="border border-gray p-6 flex flex-col gap-4 shadow rounded-2xl bg-white ">
+                        <div class="books-parent flex gap-2 ">
+                            <img class="book-saved-icon" alt="" src="./public/booksaved.svg" />
+                            <div class="books">Books</div>
+                        </div>
+                        <div class="visiting-travel-parent flex gap-2 ">
+                            <img class="global-icon" alt="" src="./public/global.svg" />
+                            <div class="books">Visiting Travel</div>
+                        </div>
+                        <div class="business-parent flex gap-2 ">
+                            <img class="status-up-icon" alt="" src="./public/statusup.svg" />
+                            <div class="books">Business</div>
+                        </div>
+                        <div class="health-parent flex gap-2 ">
+                            <img class="heart-add-icon" alt="" src="./public/heartadd.svg" />
+                            <div class="books">Health</div>
+                        </div>
+                        <div class="technology-parent flex gap-2 ">
+                            <img class="monitor-icon" alt="" src="./public/monitor.svg" />
+                            <a class="books" asp-area="" asp-page="/QuibbyTechnology">Technology</a>
+                        </div>
+                        <div class="science-parent flex gap-2 ">
+                            <img class="microscope-icon" alt="" src="./public/microscope.svg" />
+                            <div class="books">Science</div>
+                        </div>
+                      
+                    </div>
+                </div>
+               
+                <div class="group-parent2">
+                    <div class="topics text-lg text-gray-400">Resources</div>
+                    <div
+                        class="rectangle-parent5 border border-gray p-6 flex flex-col gap-4 shadow rounded-2xl bg-white">
+                        <div class="communities-parent flex gap-2 py-2  border-b border-gray-200">
+                            <img class="people-icon" alt="" src="./public/people.svg" />
+                           
+                        <a class="books" asp-area="" asp-page="/QuibbyCommunities">Communities</a>
+                        </div>
+
+                        <div class="content-policy-parent flex gap-2">
+                          
+                            <img class="note-icon" alt="" src="./public/note.svg" />
+                            <a class="books" asp-area="" asp-page="/Termsandcondition">Content Policy</a>
+
+                        </div>
+                        <div class="private-policy-parent flex gap-2">
+                            <img class="bill-icon" alt="" src="./public/bill.svg" />
+                            <a class="books" asp-area="" asp-page="/Privacy">Private Policy</a>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>*@
+@*communities*@
+        <div class="center-group lg:w-3/4 flex flex-col gap-1 mt-3  ">
+            
+            @*-------------1 communities -----------*@
+            <div class=" lg:w-10/12 lg:flex-row rounded-2xl ">
+          
+                <div class="rectangle-group pb-2 pt-0 sm:flex sm:flex-col">
+
+    <div class="w-[90%]">
+        <div class="text-black text-3xl font-medium  flex lg:flex-row flex-col  font-['Outfit']">Top Communities </div>
+        <div class="flex flex-col sm:flex-row justify-between gap-4">
+            <div class="text-zinc-500 text-base font-light sm:flex-grow sm:mb-4">Quibby’s Largest Communities</div>
+            <button onclick="openModal()" class="flex flex-col sm:flex-row gap-2">              
+            <span class="w-full sm:w-48 h-10 text-white bg-red-700 text-sm px-4 py-2.5  rounded shadow mb-2 sm:mb-0">
+        Create Community +
+    </span>
+            </button>
+
+                            <div id="myModal" class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#00000080] z-20 hidden">
+
+
+                                <form method="post" class=" sm:w-96 p-4  lg:w-2/4 w-full m-auto mt-6 bg-white rounded-2xl">
+
+                                    <div class="text-black text-3xl font-medium  flex lg:flex-row flex-col  font-['Outfit']">
+                                        <div class="flex lg:flex-row flex-col ">
+                                            <img class="w-6 h-6 max-w-full" alt="" src="./public/profile-2user.png" />
+                                        </div>
+
+                                        Add Community
+                                    </div>
+                                    <div class="mb-2 ">
+                                        <input asp-for="Community.CommunityName" class=" h-14   bg-zinc-100  rounded-lg border  w-full py-2 px-3" id="username" type="text" placeholder="Community Name">
+                                        <span asp-validation-for="Community.CommunityName" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="mb-2">
+
+                                        <input asp-for="Community.Description" class=" h-36  bg-zinc-100 top-0 left-0 rounded-lg border  w-full py-2 px-3 " id="CommunityDescription" type="text"
+                                               placeholder="Community Description">
+                                    </div>
+                                    <div class="mb-2">
+                                        <select asp-for="Community.Topic" class="h-14 bg-zinc-100 text-base font-light rounded-lg border w-full py-2 px-3 ">
+                                            <option value="" disabled selected>Select Topic</option>
+                                            <option value="Books">Books</option>
+                                            <option value="Visiting Travel">Visiting Travel</option>
+                                            <option value="Business">Business</option>
+                                            <option value="Health">Health</option>
+                                            <option value="Technology">Technology</option>
+                                            <option value="Science">Science</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row  gap-2">
+                                        <div class="w-10 h-10 bg-white rounded-full border-2 border-red-700">
+                                            <div class="text-center px-2 text-black text-sm font-black font-['Nunito']">18+</div>
+                                        </div>
+                                        <div class="text-black text-base font-light font-['Outfit']">
+                                            Adult Content
+                                            <div class="text-zinc-500 text-xs font-light font-['Outfit']">
+                                                Must be over 18 to view and contribute
+                                            </div>
+                                        </div>
+
+                                        <div class="relative">
+                                            <input asp-for="Community.IsAdultContent" type="checkbox" id="toggle" class="hidden">
+                                            <label for="toggle" class="cursor-pointer">
+                                                <div class="w-14 h-8 bg-gray-300 rounded-full p-1 flex items-center transition duration-300 ease-in-out">
+                                                    <div class="w-7 h-7 bg-green-500 rounded-full transform translate-x-0 transition-transform"></div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="w-86 h-px border mt-2 mb-2 border-neutral-200"></div>
+                                    <div class=" w-full flex justify-end  gap-4">
+                                        <button onclick="closeModal()" class="text-zinc-500 text-base font-light font-['Outfit']">Cancel</button>
+                                        <button type="submit" value="Post"
+                                                class="w-full  p-2 sm:w-36 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">
+                                            Add
+                                            Community
+                                        </button>
+                                    </div>
+                                </form>
+
+                            </div>
+        </div>
+    </div>
+ <div class="rectangle-group flex flex-col sm:flex-row pt-1 pb-1 justify-between p-6 gap-3">
+
+                        @foreach (var community in Model.Communities)
+                        {
+
+
+                            <!-- Box 1 -->
+                            <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+                                <img class="group-child13" alt="" src="./public/ellipse-16@2x.png" />
+                                <p class="text-center text-black text-base font-medium">@community.CommunityName</p>
+                                <p class="text-center text-zinc-500 text-sm font-light">@community.Topic</p>
+                                <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+                                <p class="text-center text-zinc-500 text-sm font-light">@community.Description</p>
+                                <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                                    <div class="join1">Join</div>
+                                </div>
+                            </div>
+                        }
+         @*  <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+            <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div>
+
+        <!-- Box  2-->
+        <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+           
+             <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div>
+
+        <!-- more box -->
+        <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+          
+             <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div>
+                <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+           
+             <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div> *@
+</div>
+
+                    
+            </div>
+           
+             @*----------------2nd------------*@
+            <div class="lg:w-10/12 lg:flex-row rounded-2xl ">
+                           <div class="rectangle-group pb-2 pt-0 sm:flex sm:flex-col">
+
+    <div class="w-[90%]">
+       
+        <div class="flex flex-col sm:flex-row justify-between gap-4">
+           
+          <div class="text-black text-3xl font-medium  flex lg:flex-row flex-col  font-['Outfit']">Fastest Growing Communities</div> 
+        </div>
+    </div>
+ <div class="rectangle-group flex flex-col sm:flex-row pt-1 pb-1 justify-between p-6 gap-3">
+
+        <!-- Box 1 -->
+        <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+            <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div>
+          <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+            <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div>
+
+        <!-- Box  2-->
+        <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+           
+             <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div>
+
+        <!-- more box -->
+        <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+          
+             <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div>
+                <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+           
+             <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div>
+</div>
+
+                    
+            </div>
+                           
+            </div>
+               @*----------------3rd------------*@
+            <div class="lg:w-10/12 lg:flex-row rounded-2xl ">
+                          <div class="w-[90%]">
+       
+        <div class="flex flex-col sm:flex-row justify-between gap-2">
+           
+          <div class="text-black text-3xl   font-medium  flex lg:flex-row flex-col  font-['Outfit']">Quibby Recommended Communities</div> 
+        </div>
+    </div>
+ <div class="rectangle-group flex flex-col sm:flex-row pt-1 pb-1 justify-between p-6 gap-3">
+
+        <!-- Box 1 -->
+        <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+            <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div>
+          <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+            <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div>
+
+        <!-- Box  2-->
+        <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+           
+             <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div>
+
+  @*       <!-- more box -->
+        <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+          
+             <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div> *@
+                <div class="box-container mb-4 sm:mb-0 border border-gray p-2 flex flex-col rounded-2xl bg-white">
+           
+             <img class="group-child13" alt="" src="./public/ellipse-16@2x.png"/>
+            <p class="text-center text-black text-base font-medium">Funny</p>
+            <p class="text-center text-zinc-500 text-sm font-light">Funny/Humor</p>
+            <p class="text-center text-zinc-500 text-sm font-light">54M members</p>
+            <p class="text-center text-zinc-500 text-sm font-light">funny</p>
+            <div class="w-full sm:w-16 h-7 px-5 py-1 rounded-3xl border border-black justify-center items-center gap-2.5 inline-flex">
+                <div class="join1">Join</div>
+            </div>
+        </div>
+</div>
+
+                    
+            </div>
+                           
+            </div>
+          
+        </div>
+    </div><script>
+        function openModal() {
+      document.getElementById('myModal').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('myModal').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+</script>
+</body>
+</html>

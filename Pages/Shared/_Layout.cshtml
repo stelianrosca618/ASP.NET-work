@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Quibby </title>
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Quibby.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/css/QuibbyIndex.css" /> *@
+    @* <link rel="stylesheet" href="~/css/header.css" /> *@
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" />
+<base href="~/" />
+<component type="typeof(Microsoft.AspNetCore.Components.Web.HeadOutlet)" 
+    render-mode="ServerPrerendered" />
+
+</head>
+<body class="bg-gray-100 mb-4">
+    <header class="bg-white  ">
+        <nav class="  border-b mb-2 mx-auto lg:w-10/12 w-full  p-3  py-6 ">
+            @* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button> *@
+            <div class="flex lg:flex-row flex-col lg:gap-0 gap-4 justify-between items-center">
+                <a href="/">
+                    <img class="" alt="" src="~/public/group-146.svg" />
+                </a>
+                <ul class=" flex gap-4 items-center">
+                    <div class="flex lg:flex-row flex-col gap-4">
+                        <div class="flex gap-4 items-center">
+
+
+                            <li class="flex ">
+                                <img alt="" src="~/public/home.svg" />
+
+                                <a class="text-black ml-3" asp-area="" asp-page="/Index">Home</a>
+
+                            </li>
+                            <li class="flex ">
+                                <img alt="" src="~/public/ranking.svg" />
+                                <a class="text-black ml-3" asp-area="" asp-page="/Popular">Popular</a>
+
+                            </li>
+
+                            @* <li class="flex">
+                            <img alt="" src="~/public/ranking.svg" />
+                            <a class="popular" asp-area="" asp-page="/Quibby1">Popular</a>
+
+                            </li> *@
+                            <li class="flex">
+                                <img alt="" src="~/public/chart.svg" />
+
+                                <a class="text-black ml-3" asp-area="" asp-page="/Index">All</a>
+
+                            </li>
+                            <li class="lg:hidden block">
+                                <div id="searchToggle" class="cursor-pointer flex items-center">
+                                    <img class="" alt="" src="./public/searchnormal.svg" />
+                                </div>
+                            </li>
+                        </div>
+                        <!-- Search bar -->
+                   
+                     <div class="flex gap-4">
+                                                 
+                      <li class="lg:block hidden">
+                            <form method="get" action="/QuibbySearches">
+                                <div class=" flex relative gap-2 bg-gray-100 py-2 px-2">
+                                    <img class="" alt="" src="./public/searchnormal.svg" />
+                                    <input name="searchString" type="text" placeholder="search" class=" bg-gray-100" />
+
+                                </div>
+                            </form>
+                            </li>
+                        <li class="lg:hidden  flex gap-4 w-full ">
+                                <!-- <div id="searchToggle" class="cursor-pointer flex items-center">
+                                <img class="" alt="" src="./public/searchnormal.svg" />
+                                </div>  -->
+                               
+                                <div id="searchContainer" class="hidden sm:flex flex-col mt-2 lg:mt-0 w-full">
+                                    <div class="flex relative gap-2 bg-gray-100 py-1 px-2">
+                                        @* <img class="" alt="" src="./public/searchnormal.svg" /> *@
+                                        @* <input name="searchString" type="text" placeholder="!!" class="bg-gray-100 w-full" /> *@
+                                    </div>
+                                </div>
+                                
+                        </li>
+                        </div>
+                    </div>
+                </ul>
+           
+                <div class=" flex gap-4  items-center ">
+                    <div class=" relative  ">
+                        <img class="notification-icon cursor-pointer" alt="" src="./public/notification.svg"
+                            onclick="toggleNotifications()" />
+                        <div class="absolute lg:w-cus w-72 mt-4 z-20 lg:right-4 right-50">
+                            <div id="notificationDropdown"
+                                class="notification-dropdown hidden  right-0  bg-gray-100  p-4 rounded-lg"
+                        >
+                                <div class="mb-2 px-3 p-2 flex items-center">
+                                    <img class="w-12" alt="" src="./public/notification.png" />
+                                    <div
+                                        class="text-zinc-500 text-lg flex lg:flex-row flex-col font-normal font-['Outfit']">
+                                        Notification </div>
+                                </div>
+                                <!-- Example content -->
+                                <div class="text-gray-100 ">Yesterday</div>
+
+                                <div
+                                    class="rectangle-group   flex justify-between rounded-2xl  bg-white p-4 gap-2 ">
+                                    <div class="w-[8%]">
+                                        <img class="group-inner w-12 h-12 " alt="" src=".\public\Ava.png" />
+                                    </div>
+                                    <div class="w-[90%]">
+                                        <div class="flex justify-between  ">
+                                            <div class="lisa-morrison-parent  font-medium mb-3">
+                                                <div class="lisa-morrison text-lg">Ava</div>
+                                                <div class="pm text-gray-500 text-base ">share your post</div>
+                                            </div>
+                                            <div class=" text-gray-500  ">
+                                                2 hour ago </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="rectangle-group w-full flex justify-between rounded-2xl bg-white p-4 mt-2 gap-2 ">
+                                    <div class="w-[8%]">
+                                        <img class="group-inner w-12 h-12 " alt="" src=".\public\Avery.png" />
+                                    </div>
+                                    <div class="w-[90%]">
+                                        <div class="flex justify-between w-full ">
+                                            <div class="lisa-morrison-parent  font-medium mb-3">
+                                                <div class="lisa-morrison text-lg">Lisa Morrison</div>
+                                                <div class="pm text-gray-500 text-base ">Reply in your post</div>
+                                            </div>
+                                            <div class=" text-gray-500  ">
+                                                2 hour ago </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-2  px-3 p-2 ">26/11/2023</div>
+                                <div
+                                    class="rectangle-group w-full flex justify-between rounded-2xl bg-white p-4 mt-2 gap-2 ">
+                                    <div class="w-[8%]">
+                                        <img class="group-inner w-12 h-12 " alt="" src=".\public\Andrew.png" />
+                                    </div>
+                                    <div class="w-[90%]">
+                                        <div class="flex justify-between w-full ">
+                                            <div class="lisa-morrison-parent  font-medium mb-3">
+                                                <div class="lisa-morrison text-lg">Andrew</div>
+                                                <div class="pm text-gray-500 text-base ">Comment on your post</div>
+                                            </div>
+                                            <div class=" text-gray-500  ">
+                                                2 hour ago </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div
+                                    class="rectangle-group w-full flex justify-between rounded-2xl bg-white p-4  mt-2 gap-2 ">
+                                    <div class="w-[8%]">
+                                        <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+                                    </div>
+                                    <div class="w-[90%]">
+                                        <div class="flex justify-between w-full ">
+                                            <div class="lisa-morrison-parent  font-medium mb-3">
+                                                <div class="lisa-morrison text-lg">Lisa lisa-morrison</div>
+                                                <div class="pm text-gray-500 text-base ">Reply in your post</div>
+                                            </div>
+                                            <div class=" text-gray-500  ">
+                                                2 hour ago </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        function toggleNotifications() {
+                            const dropdown = document.getElementById('notificationDropdown');
+                            dropdown.classList.toggle('hidden');
+                        }
+                    </script>
+                    @* <div class="relative">
+                    <div class="notification-dropdown hidden absolute right-0 mt-4 bg-gray-100 w-[595px] p-4 rounded-lg"
+                    id="notificationDropdown">
+
+
+
+
+
+                    </div>
+                    </div> *@
+
+                    <partial name="_LoginPartial" />
+                  
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <div class="quiby-before-login lg:flex  gap-5  lg:p-0 p-2 lg:w-10/12 w-full m-auto ">
+            <div class="group-parent lg:w-1/4 ">
+                <div class="group-container">
+                    <div class="rectangle-parent4  ">
+                        <div class="topics text-lg text-gray-400">Topics : </div>
+                        @{
+                            // var pageLink = ViewData["PostType"] != null && ViewData["PostType"]?.ToString() == "Que" ? "QuibbyHome" : "Popular";
+                            var pageLink ="Index";
+                        }
+                        <div class="border border-gray p-6 flex flex-col gap-4 shadow rounded-2xl bg-white ">
+                            <div class="books-parent flex gap-2 ">
+                                <img class="book-saved-icon" alt="" src="./public/booksaved.svg" />
+                                <a class="books" asp-area="" asp-page="/@pageLink" asp-route-topic="Books">Books</a>
+
+                            </div>
+                            <div class="visiting-travel-parent flex gap-2 ">
+                                <img class="global-icon" alt="" src="./public/global.svg" />
+                                <a class="books" asp-area="" asp-page="/@pageLink" asp-route-topic="Visiting Travel">Visiting Travel</a>
+
+                            </div>
+                            <div class="technology-parent flex gap-2 ">
+                                <img class="monitor-icon" alt="" src="./public/monitor.svg" />
+                                <a class="books" asp-area="" asp-page="/@pageLink" asp-route-topic="Animal">Animal</a>
+                            </div>
+                            <div class="business-parent flex gap-2 ">
+                                <img class="status-up-icon" alt="" src="./public/statusup.svg" />
+                                <a class="books" asp-area="" asp-page="/@pageLink" asp-route-topic="Business">Business</a>
+                            </div>
+                            <div class="health-parent flex gap-2 ">
+                                <img class="heart-add-icon" alt="" src="./public/heartadd.svg" />
+                                <a class="books" asp-area="" asp-page="/@pageLink" asp-route-topic="Health">Health</a>
+                            </div>
+                            <div class="technology-parent flex gap-2 ">
+                                <img class="monitor-icon" alt="" src="./public/monitor.svg" />
+                                <a class="books" asp-area="" asp-page="/@pageLink" asp-route-topic="Technology">Technology</a>
+                            </div>
+                            <div class="science-parent flex gap-2 ">
+                                <img class="microscope-icon" alt="" src="./public/microscope.svg" />
+                                <a class="books" asp-area="" asp-page="/@pageLink" asp-route-topic="Science">Science</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group-parent2">
+                        <div class="topics text-lg text-gray-400">Resources</div>
+                        <div class="rectangle-parent5 border border-gray p-6 flex flex-col gap-4 shadow rounded-2xl bg-white">
+                            <div class="communities-parent flex gap-2 py-2  border-b border-gray-200">
+                                <img class="people-icon" alt="" src="./public/people.svg" />
+                                <a class="books" asp-area="" asp-page="/QuibbyCommunities">Communities</a>
+
+
+                            </div>
+
+                            <div class="content-policy-parent flex gap-2">
+                                @* <div class="books">Content Policy</div> *@
+                                <img class="note-icon" alt="" src="./public/note.svg" />
+                                <a class="books" asp-area="" asp-page="/Termsandcondition">Content Policy</a>
+
+                            </div>
+                            <div class="private-policy-parent flex gap-2">
+                                <img class="bill-icon" alt="" src="./public/bill.svg" />
+                                <a class="books" asp-area="" asp-page="/Privacy">Private Policy</a>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        @RenderBody()
+        </div>
+    </main>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var searchToggle = document.getElementById('searchToggle');
+            var searchContainer = document.getElementById('searchContainer');
+
+            searchToggle.addEventListener('click', function () {
+                searchContainer.classList.toggle('hidden');
+            });
+        });
+        function toggleNotifications() {
+            var dropdown = document.getElementById("notificationDropdown");
+            dropdown.classList.toggle("hidden");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            var dropdown = document.getElementById("notificationDropdown");
+            var icon = document.querySelector(".notification-icon");
+            if (
+                event.target !== icon &&
+                !icon.contains(event.target) &&
+                event.target !== dropdown &&
+                !dropdown.contains(event.target)
+            ) {
+                dropdown.classList.add("hidden");
+            }
+        };
+    </script>
+
+
+<script src="_framework/blazor.web.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- Syncfusion ASP.NET Core Script Manager -->
+
+</body>
+
+</html>

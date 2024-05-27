@@ -1,0 +1,137 @@
+﻿@page "{topic?}"
+@model IndexModel
+@{
+    ViewData["Title"] = "Quibby - Home";
+    ViewData["PostType"] = "Post";
+}
+
+
+<div class="center-group lg:w-3/4 flex flex-col gap-3 mt-7  ">
+    @if (!string.IsNullOrEmpty(Model.Topic))
+    {
+        @if (User.Identity != null && User.Identity.IsAuthenticated)
+        {  Console.WriteLine(User.Identity.Name+"is @@@@"+User.Identity.IsAuthenticated);  
+            <div class=" lg:w-10/12 lg:flex-row rounded-2xl ">
+
+                <div class="rectangle-group pb-6 pt-0 sm:flex sm:flex-col">
+
+                    <div class="w-[90%]">
+                        <div class="text-zinc-500 text-lg flex lg:flex-row flex-col font-normal font-['Outfit']">Topic on Quibby </div>
+                        <div class="flex flex-col sm:flex-row justify-between gap-4">
+                            <div class="text-black font-bold text-4xl sm:flex-grow sm:mb-4">@Model.Topic</div>
+                            <div class="flex flex-col sm:flex-row gap-2">
+                                @* <button  onclick="openModal()"class="w-full sm:w-36 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">
+                        Post
+                        </button> *@
+                                <button onclick="location.href='@Url.Page("/Posts/Create")'" class="w-full sm:w-36 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">
+                                    Post
+                                </button>
+                                <button class="w-full sm:w-36 h-18 px-3 text-sm py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">Communities</button>
+                                <button class="w-full sm:w-36 text-sm h-18 px-3 py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">Topics</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        }
+    }
+    <div class="rectangle-parent flex flex-col lg:w-10/12 rounded-2xl  bg-white px-3 ">
+        <div class="flex gap-4 border-b border-gray-200 py-3">
+            <img class="group-inner" alt="" src="./public/ellipse-6@2x.png" />
+            <textarea id="review" class="group-item w-full text-lg" placeholder="what do you want to ask"></textarea>
+        </div>
+
+        @* <div class="line-div"></div> *@
+        <div class="submit-wrapper w-full flex justify-end py-3">
+            <button class="submit px-4 py-2 bg-gray-200 rounded text-gray-400">Submit</button>
+        </div>
+    </div>
+    @foreach (var post in Model.Posts)
+    {
+        <div class="bg-white lg:w-10/12  ">
+            <div class="rectangle-group  flex justify-between rounded-2xl bg-white p-6 gap-3 ">
+                <div class="w-[8%]">
+                    <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+                </div>
+                <div class="w-[90%]">
+                    <div class="flex justify-between w-full ">
+
+
+                        <div class="lisa-morrison-parent font-medium mb-3">
+                        <div class="lisa-morrison text-lg">@{
+                        var userId = post.UserId;
+                        if (userId != null)
+                        {
+                            var username = await Model.GetUserNameById(userId);
+                            <p>@username</p>
+                        }
+                        }</div>
+                            <div class="pm text-gray-500 text-base ">
+                                @post.CreatedDate.GetValueOrDefault().ToShortDateString() | @post.CreatedDate.GetValueOrDefault().ToShortTimeString()
+                            </div>
+                        </div>
+
+                        <div class="  ">
+                            <img class="group-icon " alt="" src="./public/group-178.svg" />
+                        </div>
+
+                    </div>
+                    <img class="" alt="" src="@post.PostPictureUrl" />
+
+
+                    <div class="mohammed-aziz-owns mt-4 text-lg pb-3">
+                        @post.Content
+                    </div>
+                    @if (User.Identity != null && User.Identity.IsAuthenticated)
+                    {
+                        <component type="typeof(MyRazorPagesApp.Components.UpVote)"
+                                   render-mode="ServerPrerendered"
+                                   param-Id="@post.Id"
+                                   param-Entity="ContentEntity.Post" />
+                    }
+                </div>
+            </div>
+
+        </div>
+    }
+
+</div>
+<button id="scrollBtn" style="display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99; border: none; outline: none; background-color: red; color: white; cursor: pointer; padding: 15px; border-radius: 4px;">
+    <svg aria-hidden="true"
+         focusable="false"
+         data-prefix="fas"
+         class="h-4 w-4"
+         role="img"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 448 512">
+        <path fill="currentColor"
+              d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path>
+    </svg>
+
+</button>
+
+
+<script>
+    window.onscroll = function () { 
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        var scrollBtn = document.getElementById("scrollBtn");
+
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollBtn.style.display = "block";
+        } else {
+            scrollBtn.style.display = "none";
+        }
+    }
+
+    document.getElementById('scrollBtn').addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+</script>

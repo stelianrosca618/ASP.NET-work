@@ -1,0 +1,426 @@
+@page
+@model MyRazorPagesApp.Pages.Posts.CreateModel
+@{
+
+    ViewData["Title"] = "Technology";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" />
+</head>
+
+<body class="bg-gray-100">
+    <div class="quiby-before-login lg:flex  gap-5 lg:p-0 p-2 lg:w-10/12 w-full m-auto ">
+        <div class="group-parent lg:w-1/4 ">
+            <div class="group-container">
+                <div class="rectangle-parent4  ">
+                    <div class="topics text-lg text-gray-400">Topics</div>
+                    <div class="border border-gray p-6 flex flex-col gap-4 shadow rounded-2xl bg-white ">
+                        <div class="books-parent flex gap-2 ">
+                            <img class="book-saved-icon" alt="" src="./public/booksaved.svg" />
+                            <div class="books">Books</div>
+                        </div>
+                        <div class="visiting-travel-parent flex gap-2 ">
+                            <img class="global-icon" alt="" src="./public/global.svg" />
+                            <div class="books">Visiting Travel</div>
+                        </div>
+                        <div class="business-parent flex gap-2 ">
+                            <img class="status-up-icon" alt="" src="./public/statusup.svg" />
+                            <div class="books">Business</div>
+                        </div>
+                        <div class="health-parent flex gap-2 ">
+                            <img class="heart-add-icon" alt="" src="./public/heartadd.svg" />
+                            <div class="books">Health</div>
+                        </div>
+                        <div class="technology-parent flex gap-2 ">
+                            <img class="monitor-icon" alt="" src="./public/monitor.svg" />
+                            <a class="books" asp-area="" asp-page="/QuibbyTechnology">Technology</a>
+                        </div>
+                        <div class="science-parent flex gap-2 ">
+                            <img class="microscope-icon" alt="" src="./public/microscope.svg" />
+                            <div class="books">Science</div>
+                        </div>
+                        <div class="science-parent flex gap-2 ">
+                            <img class="microscope-icon" alt="" src="./public/microscope.svg" />
+                           
+                            <a class="books" asp-area="" asp-page="/QuibbySearches">Searches</a>
+                        </div>
+                         <div class="science-parent flex gap-2 ">
+                            <img class="microscope-icon" alt="" src="./public/microscope.svg" />                           
+                            <a class="books" asp-area="" asp-page="/QuibbyCommunityAdmin1"> QuibbyCommunityAdmin1</a>
+                        </div>
+                          <div class="technology-parent flex gap-2 ">
+                            <img class="monitor-icon" alt="" src="./public/monitor.svg" />
+                            <a class="books" asp-area="" asp-page="/QuibbyAll">QuibbyAll</a>
+                        </div>
+                        <div class="technology-parent flex gap-2 ">
+                            <img class="monitor-icon" alt="" src="./public/monitor.svg" />
+                            <a class="books" asp-area="" asp-page="/QuibbyCreatePost">Quibbycreatepost</a>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="group-parent2">
+                    <div class="topics text-lg text-gray-400">Resources</div>
+                    <div
+                        class="rectangle-parent5 border border-gray p-6 flex flex-col gap-4 shadow rounded-2xl bg-white">
+                        <div class="communities-parent flex gap-2 py-2  border-b border-gray-200">
+                            <img class="people-icon" alt="" src="./public/people.svg" />
+                           <a class="books" asp-area="" asp-page="/QuibbyCommunities">Communities</a>
+
+                        </div>
+
+                        <div class="content-policy-parent flex gap-2">
+                            @* <div class="books">Content Policy</div> *@
+                            <img class="note-icon" alt="" src="./public/note.svg" />
+                            <a class="books" asp-area="" asp-page="/Termsandcondition">Content Policy</a>
+
+                        </div>
+                        <div class="private-policy-parent flex gap-2">
+                            <img class="bill-icon" alt="" src="./public/bill.svg" />
+                            <a class="books" asp-area="" asp-page="/Privacy">Private Policy</a>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+@*text-area*@
+        <div class="center-group lg:w-3/4 flex flex-col gap-1 mt-7  ">
+            
+            @*topic*@
+            <div class=" lg:w-10/12 lg:flex-row rounded-2xl ">
+          
+                <div class="rectangle-group pb-6 pt-0 sm:flex sm:flex-col">
+
+    <div class="w-[90%]">
+        <div class="text-zinc-500 text-lg flex lg:flex-row flex-col font-normal font-['Outfit']">Topic on Quibby </div>
+        <div class="flex flex-col sm:flex-row justify-between gap-4">
+            <div class="text-black font-bold text-4xl sm:flex-grow sm:mb-4">Technology</div>
+            <div class="flex flex-col sm:flex-row gap-2">
+@* <button  onclick="openModal()"class="w-full sm:w-36 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">
+    Post
+</button> *@
+<button onclick="location.href='@Url.Page("/Posts/Create")'" class="w-full sm:w-36 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">
+    Post
+</button>
+
+
+    <!-- Your page content here -->
+   
+<div  class=" justify-between" >
+    <!-- Modal -->
+    <div id="myModal" class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#00000080] z-20 hidden">
+      <div class= "flex justify-center mt-24 lg:p-0 p-2 lg:w-10/12 w-full m-auto h-full">
+        <!-- Close button -->
+        @* <button class="absolute top-4 right-4 text-gray-500" onclick="closeModal()">&times;</button> *@
+
+        <!-- Your form content here -->
+       <form method="post" class=" sm:w-96 p-4 absolute  lg:w-1/3 w-full bg-white rounded-2xl">
+          <div>
+    <div class="text-black text-2xl font-medium font-['Outfit'] flex items-center">
+    <div class="flex items-center">
+        <img class="w-6 h-6 max-w-full" alt="" src="~/public/Create.png" />
+        <span class="ml-2 mx-2">Create Post</span>
+    </div>
+    <div class="ml-auto">
+        <img onclick="closeModal()" class="w-6 h-6 max-w-full" alt="" src="./public/close-circle.png" />
+    </div>
+    </div>
+    
+</div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-2">
+
+                <input asp-for="Post.Title" class=" h-14   bg-zinc-100  rounded-lg border  w-full py-2 px-3"
+                    id="Company (optional)" type="text" placeholder="Title" />
+                <span asp-validation-for="Post.Title" class="text-danger"></span>
+            </div>
+            <div class="mb-2 ">
+                <input asp-for="Post.Content" class=" h-24   bg-zinc-100  rounded-lg border  w-full py-2 px-3"
+                    id="Company (optional)" type="text" placeholder="Content..." />
+                <span asp-validation-for="Post.Content" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display: none;">
+                <label asp-for="Post.PostType" class="control-label"></label>
+                <input asp-for="Post.PostType" class="form-control" />
+                <span asp-validation-for="Post.PostType" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display: none;">
+                <label asp-for="Post.ParentPostId" class="control-label"></label>
+                <select asp-for="Post.ParentPostId" class="form-control" asp-items="ViewBag.ParentPostId"></select>
+            </div>
+            <div class="form-group" style="display: none;">
+                <label asp-for="Post.UserId" class="control-label"></label>
+                <input asp-for="Post.UserId" class="form-control" />
+                <span asp-validation-for="Post.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display: none;">
+                <label asp-for="Post.CreatedDate" class="control-label"></label>
+                <input asp-for="Post.CreatedDate" class="form-control" />
+                <span asp-validation-for="Post.CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="w-86 h-px border mt-2 mb-2 border-neutral-200"></div>
+    <div class="w-full flex items-center justify-between gap-4">
+    <!-- Images -->
+    <div class="flex gap-3">
+        
+        <img class="w-10 h-10 text-center" alt="" src="\public\gallery.png" />
+        <img class="w-6 h-6" alt="" src="\public\chart.png" />
+        <img class="w-6 h-6" alt="" src="\public\Frame.png" />
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex gap-4">
+       
+        <input type="submit" value="Post" class="p-2 sm:w-36 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded border border-black mb-2 sm:mb-0" />
+    </div>
+</div>
+<div>
+
+                                  
+</div>
+        </form>
+        
+        </div>
+       
+                                
+                                @* <div
+                                    class="rectangle-parent5 border border-gray p-2 mt-2 flex flex-col gap-2 shadow rounded-2xl bg-white">
+                                    <div class="communities-parent flex gap-2 py-2  font-semibold border-b border-gray-200">
+            <img class="tick-circle-icon" alt="" src="./public/tickcircle.svg" />
+                                        <a class="books">Posting to Quibby</a>
+
+                                    </div>
+
+                        
+                                    <div class="text-black text-sm font-light font-['Outfit'] leading-10 flex gap-1">
+                <ol class="list-decimal list-inside">
+                <li class="">Be Respectful</li>
+                <li class="">Do not post AI generated content</li>
+                <li class="">Abide by the Community Rules</li>
+                <li class="">Abide by Quibby’s “Content Policy”</li>
+            </ol>
+
+                                    </div>
+                                </div> *@
+
+
+                            </div>  
+      
+    </div>
+  
+
+  <script>
+    function openModal() {
+      document.getElementById('myModal').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('myModal').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+  </script>
+                <button class="w-full sm:w-36 h-18 px-3 text-sm py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">Communities</button>
+                <button class="w-full sm:w-36 text-sm h-18 px-3 py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">Topics</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+                    
+            </div>
+            
+           
+             @*post1*@
+            <div class="bg-white lg:w-10/12 rounded-2xl ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class="littlebrwnrobot  font-medium mb-3">
+                            <div class="littlebrwnrobot text-lg">littlebrwnrobot</div>
+                            <div class="pm text-gray-500 text-base "> rosewoodlliars1 / mo. ago</div>
+
+                        </div>
+                        
+                    <div>
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+            
+  
+              
+                   <div class="there-could-be-container mt-4 text-lg pb-3">
+              <div class="text-black font-bold text-2xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+              <div class="none-of-this">
+          None of this misbehavior shit happened in private schools. From
+          experiencing both, it seems like public schools have the tendency to
+          infantilize students a lot more than any other school even if they
+          don’t want to admit it. Students who deserved to fail, actually
+          failed. Smaller classrooms, better education, and a much better safe
+          environment. Yes, tuition is horrible and many can’t afford it but the
+          difference in staff and environment is insane. Even if they were
+          funded equally, I still don’t think authority in public schools would
+          change.
+        </div
+          
+                </div>
+                 <div class="h-[180px] w-full pb-3rounded-2xl">
+            
+                     <img class="w-full h-full object-cover rounded-2xl" alt="" src="./public/rectangle-81@2x.png" />
+                 </div>
+
+                <div class="frame-parent border-t border-gray-200  lg:flex justify-between gap-4 py-3 ">
+                <div class="flex gap-3">
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                    
+                
+                    <div class="up">Up</div>
+                    </div>
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                        <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="Vector" d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+
+                        <div class="up">Down</div>
+                    </div>
+                    <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+                </div>
+                    <div>
+                        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                            </svg>
+                            <div class="up">Share</div>
+                        </div>
+                    </div>
+                </div>
+                      <div class="flex justify-between w-full ">         
+                                               <div class="Openingsort48261  font-medium mb-3">
+                            <div class="openingsort48261 text-lg">Openingsort48261</div>
+                            <div class="pm text-gray-500 text-base ">2 Hours ago</div>
+                         
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                                   </div>
+                  <div class="once-again-this">
+            Once again, this highly depends on the school. Not all private
+            schools are created equal.
+          </div>
+           <div class="frame-parent   lg:flex justify-between gap-4 py-3 ">
+                <div class="flex gap-3">
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                    
+                
+                    <div class="up">2.4k</div>
+                    </div>
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                        <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="Vector" d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+
+                        <div class="up">0</div>
+                    </div>
+                    <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+                        <svg width="19" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                            
+                    </div>
+                </div>
+                   @* comment-inner-box *@
+                   
+                </div>
+                <div class="w-[90%]  rounded-tr-2xl rounded-bl-2xl rounded-br-2xl p-3 bg-stone-50">
+                <div class="flex justify-between w-full ">         
+                                               <div class="lisa-morrison-parent  font-medium mb-3">
+          
+                    
+                <div class="littlebrwnrobot text-lg">littlebrwnrobot</div>
+                            <div class="pm text-gray-500 text-base ">2 hours ago</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                 
+
+                <div class=" mt-4 text-lg pb-3">
+                   Nor public schools
+                </div>
+                <div class="frame-parent border-t border-gray-200 flex justify-between gap-4 py-3 ">
+                <div class="flex gap-3">
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                    
+                
+                    <div class="up">2.4k</div>
+                    </div>
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                        <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="Vector" d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+
+                        <div class="up">0</div>
+                    </div>
+                    <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+                </div>
+                    
+                </div>
+            </div> 
+            </div>         
+                                      </div>
+                           
+            </div>
+            
+          
+        </div>
+    </div>
+</body>
+</html>

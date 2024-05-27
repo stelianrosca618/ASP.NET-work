@@ -1,0 +1,103 @@
+﻿@page
+@model Question.CreateModel
+@{
+
+    ViewData["Title"] = "";
+}
+
+<div class="lg:w-10/12 gap-3 flex lg:flex-row flex-col">
+
+    <div class="flex justify-center center-group lg:w-10/12  lg:p-0  flex-col gap-3 mt-7  ">
+        <div class="text-black text-3xl font-medium font-['Outfit'] flex items-center">
+            <div class="flex lg:flex-row flex-col items-center mr-2">
+                <img class="w-8 h-8 max-w-full" alt="" src="~/public/Create.png" />
+            </div>
+            Create Question
+        </div>
+        <form method="post" class=" w-full  gap-3 bg-gray-100 rounded-2xl">
+            <div class=" bg-gray-100  rounded-lg p-3 ">
+                <div class="rectangle-group   rounded-2xl bg-white p-6 gap-3 ">
+                    <div asp-validation-summary="All" class="text-danger text-red-500"></div>
+                    <div class="mb-2">
+                        <input type="hidden" asp-for="Question.ParentPostId" value="@Model.PostId"/>
+                        <input asp-for="Question.Title"
+                               class=" h-14   bg-white rounded-lg border  w-full py-2 px-3" id="Company (optional)"
+                               type="text" placeholder="Title" />
+                        <span asp-validation-for="Question.Title" class="text-danger"></span>
+                    </div>
+                    <div class="mb-2 ">
+                        <textarea asp-for="Question.Content"
+                                  class=" h-64    bg-white  rounded-lg border  w-full py-2 px-3 align-top"
+                                  id="Company (optional)" placeholder="Content..."></textarea>
+                        <span asp-validation-for="Question.Content" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-2xl">
+                <div class="rectangle-group  flex justify-between p-6 gap-3 ">
+                    <div class="w-[90%]">
+                        <div class="flex justify-between w-full ">
+                            <div class="Openingsort48261  font-medium mb-3">
+                                <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                                    <div class="up">Share</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="  ">
+                        <input type="submit" value="Post" id="post"
+                               class="p-2 w-full sm:w-36 h-18 text-white bg-sky-600 text-sm px-3 py-2.5 rounded-3xl border mb-2 sm:mb-0" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="lg:w-2/4 mt-10  ">
+
+    <div class="group-parent3 mt-10">
+
+        <div class="rectangle-parent5 border border-gray p-6  flex flex-col gap-2 shadow rounded-2xl bg-white">
+            <div class="communities-parent flex gap-2 py-4  font-semibold border-b border-gray-200">
+                <img class="tick-circle-icon" alt="" src="~/public/tickcircle.svg" />
+                <a class="books">Posting to Quibby</a>
+
+            </div>
+
+
+            <div class="text-black  leading-10 flex gap-2">
+                <ol class="list-decimal list-inside">
+                    <li class="">Be Respectful</li>
+                    <li class="">Do not post AI generated content</li>
+                    <li class="">Abide by the Community Rules</li>
+                    <li class="">Abide by Quibby’s “Content Policy”</li>
+                </ol>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        const toggleCheckbox = document.getElementById('toggle');
+        const toggleIndicator = document.getElementById('toggle-indicator');
+
+        toggleCheckbox.addEventListener('change', function () {
+            if (toggleCheckbox.checked) {
+                toggleIndicator.style.transform = 'translateX(100%)';
+            } else {
+                toggleIndicator.style.transform = 'translateX(0)';
+            }
+        });
+        ("$post").addEventListener("onClick", function () {
+            debugger;
+        });
+    </script>
+}

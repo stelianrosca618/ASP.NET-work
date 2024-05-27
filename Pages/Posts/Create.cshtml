@@ -1,0 +1,273 @@
+﻿@page
+@model MyRazorPagesApp.Pages.Posts.CreateModel
+@inject IWebHostEnvironment env
+
+@{
+    ViewData["Title"] = "Create";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" />
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="quiby-before-login flex lg:flex-row flex-col  justify-between gap-3  p-2 lg:w-10/12 w-full m-auto ">
+
+
+        <div class="lg:w-10/12 gap-3 flex lg:flex-row flex-col    ">
+
+            <div class="flex justify-center center-group lg:w-10/12  lg:p-0  flex-col gap-3 mt-7  ">
+                <div class="text-black text-3xl font-medium font-['Outfit'] flex items-center">
+                    <div class="flex lg:flex-row flex-col items-center mr-2">
+                        <img class="w-8 h-8 max-w-full" alt="" src="~/public/Create.png" />
+                    </div>
+                    Create New Post
+                </div>
+                <div class=" bg-gray-100  rounded-lg p-3 ">
+                    <!-- Close button -->
+                    @* <button class="absolute top-4 right-4 text-gray-500" onclick="closeModal()">&times;</button>
+                    *@
+
+                    <!-- Your form content here -->
+                    <form method="post" class=" w-full  gap-3 bg-gray-100 rounded-2xl" enctype="multipart/form-data">
+
+                        <div class="rectangle-group   rounded-2xl bg-white p-6 gap-3 ">
+                            <div asp-validation-summary="All" class="text-danger text-red-500"></div>
+                            <div class="mb-2">
+                                <input asp-for="Post.Title"
+                                       class=" h-14   bg-white rounded-lg border  w-full py-2 px-3"
+                                       id="Company (optional)" type="text" placeholder="Title" />
+                                <span asp-validation-for="Post.Title" class="text-danger"></span>
+                            </div>
+                            <div class="mb-2 ">
+                                <textarea asp-for="Post.Content"
+                                          class=" h-64    bg-white  rounded-lg border  w-full py-2 px-3 align-top"
+                                          id="Company (optional)" placeholder="Content..."></textarea>
+                                <span asp-validation-for="Post.Content" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group" style="display: none;">
+                                <label asp-for="Post.PostType" class="control-label"></label>
+                                <input asp-for="Post.PostType" class="form-control" />
+                                <span asp-validation-for="Post.PostType" class="text-danger"></span>
+                            </div>
+                            <div class="form-group" style="display: none;">
+                                <label asp-for="Post.ParentPostId" class="control-label"></label>
+                                <select asp-for="Post.ParentPostId" class="form-control"
+                                        asp-items="ViewBag.ParentPostId"></select>
+                            </div>
+                            <div class="form-group" style="display: none;">
+                                <label asp-for="Post.UserId" class="control-label"></label>
+                                <input asp-for="Post.UserId" class="form-control" />
+                                <span asp-validation-for="Post.UserId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group" style="display: none;">
+                                <label asp-for="Post.CreatedDate" class="control-label"></label>
+                                <input asp-for="Post.CreatedDate" class="form-control" />
+                                <span asp-validation-for="Post.CreatedDate" class="text-danger"></span>
+                            </div>
+                            <div class="w-full flex items-center justify-between gap-6">
+                                <!-- Images -->
+                                <div class="flex gap-3 mt-10">
+                                    <input type="file" id="file" name="image" class="hidden" accept="image/*" />
+                                    <label for="file" class="cursor-pointer">
+                                        <img class="" alt="" src="\public\imageicon.png" />
+                                    </label>
+
+                                    <input type="file" id="file2" name="image" class="hidden" accept="image/*" />
+                                    <label for="file" class="cursor-pointer">
+                                        <img class="" alt="" src="\public\chart.png.png" />
+                                    </label>
+
+                                    <input type="file" id="file3" name="image" class="hidden" accept="image/*" />
+                                    <label for="file" class="cursor-pointer">
+                                        <img class="" alt="" src="\public\frame.png.png" />
+                                    </label>
+                                </div>
+
+                                <div style="display: flex; align-items: center;">
+                                    <div>
+                                        NSFW Content !
+                                    </div>
+                                    <div class="relative">
+                                        <input type="checkbox" id="toggle" class="hidden">
+                                        <label for="toggle" class="cursor-pointer">
+                                            <div class="w-14 h-8 bg-gray-300 rounded-full p-1 flex items-center transition duration-300 ease-in-out">
+                                                <div id="toggle-indicator" class="w-7 h-7 bg-green-500 rounded-full transform translate-x-0 transition-transform"></div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        @* <div class="bg-white  rounded-2xl ">
+
+                        <div class="rectangle-group flex justify-between rounded-2xl bg-white mt-6 p-6 gap-3 relative">
+                        <div class="w-[8%]">
+                        <img class="group-inner w-12 h-12 cursor-pointer" alt="" src="~/public/ellipse-7@2x.png" onclick="toggleDropdown('imageDropdown')" />
+                        </div>
+                        <div class="w-[90%]">
+                        <div class="flex justify-between w-full">
+                        <div class="Openingsort48261 font-medium mb-3 relative">
+
+                        <div id="communityLabel" class="openingsort48261 text-lg cursor-pointer" onclick="toggleDropdown('communityDropdown')">Community</div>
+                        <div class="pm text-gray-500 text-base">3 days ago</div>
+                        </div>
+
+                        <div class="cursor-pointer" id="dropdownIcon" onclick="toggleDropdown('communityDropdown')">
+                        <svg width="18" height="10" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="Vector" d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        </div>
+
+                        <!-- Image Dropdown Options -->
+
+
+                        <!-- Community Dropdown Options -->
+                        <div class="dropdown-options absolute top-full left-0 z-10 hidden bg-white border border-gray-300 rounded-md shadow-md max-h-40 overflow-y-auto w-full" id="communityDropdown">
+                        <select class="outline-none border-none w-full  p-2" onchange="handleCommunityDropdownChange(this)">
+                        <option  value="" disabled selected>Select Communities</option>
+                        <option value="addiction">Addiction</option>
+                        <option value="other_topic_1">Activism</option>
+                        <option value="other_topic_2">Advice</option>
+                        <option value="other_topic_3">Adult content</option>
+                        </select>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+
+                        <script>
+                        function toggleDropdown(dropdownId) {
+                        const dropdownOptions = document.getElementById(dropdownId);
+                        dropdownOptions.classList.toggle('hidden');
+                        }
+
+                        function handleCommunityDropdownChange(select) {
+                        const communityLabel = document.getElementById('communityLabel');
+                        communityLabel.textContent = select.options[select.selectedIndex].text;
+                        toggleDropdown('communityDropdown'); // Hide dropdown after selection (optional)
+                        }
+                        </script>
+
+
+                        </div> *@
+
+                        <div class="bg-white  rounded-2xl ">
+                            <div class="rectangle-group flex justify-between rounded-2xl bg-white mt-6 p-6 gap-3 relative">
+                                <div class="w-[8%]">
+                                    <img class="group-inner w-12 h-12 cursor-pointer" alt="" src="~/public/ellipse-7@2x.png" onclick="toggleDropdown('imageDropdown')" />
+                                </div>
+                                <div class="w-[90%]">
+                                    <div class="flex justify-between w-full">
+                                        <div class="Openingsort48261 w-full text-lg mb-3 relative">
+                                            <div class=" w-full">
+                                                <select asp-for="Post.CommunityId" class="h-14 bg-white  w-full py-2 px-1 ">
+                                                    <option value="" disabled selected>Select Communities</option>
+                                                    @foreach (var comm in Model.Communities)
+                                                    {
+                                                        <option value="@comm.CommunityID">@comm.CommunityName (@comm.Topic)</option>
+                                                    }
+                                                </select>
+                                            </div>
+
+                                            <div class="pm text-gray-500 text-base">3 days ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rounded-2xl ">
+                            <div class="rectangle-group  flex justify-between p-6 gap-3 ">
+
+                                <div class="w-[90%]">
+                                    <div class="flex justify-between w-full ">
+                                        <div class="Openingsort48261  font-medium mb-3">
+                                            <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+
+                                                <div class="up">Share</div>
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                </div>
+                                <div class="  ">
+                                    <input type="submit" value="Post" id="post"
+                                           class="p-2 w-full sm:w-36 h-18 text-white bg-sky-600 text-sm px-3 py-2.5 rounded-3xl border mb-2 sm:mb-0" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="lg:w-2/4 mt-10  ">
+
+
+                <div class="group-parent3 mt-10">
+
+                    <div class="rectangle-parent5 border border-gray p-6  flex flex-col gap-2 shadow rounded-2xl bg-white">
+                        <div class="communities-parent flex gap-2 py-4  font-semibold border-b border-gray-200">
+                            <img class="tick-circle-icon" alt="" src="~/public/tickcircle.svg" />
+                            <a class="books">Posting to Quibby</a>
+
+                        </div>
+
+
+                        <div class="text-black  leading-10 flex gap-2">
+                            <ol class="list-decimal list-inside">
+                                <li class="">Be Respectful</li>
+                                <li class="">Do not post AI generated content</li>
+                                <li class="">Abide by the Community Rules</li>
+                                <li class="">Abide by Quibby’s “Content Policy”</li>
+                            </ol>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+        <script>
+            const toggleCheckbox = document.getElementById('toggle');
+            const toggleIndicator = document.getElementById('toggle-indicator');
+
+            toggleCheckbox.addEventListener('change', function () {
+                if (toggleCheckbox.checked) {
+                    toggleIndicator.style.transform = 'translateX(100%)';
+                } else {
+                    toggleIndicator.style.transform = 'translateX(0)';
+                }
+            });
+            ("$post").addEventListener("onClick", function () {
+                debugger;
+            });
+        </script>
+    }
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+@page
+@model QuibbyTopicModel
+@{
+
+  ViewData["Title"] = "QuibbyCommunitiesPopup";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" />
+
+</head>
+
+<body class="bg-gray-100">
+  <div class=" flex justify-center mt-6 lg:p-0 p-2 lg:w-3/4 w-full m-auto ">
+    <form class=" sm:w-96 p-4  lg:w-2/4 w-full m-auto mt-6 bg-white rounded-2xl">
+     
+     <div class="text-black text-2xl font-medium font-['Outfit'] flex items-center">
+    <div class="flex lg:flex-row flex-col items-center">
+        <img class="teacher-icon" alt="" src="./public/teacher.svg" />
+    </div>
+    <span class="ml-2 mx-2 ">Education</span>
+</div>
+      <div class="mb-2 ">
+        <input class=" h-14   bg-zinc-100  rounded-lg border  w-full py-2 px-3" id="Company (optional)" type="text" placeholder="Institute Name (optional)">
+      </div>
+
+      <div class="mb-2">
+
+        <input class=" h-14  bg-zinc-100 top-0 left-0 rounded-lg border  w-full py-2 px-3 " id="CommunityDescription" type="text"
+          placeholder="Subject (optional)">
+      </div>
+    <div class="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-4">
+    <div class="flex-1 mb-2 sm:mb-0">
+        <select class="h-14 bg-zinc-100 text-base font-light rounded-lg border w-full sm:w-62 py-2 px-3" id="startYear" name="startYear">
+            <option value="" disabled selected>Starting Start Year</option>
+        </select>
+    </div>
+    <div class="flex-1 mb-2 sm:mb-0">
+        <select class="h-14 bg-zinc-100 text-base font-light rounded-lg border w-full sm:w-62 py-2 px-3" id="endYear" name="endYear">
+            <option value="" disabled selected>Select End Year</option>
+        </select>
+    </div>
+</div>
+
+<script>
+    var selectElement = document.getElementById('startYear');
+    var endYearSelect = document.getElementById('endYear');
+
+    for (var year = 2000; year <= 2024; year++) {
+        var optionElement = document.createElement('option');
+        optionElement.value = year;
+        optionElement.text = year;
+
+        selectElement.add(optionElement);
+        endYearSelect.add(optionElement.cloneNode(true));
+    }
+</script>
+
+<div class="w-86 h-px border mt-2 mb-2 border-neutral-200"></div>
+      <div class=" w-full flex justify-end  gap-4">
+     
+       <div class="add-more-parent flex items-center"> <img class="add-circle-icon5" alt="" src="./public/addcircle2.svg" />
+    <div class="text-zinc-500 text-base font-light font-['Outfit']">Add More</div>
+   
+</div>
+        <button
+          class="w-full  p-2 sm:w-36 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded border border-black mb-2 sm:mb-0">
+          Update</button>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+
+</html>

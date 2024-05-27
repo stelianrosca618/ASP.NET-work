@@ -1,0 +1,11 @@
+@page
+@model SearchBoxModel
+
+<form method="post">
+     <div id="searchContainer" class="hidden sm:flex flex-col mt-2 lg:mt-0 w-full">
+                                    <div class="flex relative gap-2 bg-gray-100 py-1 px-2">
+                                        <input asp-for="Query" type="text" placeholder="search" class="bg-gray-100 w-full" />
+                                            @* <button type="submit">Search</button> *@
+                                    </div>
+                                </div>
+</form>

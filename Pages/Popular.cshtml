@@ -1,0 +1,464 @@
+@page "{topic?}"
+@model Popular
+
+@{
+    ViewData["Title"] = "Popular";
+    ViewData["PostType"] = "Post";
+}
+
+
+
+<button type="button"
+        data-te-ripple-init
+        data-te-ripple-color="light"
+        class="!fixed bottom-5 right-5 hidden rounded-full bg-red-600 p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg"
+        id="btn-back-to-top">
+    <svg aria-hidden="true"
+         focusable="false"
+         data-prefix="fas"
+         class="h-4 w-4"
+         role="img"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 448 512">
+        <path fill="currentColor"
+              d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path>
+    </svg>
+</button>
+<div class="center-group lg:w-3/4 flex flex-col gap-3 mt-7  ">
+    @if (!string.IsNullOrEmpty(Model.Topic))
+    {
+        <div class=" lg:w-10/12 lg:flex-row rounded-2xl ">
+
+            <div class="rectangle-group pb-6 pt-0 sm:flex sm:flex-col">
+
+                <div class="w-[100%]">
+                    <div class="text-zinc-500 text-lg flex lg:flex-row flex-col font-normal font-['Outfit']">Topic on Quibby </div>
+                    <div class="flex flex-col sm:flex-row justify-between gap-4">
+                        <div class="text-black font-bold text-4xl sm:flex-grow sm:mb-4">@Model.Topic</div>
+                        <div class="flex flex-col sm:flex-row gap-2"> 
+                            @* <button  onclick="openModal()"class="w-full sm:w-36 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">
+                        Post
+                        </button> *@
+                            <a asp-page="Posts/Create" asp-route-type="@ViewData["PostType"]" class="w-full sm:w-36 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded-3xl border border-black mb-2 sm:mb-0 text-center align-middle">
+                                Post
+                            </a>
+                            <button class="w-full sm:w-36 h-18 px-3 text-sm py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">Communities</button>
+                            <button class="w-full sm:w-36 text-sm h-18 px-3 py-2.5 rounded-3xl border border-black mb-2 sm:mb-0">Topics</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    }
+    @*text-area*@
+    <div class="rectangle-parent flex flex-col lg:w-10/12 rounded-2xl  bg-white px-3 ">
+        <div class="flex gap-4 border-b border-gray-200 py-3">
+            <img class="group-inner" alt="" src="./public/ellipse-6@2x.png" />
+            <textarea id="review" class="group-item w-full text-lg"
+                      placeholder="what do you want to ask"></textarea>
+        </div>
+        @* <div class="line-div"></div> *@
+        <div class="submit-wrapper w-full flex justify-end py-3">
+            <button class="submit px-4 py-2 bg-gray-200 rounded text-gray-400">Submit</button>
+        </div>
+    </div>
+    @*lisa-morison-post*@
+    @if (Model.Posts != null)
+    {
+        @foreach (var item in Model.Posts)
+        {
+            <div class="bg-white lg:w-10/12 rounded-2xl ">
+                <div class="rectangle-group  flex justify-between rounded-2xl bg-white p-6 gap-3 ">
+                    <div class="w-[8%]">
+                        <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+                    </div>
+                    <div class="w-[90%]">
+                        <div class="flex justify-between w-full ">
+                            <div class="lisa-morrison-parent  font-medium mb-3">
+                                <div class="lisa-morrison text-lg">@item.Title</div>
+                                <div class="pm text-gray-500 text-base ">@item.CreatedDate</div>
+                            </div>
+
+                            <div class="  ">
+                                <img class="group-icon " alt="" src="./public/group-178.svg" />
+                            </div>
+
+
+
+                        </div>
+                        <img class="rectangle-icon" alt="" src="@item.PostPictureUrl" />
+                        <div class="mohammed-aziz-owns mt-4 text-lg pb-3">
+                            @item.Content
+                        </div>
+                        <div class="frame-parent border-t border-gray-200 flex lg:flex-row flex-col justify-between gap-4 py-3 ">
+                            <div class="flex gap-3">
+                                <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                                    <svg width="13" height="7" viewBox="0 0 13 7" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Vector"
+                                              d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594"
+                                              stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+                                              stroke-linejoin="round" />
+                                    </svg>
+
+
+                                    <div class="up">Up</div>
+                                </div>
+                                <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                                    <svg width="13" height="7" viewBox="0 0 13 7" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Vector"
+                                              d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406"
+                                              stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+                                              stroke-linejoin="round" />
+                                    </svg>
+
+                                    <div class="up">Down</div>
+                                </div>
+                                <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g id="message-2">
+                                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black"
+                                                  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path id="Vector_2"
+                                                  d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z"
+                                                  stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+                                                  stroke-linejoin="round" />
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g id="message-2">
+                                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black"
+                                                  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path id="Vector_2"
+                                                  d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z"
+                                                  stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+                                                  stroke-linejoin="round" />
+                                        </g>
+                                    </svg>
+                                    <div class="up">Share</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        }
+    }
+    else
+    {
+        <p>No posts available.</p>
+    }
+    @* lisa-morison-post-with-pic
+    <div class="bg-white lg:w-10/12 rounded-2xl ">
+    <div class="rectangle-group  flex justify-between rounded-2xl bg-white p-6 gap-3 ">
+    <div class="w-[8%]">
+    <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+    </div>
+    <div class="w-[90%]">
+    <div class="flex justify-between w-full ">
+    <div class="lisa-morrison-parent  font-medium mb-3">
+    <div class="lisa-morrison text-lg">Lisa Morrison</div>
+    <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+    </div>
+
+    <div class="  ">
+    <img class="group-icon " alt="" src="./public/group-178.svg" />
+    </div>
+
+    </div>
+    <img class="rectangle-icon" alt="" src="./public/rectangle-76@2x.png" />
+
+    <div class="mohammed-aziz-owns mt-4 text-lg pb-3">
+    Mohammed Aziz owns his bookstore in Rabat's medina since 1967. He has
+    over 4,000 books some of which he meticulously displays outside
+    everyday. He has read every single book, wether they're in Arabic,
+    French, English or Spanish. Do NOT ignore unexplained weight loss. I
+    have had more than one patient be very happy about their weight loss.
+    They were overweight
+    </div>
+    <div
+    class="frame-parent border-t border-gray-200 flex  lg:flex-row flex-col justify-between gap-4 py-3 ">
+    <div class="flex gap-3">
+    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+    <svg width="13" height="7" viewBox="0 0 13 7" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path id="Vector"
+    d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594"
+    stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+    stroke-linejoin="round" />
+    </svg>
+
+
+    <div class="up">Up</div>
+    </div>
+    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+    <svg width="13" height="7" viewBox="0 0 13 7" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path id="Vector"
+    d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406"
+    stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+    stroke-linejoin="round" />
+    </svg>
+
+    <div class="up">Down</div>
+    </div>
+    <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <g id="message-2">
+    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black"
+    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    <path id="Vector_2"
+    d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z"
+    stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+    stroke-linejoin="round" />
+    </g>
+    </svg>
+    </div>
+    </div>
+    <div>
+    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <g id="message-2">
+    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black"
+    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    <path id="Vector_2"
+    d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z"
+    stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+    stroke-linejoin="round" />
+    </g>
+    </svg>
+    <div class="up">Share</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    </div>
+    @* grid-pictures <!--
+    <div class="bg-white lg:w-10/12 rounded-2xl ">
+    <div class="rectangle-group  flex justify-between rounded-2xl bg-white p-6 gap-3 ">
+    <div class="w-[8%]">
+    <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+    </div>
+    <div class="w-[90%]">
+    <div class="flex justify-between w-full ">
+    <div class="lisa-morrison-parent  font-medium mb-3">
+    <div class="lisa-morrison text-lg">Lisa Morrison</div>
+    <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+    </div>
+
+    <div class="  ">
+    <img class="group-icon " alt="" src="./public/group-178.svg" />
+    </div>
+
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4 text-lg pb-3">
+
+    <img class="group-child7" alt="" src="./public/rectangle-761@2x.png" />
+
+    <img class="group-child8" alt="" src="./public/rectangle-77@2x.png" />
+
+    <img class="group-child9" alt="" src="./public/rectangle-78@2x.png" />
+    <img class="group-child13" alt="" src="./public/rectangle-79@2x.png" />
+    </div>
+
+    <div
+    class="frame-parent border-t border-gray-20 flex lg:flex-row flex-col justify-between gap-4 py-3 ">
+    <div class="flex gap-3">
+    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+    <svg width="13" height="7" viewBox="0 0 13 7" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path id="Vector"
+    d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594"
+    stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+    stroke-linejoin="round" />
+    </svg>
+
+
+    <div class="up">Up</div>
+    </div>
+    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+    <svg width="13" height="7" viewBox="0 0 13 7" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path id="Vector"
+    d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406"
+    stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+    stroke-linejoin="round" />
+    </svg>
+
+    <div class="up">Down</div>
+    </div>
+    <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <g id="message-2">
+    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black"
+    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    <path id="Vector_2"
+    d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z"
+    stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+    stroke-linejoin="round" />
+    </g>
+    </svg>
+    </div>
+    </div>
+    <div>
+    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <g id="message-2">
+    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black"
+    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    <path id="Vector_2"
+    d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z"
+    stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+    stroke-linejoin="round" />
+    </g>
+    </svg>
+    <div class="up">Share</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    </div>
+    @* vedio *@
+    <div class="bg-white lg:w-10/12 rounded-2xl ">
+        <div class="rectangle-group  flex justify-between rounded-2xl bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">
+                    <div class="lisa-morrison-parent  font-medium mb-3">
+                        <div class="lisa-morrison text-lg">Lisa Morrison</div>
+                        <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                    </div>
+
+                    <div class="  ">
+                        <img class="group-icon " alt="" src="./public/group-178.svg" />
+                    </div>
+
+                </div>
+                <img class="rectangle-icon mt-3 text-lg pb-3" alt="" src="./public/rectangle-762@2x.png" />
+
+                <div class="frame-parent border-t border-gray-200 flex  lg:flex-row flex-col justify-between mt-4 gap-4 py-3 ">
+                    <div class="flex gap-3">
+                        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                            <svg width="13" height="7" viewBox="0 0 13 7" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path id="Vector"
+                                      d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594"
+                                      stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+                                      stroke-linejoin="round" />
+                            </svg>
+
+
+                            <div class="up">Up</div>
+                        </div>
+                        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                            <svg width="13" height="7" viewBox="0 0 13 7" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path id="Vector"
+                                      d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406"
+                                      stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+                                      stroke-linejoin="round" />
+                            </svg>
+
+                            <div class="up">Down</div>
+                        </div>
+                        <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black"
+                                          stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path id="Vector_2"
+                                          d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z"
+                                          stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black"
+                                          stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path id="Vector_2"
+                                          d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z"
+                                          stroke="black" stroke-miterlimit="10" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                </g>
+                            </svg>
+                            <div class="up">Share</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@* <div class="see-image-after-container">
+        See Image after
+        <span class="login"><a asp-area="" asp-page="~\Login">Login</a></span>
+        </div> *@
+
+
+
+<button id="scrollBtn" style="display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99; border: none; outline: none; background-color: red; color: white; cursor: pointer; padding: 15px; border-radius: 4px;">
+    <svg aria-hidden="true"
+         focusable="false"
+         data-prefix="fas"
+         class="h-4 w-4"
+         role="img"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 448 512">
+        <path fill="currentColor"
+              d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path>
+    </svg>
+
+</button>
+
+
+<script>
+    window.onscroll = function () {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        var scrollBtn = document.getElementById("scrollBtn");
+
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollBtn.style.display = "block";
+        } else {
+            scrollBtn.style.display = "none";
+        }
+    }
+
+    document.getElementById('scrollBtn').addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+</script>

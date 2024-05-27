@@ -1,0 +1,1192 @@
+@page
+@model IndexModel
+
+@{
+
+    ViewData["Title"] = "QuibbyAll";
+    Layout = "_LayoutAuth";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  
+</head>
+
+<body class="bg-gray-100">
+    <div class="lg:flex  gap-5  lg:w-10/12 m-auto p-4">
+        <div class="group-parent lg:w-1/3">
+            <div class="group-container">
+                <div class="rectangle-parent4  ">
+
+                    <div class="border border-gray p-6 flex flex-col gap-4 shadow rounded-2xl bg-white ">
+                       
+                       <div class="books-parent flex items-center justify-center gap-2">
+  <img class="group-child3" alt="" src=".\public\Robert.png" />
+</div>
+
+                       
+                        <div class="visiting-travel-parent flex  justify-center items-center">
+                            <div class="text-center text-black text-2xl font-semibold font-['Outfit']">Robert Maxwell
+                                <div class="text-zinc-500 text-base font-normal font-['Outfit']">10 followers 2 following </div>
+        
+
+                            </div>
+
+                        </div>
+                         <div>
+    <div class="flex items-center justify-between">
+        <div class="text-base font-medium">
+            NSFW Content ! 
+        </div>
+        <div class="relative ml-4">
+            <input type="checkbox" id="toggle" class="hidden">
+            <label for="toggle" class="cursor-pointer">
+                <div class="w-14 h-8 bg-gray-300 rounded-full p-1 flex items-center transition duration-300 ease-in-out">
+                    <div id="toggle-indicator" class="w-7 h-7 bg-green-500 rounded-full transform translate-x-0 transition-transform"></div>
+                </div>
+            </label>
+        </div>
+    </div>
+    
+    <div class="flex items-center justify-between  mt-4">
+        <div class="text-base font-medium">
+            Blur NSFW Content ! 
+        </div>
+        <div class="relative ml-4">
+            <input type="checkbox" id="toggle-blur" class="hidden">
+            <label for="toggle-blur" class="cursor-pointer">
+                <div class="w-14 h-8 bg-gray-300 rounded-full p-1 flex items-center transition duration-300 ease-in-out">
+                    <div id="toggle-indicator-blur" class="w-7 h-7 bg-green-500 rounded-full transform translate-x-0 transition-transform"></div>
+                </div>
+            </label>
+        </div>
+    </div>
+</div>
+<div class="w-full h-px border border-neutral-200"></div>
+                        <div class="credentials-highlights text-center text-black text-base font-medium">Credentials & Highlights</div>
+                        
+                        <button onclick="EducationopenModal()" class="add-employment-credential-parent flex items-center">
+    <img class="add-circle-icon" alt="" src="./public/addcircle.svg" />
+    <span class="ml-2">Add Education credential</span>
+</button>
+@* education *@
+ <div id="EducationModal" class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#00000080] z-20  hidden ">
+     <div class=" flex justify-center mt-6 lg:p-0 p-2 lg:w-3/4 w-full m-auto h-full ">
+    <form class=" sm:w-96 p-4 absolute top-1/4  lg:w-1/3 w-full m-auto mt-20 bg-white rounded-2xl">
+     
+  
+<div class="text-black text-2xl font-medium font-['Outfit'] flex items-center">
+    <div class="flex items-center">
+      
+        <img class="teacher-icon" alt="" src="./public/teacher.svg" />
+       <span class="ml-2 mx-2 ">Education</span>
+    </div>
+    <div class="ml-auto">
+        <img onclick="EducationcloseModal()" class="w-6 h-6 max-w-full" alt="" src="./public/close-circle.png" />
+    </div>
+</div>
+      <div class="mb-2 ">
+        <input class=" h-14   bg-zinc-100  rounded-lg border  w-full py-2 px-3" id="Company (optional)" type="text" placeholder="Institute Name (optional)">
+      </div>
+
+      <div class="mb-2">
+
+        <input class=" h-14  bg-zinc-100 top-0 left-0 rounded-lg border  w-full py-2 px-3 " id="CommunityDescription" type="text"
+          placeholder="Subject (optional)">
+      </div>
+    <div class="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-4">
+    <div class="flex-1 mb-2 sm:mb-0">
+        <select class="h-14 bg-zinc-100 text-base font-light rounded-lg border w-full sm:w-62 py-2 px-3" id="startYear" name="startYear">
+            <option value="" disabled selected>Starting Start Year</option>
+        </select>
+    </div>
+    <div class="flex-1 mb-2 sm:mb-0">
+        <select class="h-14 bg-zinc-100 text-base font-light rounded-lg border w-full sm:w-62 py-2 px-3" id="endYear" name="endYear">
+            <option value="" disabled selected>Select End Year</option>
+        </select>
+    </div>
+</div>
+
+<script>
+    var selectElement = document.getElementById('startYear');
+    var endYearSelect = document.getElementById('endYear');
+
+    for (var year = 2000; year <= 2024; year++) {
+        var optionElement = document.createElement('option');
+        optionElement.value = year;
+        optionElement.text = year;
+
+        selectElement.add(optionElement);
+        endYearSelect.add(optionElement.cloneNode(true));
+    }
+</script>
+
+<div class="w-86 h-px border mt-2 mb-2 border-neutral-200"></div>
+      <div class=" w-full flex justify-end  gap-4">
+     
+       <div class="add-more-parent flex items-center"> <img class="add-circle-icon5" alt="" src="./public/addcircle2.svg" />
+    <div class="text-zinc-500 text-base font-light font-['Outfit']">Add More</div>
+   
+</div>
+        <button
+          class="w-full  p-2 sm:w-36 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded border border-black mb-2 sm:mb-0">
+          Update</button>
+      </div>
+
+    </form>
+  </div>
+
+ </div>
+              <button onclick="EmploymentopenModal()" class="add-employment-credential-parent flex items-center">
+    <img class="add-circle-icon" alt="" src="./public/addcircle.svg" />
+    <span class="ml-2">Add Employment credential</span>
+</button>
+@* employement popup *@
+ <div id="EmploymentModal" class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#00000080] z-20 hidden ">
+     <div class=" flex justify-center mt-6 lg:p-0 p-2 lg:w-3/4 w-full m-auto h-full ">
+    <form class="  sm:w-96 p-4 absolute top-1/4  lg:w-1/3 w-full m-auto mt-20 bg-white rounded-2xl">    
+    
+      <div class="text-black text-2xl font-medium font-['Outfit'] flex items-center">
+    <div class="flex items-center">
+      
+        <img class="w-6 h-6 max-w-full" alt="" src="./public/profile-2user.png" />
+        <span class="ml-2 mx-2">Employement</span>
+    </div>
+    <div class="ml-auto">
+        <img onclick="EmploymentcloseModal()" class="w-6 h-6 max-w-full" alt="" src="./public/close-circle.png" />
+    </div>
+</div>
+      <div class="mb-2 ">
+        <input class=" h-14  bg-zinc-100  rounded-lg border  w-full py-2 px-3" id="Company (optional)" type="text" placeholder="Company (optional)">
+      </div>
+
+      <div class="mb-2">
+
+        <input class=" h-14  bg-zinc-100 top-0 left-0 rounded-lg border  w-full py-2 px-3 " id="CommunityDescription" type="text"
+          placeholder="Position (optional)">
+      </div>
+    <div class="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-4">
+    <div class="flex-1 mb-2 sm:mb-0">
+        <select class="h-14 bg-zinc-100 text-base font-light rounded-lg border w-full sm:w-62 py-2 px-3" id="start" name="start">
+            <option value="" disabled selected>Select Start Year</option>
+        </select>
+    </div>
+    <div class="flex-1 mb-2 sm:mb-0">
+        <select class="h-14 bg-zinc-100 text-base font-light rounded-lg border w-full sm:w-62 py-2 px-3" id="end" name="end">
+            <option value="" disabled selected>Select End Year</option>
+        </select>
+    </div>
+</div>
+
+<script>
+    var selectElement = document.getElementById('start');
+    var endYearSelect = document.getElementById('end');
+
+    for (var year = 2000; year <= 2024; year++) {
+        var optionElement = document.createElement('option');
+        optionElement.value = year;
+        optionElement.text = year;
+
+        selectElement.add(optionElement);
+        endYearSelect.add(optionElement.cloneNode(true));
+    }
+</script>
+
+        <div class="flex justify-right flex-col sm:flex-row  gap-2">
+          
+    <input checked id="red-checkbox" type="checkbox" value="" class="w-4 h-4 bg-red-600  border-gray-300 rounded focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+    <label for="red-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">In progress</label>
+
+
+            </div>
+<div class="w-86 h-px border mt-2 mb-2 border-neutral-200"></div>
+      <div class=" w-full flex justify-end  gap-4">
+        <div class="add-more-parent flex items-center"> <img class="add-circle-icon5" alt="" src="./public/addcircle2.svg" />
+    <div class="text-zinc-500 text-base font-light font-['Outfit']">Add More</div>
+   
+</div>
+        <button
+          class="w-full  p-2 sm:w-36 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded border border-black mb-2 sm:mb-0">Add
+          Update</button>
+      </div>
+
+    </form>
+  </div>
+
+ </div>
+              <button onclick="LocationopenModal()" class="add-employment-credential-parent flex items-center">
+    <img class="add-circle-icon" alt="" src="./public/addcircle.svg" />
+    <span class="ml-2">Add Location credential</span>
+</button>
+                    
+    @* location popup form *@
+ <div id="LocationModal" class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#00000080] z-20 hidden">
+     
+<div class=" flex justify-center mt-6 lg:p-0 p-2 lg:w-3/4 w-full m-auto h-full ">
+    <form class="  sm:w-96 p-4 absolute top-1/4  lg:w-1/3 w-full m-auto mt-20 bg-white rounded-2xl">
+     
+  
+<div class="text-black text-2xl font-medium font-['Outfit'] flex items-center">
+    <div class="flex items-center">
+      
+        <img class="teacher-icon" alt="" src="./public/teacher.svg" />
+       <span class="ml-2 mx-2 ">Location</span>
+    </div>
+    <div class="ml-auto">
+        <img onclick="LocationcloseModal()" class="w-6 h-6 max-w-full" alt="" src="./public/close-circle.png" />
+    </div>
+</div>
+     
+
+      <div class="mb-2">
+
+        <input class=" h-14  bg-zinc-100 top-0 left-0 rounded-lg border  w-full py-2 px-3 " id="Country" type="text"
+          placeholder="Country">
+      </div>
+    <div class="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-4">
+    <div class="flex-1 mb-2 sm:mb-0">
+        <select class="h-14 bg-zinc-100 text-base font-light rounded-lg border w-full sm:w-62 py-2 px-3" id="stateSelect" name="stateSelect">
+            <option value="" disabled selected>Select State</option>
+        </select>
+    </div>
+    <div class="flex-1 mb-2 sm:mb-0">
+        <select class="h-14 bg-zinc-100 text-base font-light rounded-lg border w-full sm:w-62 py-2 px-3" id="citySelect" name="citySelect">
+            <option value="" disabled selected>Select City</option>
+        </select>
+    </div>
+</div>
+
+<script>
+    var stateSelect = document.getElementById('stateSelect');
+    var citySelect = document.getElementById('citySelect');
+
+    // Sample data for states and cities
+    var states = ["California", "New York", "Texas"];
+    var cities = {
+        "California": ["Los Angeles", "San Francisco", "San Diego"],
+        "New York": ["New York City", "Buffalo", "Albany"],
+        "Texas": ["Houston", "Austin", "Dallas"]
+    };
+
+    // Populate options for states
+    states.forEach(function (state) {
+        var optionElement = document.createElement('option');
+        optionElement.value = state;
+        optionElement.text = state;
+        stateSelect.add(optionElement);
+    });
+
+    // Populate options for cities based on the selected state
+    stateSelect.addEventListener('change', function () {
+        var selectedState = stateSelect.value;
+        citySelect.innerHTML = ""; // Clear existing options
+
+        if (selectedState in cities) {
+            cities[selectedState].forEach(function (city) {
+                var optionElement = document.createElement('option');
+                optionElement.value = city;
+                optionElement.text = city;
+                citySelect.add(optionElement);
+            });
+        }
+
+        // Add a default "Select City" option
+        var defaultOption = document.createElement('option');
+        defaultOption.value = "";
+        defaultOption.text = "Select City";
+        citySelect.add(defaultOption);
+    });
+</script>
+
+
+<div class="w-86 h-px border mt-2 mb-2 border-neutral-200"></div>
+      <div class=" w-full flex ">
+     
+       
+        <button
+          class="w-full  p-2 h-18 text-white bg-red-700 text-sm px-3 py-2.5 rounded border border-black mb-2 sm:mb-0">
+          Update</button>
+      </div>
+
+    </form>
+  </div>
+< </div>
+<div class="w-full h-px border border-neutral-200"></div>
+<div class="science-parent flex gap- ">
+                           
+                             <img class="calendar-2-icon" alt="" src="./public/calendar2.svg" />
+
+          <div class="text-zinc-500 text-base font-normal">Joined 1 December 2023</div>
+                        </div>
+                        <div class="science-parent flex gap-1 ">
+                           
+                             <img class="calendar-2-icon" alt="" src="./public/calendar2.svg" />
+
+          <div class="text-zinc-500 text-base font-normal">Active in 1 Space</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="group-parent2">
+                    <div class="topics text-lg text-gray-400">Communities</div>
+                    <div
+                        class="rectangle-parent5 border border-gray p-6 flex flex-col gap-4 shadow rounded-2xl bg-white">
+                        <div class="communities-parent flex gap-2 py-2  border-b border-gray-200">
+                            <img class="people-icon" alt="" src="./public/people.svg" />
+                           
+ <a class="books" asp-area="" asp-page="/QuibbyCommunities">Communities</a>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lg:w-2/3">
+            <ul class="flex flex-row justify-between items-center space-x-4 mb-4">
+                
+                <li>
+                    <a href="#" onclick="setActiveTab('profile')"
+                        class="lg:px-4 px-1 py-2 rounded-lg cursor-pointer transition-all ease-in-out">
+                        Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="setActiveTab('activities')"
+                        class="md:px-4 px-1  py-2 rounded-lg cursor-pointer transition-all ease-in-out">
+                        Activities
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="setActiveTab('replies')"
+                        class="md:px-4 px-1  py-2 rounded-lg cursor-pointer transition-all ease-in-out">
+                        Replies
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="setActiveTab('posts')"
+                        class="md:px-4 px-1  py-2 rounded-lg cursor-pointer transition-all ease-in-out">
+                         Posts
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="setActiveTab('followings')"
+                        class="md:px-4 px-1  py-2 rounded-lg cursor-pointer transition-all ease-in-out">
+                        Following
+                    </a>
+                </li>
+                
+            </ul>
+
+            <div id="profileTab" class="  justify-center flex flex-col gap-3 mt-7 ">
+
+                <div class=" w-full rounded-2xl">
+
+                    <img class="w-10/12 h-10/12 object-cover" alt="" src=".\public\profilepic.png.png" />
+                </div>
+                <p
+                    class="flex justify-center  mt-4 mb-2 items-center text-neutral-400 text-base font-normal font-['Outfit']">
+                    You haven’t shared, answered or posted anything yet.</p>
+                <div class="flex justify-center items-center">
+                    <button
+                        class="w-full p-2 sm:w-36 h-18 text-white bg-emerald-500 text-sm px-3 py-2.5 rounded-3xl border border-black mt-4 mb-2 ">Answer
+                        Question</button>
+                </div>
+
+
+            </div>
+
+            <div id="activitiesTab" class=" justify-center flex flex-col gap-3 mt-7  ">
+               
+          
+                 <div class="bg-white lg:w-full rounded-2xl  mb-4">
+            
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                        <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                           <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+         <div class="bg-white lg:w-full rounded-2xl mb-4 ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                        <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                          <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+            <div class="bg-white lg:w-full rounded-2xl mb-4">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                        <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                          <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+            <div class="bg-white lg:w-full rounded-2xl mb-4 ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                        <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>  <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+            <div class="bg-white lg:w-full rounded-2xl ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                        <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                            <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+            
+            </div>
+
+            <div id="repliesTab" class="mb-4">
+              <div class="bg-white lg:w-full rounded-2xl  mb-4">
+            
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-emerald-500 p-3 rounded-3xl">
+                         <img class="group-child1" alt="" src="./public/group-20031.svg" />
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                           <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+         <div class="bg-white lg:w-full rounded-2xl mb-4 ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-emerald-500 p-3 rounded-3xl">
+                        
+
+          <img class="group-child1" alt="" src="./public/group-20031.svg" />
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                          <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+            <div class="bg-white lg:w-full rounded-2xl mb-4">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-emerald-500 p-3 rounded-3xl">
+                        <img class="group-child1" alt="" src="./public/group-20031.svg" />
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                          <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+            <div class="bg-white lg:w-full rounded-2xl mb-4 ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-emerald-500 p-3 rounded-3xl">
+                        <img class="group-child1" alt="" src="./public/group-20031.svg" />
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>  <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+            <div class="bg-white lg:w-full rounded-2xl ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-emerald-500 p-3 rounded-3xl">
+                        <img class="group-child1" alt="" src="./public/group-20031.svg" />
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                            <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+            
+                
+            </div>
+            <div id="postsTab" class="justify-center flex flex-col gap-3 mt-7 " >
+           
+                <label for="sortOptions" class="mb-2 block text-sm font-medium text-gray-600">Sort by:</label>
+<select id="sortOptions" onchange="sortComments()" class="w-28 h-10 bg-emerald-500 rounded-3xl">
+    <option value="comments">Comments</option>
+    <option value="upvotes">Upvotes</option>
+    <option value="downvotes">Downvotes</option>
+    <option value="replies">Replies</option>
+</select>
+
+@* <div id="selectedContent" class="mb-4">
+    <!-- Selected content will be displayed here -->
+</div>
+
+<script>
+    function sortComments() {
+        // Get the selected value
+        var selectedValue = document.getElementById("sortOptions").value;
+
+        // Get the div where you want to display the selected content
+        var selectedContentDiv = document.getElementById("selectedContent");
+
+        // Display different data based on the selected option
+        switch (selectedValue) {
+            case "comments":
+                // Add logic to display comments data
+                selectedContentDiv.innerHTML = "";
+                break;
+            case "upvotes":
+                // Add logic to display upvotes data
+                selectedContentDiv.innerHTML = "";
+                break;
+            case "downvotes":
+                // Add logic to display downvotes data
+                selectedContentDiv.innerHTML = "Here are the downvotes.";
+                break;
+            case "replies":
+                // Add logic to display replies data
+                selectedContentDiv.innerHTML = "Here are the replies.";
+                break;
+            default:
+                selectedContentDiv.innerHTML = "Select an option.";
+        }
+    }
+</script> *@ <div class="bg-white lg:w-full rounded-2xl mt-4 mb-4">
+            
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                        <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                           <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+         <div class="bg-white lg:w-full rounded-2xl mb-4 ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                        <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                          <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+            <div class="bg-white lg:w-full rounded-2xl mb-4">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                        <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                          <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+            <div class="bg-white lg:w-full rounded-2xl mb-4 ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                        <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>  <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+            <div class="bg-white lg:w-full rounded-2xl ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+            <div class="w-[8%]">
+                 <div class="message-2-wrapper bg-amber-500 p-3 rounded-3xl">
+                        <svg w-12 h-12 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+              
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class=" Fedrick  font-medium mb-3">
+                            <div class=" Fedrick text-lg">You Replied on Fedrick Comment
+                                <div class="text-black text-sm font-light font-['Outfit']">Technology</div>
+
+                            </div>
+                            <div class="pm text-gray-500 text-base ">10/11/2023 | 10:03pm</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                            <div class="text-black font-bold text-1xl">
+          private schools don’t infantilize students like public schools do
+        </div>
+                            <p class="none-of-this mt-1 text-lg pb-3">
+                  None of this misbehavior shit happened in private schools. From
+            experiencing both, it seems like public schools have the tendency to
+            infantilize students a lot more than any other school even if they
+            don’t want to admit it. Students wh...
+                </p>
+             
+            </div>         
+                                      </div>
+                           
+            </div>
+            </div>
+            <div id="followingsTab" class="mb-4">
+                <h1 class=" text-black text-base font-medium ml-4 mb-2">Users</h1>
+          
+                 <div class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 p-6">
+
+        <!-- Box 1 -->
+       <div class=" h-64 rounded-lg shadow p-2 flex flex-col bg-white">
+    <img class="w-24 h-24 mt-3 rounded-full border border-gray-200 mx-auto mb-3" alt="" src=".\public\Erica.png"/>
+    <p class="text-center text-black text-base font-medium mb-3">Erica</p>
+    
+    <div class="w-32 h-10 px-7 py-2.5 rounded-3xl border border-black mx-auto mb-3 flex justify-center items-center gap-2.5 ">
+        <div class="text-black">Follow</div>
+    </div>
+</div>
+ <!-- Box 2 -->
+              <div class=" h-64 rounded-lg shadow p-2 flex flex-col bg-white">
+    <img class="w-24 h-24 mt-3 rounded-full border border-gray-200 mx-auto mb-3" alt="" src=".\public\Avery.png"/>
+    <p class="text-center text-black text-base font-medium mb-3">Avery</p>
+    
+    <div class="w-32 h-10 px-7 py-2.5 bg-emerald-500 rounded-3xl mx-auto mb-3 flex justify-center items-center gap-2.5 ">
+        <div class="text-white">Follow</div>
+    </div>
+</div>
+
+        <!-- Box  3-->
+            <div class=" h-64 rounded-lg shadow p-2 flex flex-col bg-white">
+    <img class="w-24 h-24 mt-3 rounded-full border border-gray-200 mx-auto mb-3" alt="" src=".\public\Andrew.png"/>
+    <p class="text-center text-black text-base font-medium mb-3">Andrew</p>
+    
+    <div class="w-32 h-10 px-7 py-2.5 bg-emerald-500 rounded-3xl mx-auto mb-3 flex justify-center items-center gap-2.5 ">
+        <div class="text-white">Follow</div>
+    </div>
+</div>
+
+        <!-- more box -->
+             <div class=" h-64 rounded-lg shadow p-2 flex flex-col bg-white">
+    <img class="w-24 h-24 mt-3 rounded-full border border-gray-200 mx-auto mb-3" alt="" src=".\public\Victoria.png"/>
+    <p class="text-center text-black text-base font-medium mb-3">Victoria</p>
+    
+    <div class="w-32 h-10 px-7 py-2.5 bg-emerald-500 rounded-3xl mx-auto mb-3 flex justify-center items-center gap-2.5 ">
+        <div class="text-white">Follow</div>
+    </div>
+</div>
+                    <div class="w-60 h-64 rounded-lg shadow p-2 flex flex-col bg-white">
+    <img class="w-24 h-24 mt-3 rounded-full border border-gray-200 mx-auto mb-3" alt="" src=".\public\Ava.png"/>
+    <p class="text-center text-black text-base font-medium mb-3">Ava</p>
+    
+    <div class="w-32 h-10 px-7 py-2.5 bg-emerald-500 rounded-3xl mx-auto mb-3 flex justify-center items-center gap-2.5 ">
+        <div class="text-white">Follow</div>
+    </div>
+</div>
+</div>
+ <h1 class=" text-black text-base font-medium ml-4 mb-2">Communities</h1>
+          
+                 <div class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 p-6">
+
+        <!-- Box 1 -->
+       <div class=" h-64 rounded-lg shadow p-2 flex flex-col bg-white">
+    <img class="w-24 h-24 mt-3 rounded-full border border-gray-200 mx-auto mb-3" alt="" src=".\public\DesertAdventure.png"/>
+    <p class="text-center text-black text-base font-medium mb-3">Desert Adventure</p>
+    
+    <div class="w-32 h-10 px-7 py-2.5 bg-sky-600 rounded-3xl mx-auto mb-3 flex justify-center items-center gap-2.5 ">
+        <div class="text-white">Joined</div>
+    </div>
+</div>
+ <!-- Box 2 -->
+              <div class=" h-64 rounded-lg shadow p-2 flex flex-col bg-white">
+    <img class="w-24 h-24 mt-3 rounded-full border border-gray-200 mx-auto mb-3" alt="" src=".\public\Random.png"/>
+    <p class="text-center text-black text-base font-medium mb-3">Random Communities</p>
+    <div class="w-32 h-10 px-7 py-2.5 rounded-3xl border border-black mx-auto mb-3 flex justify-center items-center gap-2.5 ">
+        <div class="text-black">Joined</div>
+    </div>
+</div>
+
+        <!-- Box  3-->
+            <div class=" h-64 rounded-lg shadow p-2 flex flex-col bg-white">
+    <img class="w-24 h-24 mt-3 rounded-full border border-gray-200 mx-auto mb-3" alt="" src=".\public\Formula.png"/>
+    <p class="text-center text-black text-base font-medium mb-3">Formula a1 Communities</p>
+    
+    <div class="w-32 h-10 px-7 py-2.5 bg-sky-600 rounded-3xl mx-auto mb-3 flex justify-center items-center gap-2.5 ">
+        <div class="text-white">Joined</div>
+    </div>
+</div>
+
+       
+</div>
+            </div>
+        </div>
+        
+    </div>
+
+   <script>
+    function setActiveTab(tabName) {
+        // Hide all tabs
+        hideAllTabs();
+
+        // Show the selected tab
+        document.getElementById(tabName + 'Tab').style.display = 'block';
+    }
+
+    function hideAllTabs() {
+        // Hide all tabs
+
+        // Add similar lines for other tabs
+            document.getElementById('profileTab').style.display = 'none';
+            document.getElementById('activitiesTab').style.display = 'none';
+            document.getElementById('repliesTab').style.display = 'none';
+            document.getElementById('postsTab').style.display = 'none';
+            document.getElementById('followingsTab').style.display = 'none';
+    }
+
+    // Call hideAllTabs initially to hide all tabs by default
+    hideAllTabs();
+    function EducationopenModal() {
+      document.getElementById('EducationModal').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function EducationcloseModal() {
+      document.getElementById('EducationModal').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+    function EmploymentopenModal() {
+      document.getElementById('EmploymentModal').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function EmploymentcloseModal() {
+      document.getElementById('EmploymentModal').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+    function LocationopenModal() {
+      document.getElementById('LocationModal').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function LocationcloseModal() {
+      document.getElementById('LocationModal').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+</script>
+</body>
+
+</html>

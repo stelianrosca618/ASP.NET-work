@@ -1,0 +1,358 @@
+@page
+
+@model QuibbyHomeModel
+@using MyRazorPagesApp.Components
+@using Microsoft.AspNetCore.Components.Web
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Home";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" />
+</head>
+<body class="bg-gray-100">
+    <div class="quiby-before-login lg:flex  gap-5  lg:p-0 p-2 lg:w-10/12 w-full m-auto ">
+        <div class="group-parent lg:w-1/4 ">
+            <div class="group-container">
+                <div class="rectangle-parent4  ">
+                    <div class="topics text-lg text-gray-400">Topics</div>
+                    <div class="border border-gray p-6 flex flex-col gap-4 shadow rounded-2xl bg-white ">
+                        <div class="books-parent flex gap-2 ">
+                            <img class="book-saved-icon" alt="" src="./public/booksaved.svg" />
+                            <div class="books">Books</div>
+                        </div>
+                        <div class="visiting-travel-parent flex gap-2 ">
+                            <img class="global-icon" alt="" src="./public/global.svg" />
+                            <div class="books">Visiting Travel</div>
+                        </div>
+                        <div class="business-parent flex gap-2 ">
+                            <img class="status-up-icon" alt="" src="./public/statusup.svg" />
+                            <div class="books">Business</div>
+                        </div>
+                        <div class="health-parent flex gap-2 ">
+                            <img class="heart-add-icon" alt="" src="./public/heartadd.svg" />
+                            <div class="books">Health</div>
+                        </div>
+                        <div class="technology-parent flex gap-2 ">
+                            <img class="monitor-icon" alt="" src="./public/monitor.svg" />
+                            <a class="books" asp-area="" asp-page="/QuibbyTechnology">Technology</a>
+                        </div>
+                        <div class="science-parent flex gap-2 ">
+                            <img class="microscope-icon" alt="" src="./public/microscope.svg" />
+                            <div class="books">Science</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-parent2">
+                    <div class="topics text-lg text-gray-400">Resources</div>
+                    <div
+                        class="rectangle-parent5 border border-gray p-6 flex flex-col gap-4 shadow rounded-2xl bg-white">
+                        <div class="communities-parent flex gap-2 py-2  border-b border-gray-200">
+                            <img class="people-icon" alt="" src="./public/people.svg" />
+                            <a class="books" asp-area="" asp-page="/QuibbyCommunities">Communities</a>
+                           
+
+                        </div>
+
+                        <div class="content-policy-parent flex gap-2">
+                            @* <div class="books">Content Policy</div> *@
+                            <img class="note-icon" alt="" src="./public/note.svg" />
+                            <a class="books" asp-area="" asp-page="/Termsandcondition">Content Policy</a>
+
+                        </div>
+                        <div class="private-policy-parent flex gap-2">
+                            <img class="bill-icon" alt="" src="./public/bill.svg" />
+                            <a class="books" asp-area="" asp-page="/Privacy">Private Policy</a>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        @*text-area*@
+        <div class="center-group lg:w-3/4 flex flex-col gap-3 mt-7  ">
+            
+            @*topic*@
+            <div class="bg-white lg:w-10/12 rounded-2xl ">
+            <div class=" flex justify-between lg:p-6   p-3 gap-3 ">
+           
+            <div class="w-full">
+              <div class="text-zinc-500 text-lg font-normal font-['Outfit']">Topic: Science</div>
+              <div class="text-black font-bold text-[28px]">How does water evaporate ? </div>
+                            <div class="mohammed-aziz-owns mt-4 text-lg pb-3">
+                    </div>
+            
+
+        <button class="w-56 h-18 px-3 py-2.5 rounded-3xl  border border-black  items-start gap-2 inline-flex " id="add-answer-button"  onclick="toggleAnswerForm()">Write Answer</button>
+        <button class="w-56 h-18 px-3 py-2.5  rounded-3xl  border border-black  items-start gap-2 inline-flex"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.87004 8.1525C6.79504 8.145 6.70504 8.145 6.62254 8.1525C4.83754 8.0925 3.42004 6.63 3.42004 4.83C3.42004 2.9925 4.90504 1.5 6.75004 1.5C8.58754 1.5 10.08 2.9925 10.08 4.83C10.0725 6.63 8.65504 8.0925 6.87004 8.1525Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12.3066 3C13.7616 3 14.9316 4.1775 14.9316 5.625C14.9316 7.0425 13.8066 8.1975 12.4041 8.25C12.3441 8.2425 12.2766 8.2425 12.2091 8.25" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3.12102 10.92C1.30602 12.135 1.30602 14.115 3.12102 15.3225C5.18352 16.7025 8.56602 16.7025 10.6285 15.3225C12.4435 14.1075 12.4435 12.1275 10.6285 10.92C8.57352 9.5475 5.19102 9.5475 3.12102 10.92Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.7539 15C14.2939 14.8875 14.8039 14.67 15.2239 14.3475C16.3939 13.47 16.3939 12.0225 15.2239 11.145C14.8114 10.83 14.3089 10.62 13.7764 10.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Follow (0)
+        </button>
+        <img class="edit-icon mr-2" alt="" src="./public/profile2user@2x.png" />
+     <form action="" method="post">
+      <div  id="answer-form">              
+       <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <textarea  class="block p-2.5 w-full my-2 pl-2 md:h-16 border-gray-300 text-lg" type="text"  id="answer" placeholder="Type your answer..." name="answer" value="@Model.Answer.Content"></textarea>
+                <button  class="w-26 h-18 px-3 py-2.5  rounded-3xl border border-black" type="submit" value="Submit">Submit Answer</button>
+            </div>
+        </form>   
+            <script>
+                function toggleAnswerForm() {
+                    var answerForm = document.getElementById('answer-form');
+                    answerForm.style.display = (answerForm.style.display === 'none' || answerForm.style.display === '') ? 'block' : 'none';
+                }
+        
+                @* function submitAnswer() {
+                    var answer = document.getElementById('answer').value;
+                    alert('Answer submitted: ' + answer);
+                    //  submitted answer here
+                } *@
+            </script>
+            </div>         
+        </div>
+      </div>
+     @if(Model.Answers != null)
+     {
+        @foreach(var answer in Model.Answers)
+        {
+                @*post1*@
+            <div class="bg-white lg:w-10/12 rounded-2xl ">
+            <div class="rectangle-group  flex justify-between bg-white p-6 gap-3 ">
+                    <div class="w-[8%]">
+                    <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+                </div>
+                <div class="w-[90%]">
+                    <div class="flex justify-between w-full ">         
+                                                <div class="Openingsort48261  font-medium mb-3">
+                                <div class="openingsort48261 text-lg">@answer.UserId</div>
+                                <div class="pm text-gray-500 text-base ">@answer.CreatedDate</div>
+                            <div class="answere text-green-500 text-base ">Answer</div>
+                            </div>
+                            
+                        <div class="  ">
+                        <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                    
+                    </div>
+                    @* <div class="h-[180px] w-full rounded-2xl">
+                
+                        <img class="w-full h-full object-cover" alt="" src="./public/rectangle-81@2x.png" />
+                    </div> *@
+                
+                    <div class="there-could-be-container mt-4 text-lg pb-3">
+                <p class="there-could-be">
+                @answer.Content
+                </p>
+            
+                    </div>
+                    @* @{Console.WriteLine(answer.Id+"+++++");} *@
+                    <component type="typeof(MyRazorPagesApp.Components.UpVote)" render-mode="ServerPrerendered" param-AnswerId="@answer.Id" />
+                    
+                    @* <div class="frame-parent border-t border-gray-200  flex lg:flex-row flex-col justify-between gap-4 py-3 ">
+                     <div class="flex gap-3">
+                        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                            <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="Vector" d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        
+                    
+                        <form method="post" asp-page-handler="OnPostUpvoteAnswerAsync" asp-route-id="@answer.Id">
+                            <button type="submit" class="up">Up</button>
+                        </form>
+                        <span id="upvoteCount_@answer.Id">@Model.Votes.Where(v => v.AnswerId == answer.Id).Sum(v => v.Upvote)</span> 
+                        </div>
+                        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                            <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="Vector" d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+
+                            <div class="up">Down</div>
+                        </div>
+                        <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                </svg>
+                        </div>
+                    </div>
+                        <div  class="flex gap-2">
+                            <div class="flex gap-1 items-center bg-amber-500  rounded-3xl px-3 py-2 w-fit">                     
+                                        <div class="report">Report</div>
+                        </div>
+                            <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="message-2">
+                                    <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                </svg>
+                                <div class="up">Share</div>
+                            </div>
+                        </div>
+                    </div> *@
+                </div>         
+            </div>
+           </div>
+        }
+    }
+           
+      
+<button id="scrollBtn" style="display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99; border: none; outline: none; background-color: red; color: white; cursor: pointer; padding: 15px; border-radius: 4px;">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    data-prefix="fas"
+    class="h-4 w-4"
+    role="img"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 448 512">
+    <path
+      fill="currentColor"
+      d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path>
+  </svg>   
+    
+</button>
+
+
+<script>
+    @* document.querySelectorAll('.up').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            var answerId = this.getAttribute('data-answer-id');
+
+            fetch('/QuibbyHome?handler=OnPostUpvoteAnswerAsync', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: answerId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    var upvoteCountSpan = document.getElementById('upvoteCount_' + answerId);
+                    upvoteCountSpan.innerText = data.upvotes;
+                } else {
+                    alert('Error upvoting answer.');
+                }
+            });
+        });
+    }); *@
+    
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      var scrollBtn = document.getElementById("scrollBtn");
+
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    }
+
+    document.getElementById('scrollBtn').addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+  </script>
+    </div>
+    
+</body>
+</html>
+
+
+
+  @* @*post2
+            <div class="bg-white lg:w-10/12 rounded-2xl ">
+            <div class="rectangle-group  flex justify-between bg-white lg:p-6 p-3 gap-3 ">
+            <div class="w-[8%]">
+                <img class="group-inner w-12 h-12 " alt="" src="./public/ellipse-7@2x.png" />
+            </div>
+            <div class="w-[90%]">
+                <div class="flex justify-between w-full ">         
+                                               <div class="Openingsort48261  font-medium mb-3">
+                            <div class="openingsort48261 text-lg">Openingsort48261</div>
+                            <div class="pm text-gray-500 text-base ">3 days ago</div>
+                         <div class="answere text-green-500 text-base ">Answer</div>
+                        </div>
+                        
+                    <div class="  ">
+                    <img class="group-icon " alt="" src="./public/group-178.svg" /></div>
+                   
+                </div>
+                
+
+                <div class="if-someones-behavior1 mt-1  pb-1   w-full text-zinc-900 text-lg font-light font-['Outfit'] leading-normal">
+                   If someone's behavior makes you uncomfortable, it might be a good
+            idea to trust your instincts and maintain personal boundaries. You
+            could also consider directly addressing the situation by politely
+            asking the person about their behavior, or simply smiling at them
+            first to see if their response changes. However, it's essential to
+            prioritize your own comfort and safety in such situations.
+                </div>
+              <div class="frame-parent border-t border-gray-200  flex lg:flex-row flex-col justify-between gap-4 py-3 ">
+                <div class="flex gap-3">
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                        <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="Vector" d="M11.56 5.86594L7.21333 1.51928C6.7 1.00594 5.86 1.00594 5.34667 1.51928L1 5.86594" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    
+                
+                    <div class="up">Up</div>
+                    </div>
+                    <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                        <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="Vector" d="M0.99957 1.13406L5.34624 5.48072C5.85957 5.99406 6.69957 5.99406 7.2129 5.48072L11.5596 1.13406" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+
+                        <div class="up">Down</div>
+                    </div>
+                    <div class="message-2-wrapper bg-gray-200 p-3 rounded-3xl">
+                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="message-2">
+                            <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                    </div>
+                </div>
+                    <div  class="flex gap-2">
+                           <div class="flex gap-1 items-center bg-amber-500  rounded-3xl px-3 py-2 w-fit">                     
+                                    <div class="report">Report</div>
+                    </div>
+                        <div class="flex gap-1 items-center bg-gray-200 rounded-3xl px-3 py-2 w-fit">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="message-2">
+                                <path id="Vector" d="M5.66699 7.5H10.3337" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_2" d="M4.66634 12.7868H7.33301L10.2997 14.7601C10.7397 15.0535 11.333 14.7401 11.333 14.2068V12.7868C13.333 12.7868 14.6663 11.4535 14.6663 9.45345V5.45345C14.6663 3.45345 13.333 2.12012 11.333 2.12012H4.66634C2.66634 2.12012 1.33301 3.45345 1.33301 5.45345V9.45345C1.33301 11.4535 2.66634 12.7868 4.66634 12.7868Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                            </svg>
+                            <div class="up">Share</div>
+                        </div>
+                    </div>
+                </div>
+            </div>         
+                                      </div>
+                           
+            </div>
+          
+        </div> *@

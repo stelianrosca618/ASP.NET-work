@@ -1,0 +1,24 @@
+﻿@page
+@model MyRazorPagesApp.Pages.CommentModel
+@{
+}
+   @if(User.Identity != null && User.Identity.IsAuthenticated)
+                    {
+                        <component type="typeof(MyRazorPagesApp.Components.Index)"
+                                   render-mode="Server"/>
+
+                       <div> <component type="typeof(MyRazorPagesApp.Components.Create)"
+                                   render-mode="Server" />
+                        </div>
+
+                        @* <div> <component type="typeof(MyRazorPagesApp.Components.Edit)"
+                                   render-mode="Server" />
+                        </div>
+
+                        <div> <component type="typeof(MyRazorPagesApp.Components.Delete)"
+                                   render-mode="Server" />
+                        </div> *@
+
+                  
+                  
+                    }
